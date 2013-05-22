@@ -1,0 +1,45 @@
+# Introduction 
+
+### Welcome to the Land of Javascript 
+With this guidebook, you will learn to navigate the many winding paths of creating projects with the programming language of the browser: javascript.
+
+This book will start with basic javascript programming and development tools, then gradually increase in difficulty. The approach: a series of projects you will complete, each one building on the skills you learned.
+
+You’ll learn a lot about javascript from this book, its purpose is not to be a reference guide to the intricacies of the language. _Learn.js_ will familiarize you with a wide range of development tools common to javascript development, and you’ll become proficient at using those tools through project-based learning.
+
+
+### Goals. You will:
+- Learn Javascript syntax, functions, data types, and programming patterns.  
+- Learn how to find and use Javascript libraries.  
+- Use javascript/jquery to manipulate html elements.  
+- Use javascript for server-side coding.  
+- Use developer tools like Git, GitHub, Chrome Dev Tools, Bower, npm, and Grunt.  
+- Learn how to build a wide range of projects with javascript, from the server to the client, from game development to data analysis.  
+
+### Topics the book will cover:
+- Writing your first Javascript ever!  
+- Writing code in the browser.  
+- Need an html/css refresher? Get refreshed!  
+- Mapping with leaflet, mapbox, and google maps.  
+- Creating charts with chart.js, vega.js, and d3.js.  
+- Animating with jquery, raphael.js, and other libraries.  
+- Simple game development using canvas, svg, animating html elements.  
+- Using game development frameworks like pixi.js, voxel.js, and others.  
+- Writing server-side javascript with node.js.  
+- Using web service APIs like twitter, tumblr, dropbox, and others.  
+- Javascript command line tools.  
+- Scraping the web with javascript.  
+- Real-time javascript with websockets.  
+- Writing client-side javascript with node.js tools.  
+- Creating javascript apps for use in Phonegap/Cordova.
+- Git & GitHub.  
+- Using Chrome's developer tools.  
+- Develop in a clean workspace with Vagrant & Virtualbox.  
+- So many tools!: Grunt, npm, bower, browserify, and more. Ease your development process.  
+- Building an API with javascript: client and server.  
+- Options for hosting javascript projects.  
+
+### How to use this book
+You should complete the first few chapters in order. Initially, you'll learn js basics and how to use development tools. Next, you should work on the projects that interest you most.
+
+This book is under active development and will see ongoing updates. Learning to build a project with a specific javascript library is only useful for as long as that library is supported and the best solution to the problem. The tools we use for web development change regularly, so this book will morph along with the javascript development standards of the day.

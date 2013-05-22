@@ -1,0 +1,21 @@
+### javascript books:
+- [js for cats](https://github.com/maxogden/javascript-for-cats)
+- [eloquent javascript](http://eloquentjavascript.net/)
+- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
+- [jquery fundamentals](http://jqfundamentals.com/)
+- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
+
+### node.js books:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [stream handbook](https://github.com/substack/stream-handbook)
+- [node beginner book](http://www.nodebeginner.org/)
+
+### html/js/dom books:
+- [dive into html5](http://diveintohtml5.info/)
+- [dom enlightenmnet](http://domenlightenment.com/)
+
+### Style guides:
+- [airbnb js style guide](https://github.com/airbnb/javascript)
+- [felixge node style guide](https://github.com/felixge/node-style-guide)
+- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)

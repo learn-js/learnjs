@@ -1,0 +1,63 @@
+# Chapter One
+
+## A fanpage for pizza.
+
+We're going to make a website for pizza as our first project, and I'm pretty excited about that. This project starts out a little heavy on html and css, but that's alright for the first project isn't it? Maybe you need an html/css refresher. If you're a hero of markup and styling you should be able to complete this project super fast.
+
+### A breakdown of what we'll go over:  
+- Sketching the contents of the page.  
+- Brief overview of html and css.  
+- Using an online editor.  
+- Adding text and images.
+- Creating a pizza with code.
+- Using menu data from your favorite pizza place, aka: using json.
+- A map of your favorite pizza places.
+
+### Sketching the contents of the page.
+We're making a fanpage about pizza. A microsite. If this were the 1990s we'd be making a zine with paper, scissors, and secretly using a copy machine for free.
+
+**This is not the 1990s.**
+
+But we can build our pizza microsite with a similar tone and purpose. On the web everyone is a publisher, so let's publish something awesome about pizza. 
+
+Choosing pizza as the topic is arbitrary. You could make a fanpage for anything. 
+
+If we were writing a zine in the '90s we might make a quick prototype with a pencial. And you know, that's basically what we'll do right now, too. Instead of calling it a zine, we'll call it a microsite.
+
+Get a pencil and a piece of paper. Or find a marker and go to your window or whiteboard. Whatever. Let's sketch.
+
+#### We'll start by drawing four things:
+1. the header
+2. the main content area.
+3. a large pizza in the main area.
+4. the footer.
+ 
+##### The header.
+The header will be very simple, just the title, description, and a cool little pizza icon.
+
+##### The main content area.
+The main content area will have a few things:
+
+- A large pizza.
+- A list of your favorite types of pizza.
+- A map of your favorite pizza places.
+
+##### The footer.
+The footer of this microsite will be very simple. Think of it like the credits of a movie or masthead of a newspaper. Any small details that people need to know.
+Things like:
+- Who you are
+- How the site was made
+- Licensing of the code and content
+- Contact information
+
+### Overview of html & css.
+
+### Using online text editors.
+
+### Adding text and images to our microsite.
+
+### Creating a pizza with code.
+
+### Adding menu data using json.
+
+### Map your favorite pizza places.
