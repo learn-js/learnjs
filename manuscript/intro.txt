@@ -1,45 +1,66 @@
 # Introduction 
 
-### Welcome to the Land of Javascript 
-With this guidebook, you will learn to navigate the many winding paths of creating projects with the programming language of the browser: javascript.
 
-This book will start with basic javascript programming and development tools, then gradually increase in difficulty. The approach: a series of projects you will complete, each one building on the skills you learned.
+## Thank you. 
 
-You’ll learn a lot about javascript from this book, its purpose is not to be a reference guide to the intricacies of the language. _Learn.js_ will familiarize you with a wide range of development tools common to javascript development, and you’ll become proficient at using those tools through project-based learning.
+You believed in this project enough to get involved early, and your support is making it possible. This release went out on May 23, 2013, and it was the first release of _Learn.js_. You're a serious early adopter, and that's awesome.
+
+Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
+
+This book is highly inspired by the lean publishing model ([read more about it](https://leanpub.com/manifesto)) proposed by Peter Armstrong, founder of leanpub.com. I'm releasing the book early to get feedback from you, dear readers, so that together we can make the best book about javascript tools and libraries possible.
+
+This book is looking pretty sparse right now at v0.1.0, but I'll be releasing updates weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by filling out a survey asking what development tools, libraries, and programming patterns you'd be most interested in seeing covered.
+
+The goal: produce a book of roughly 200 pages by the end of July. You're a big part of making that goal real. Thank you.
 
 
-### Goals. You will:
-- Learn Javascript syntax, functions, data types, and programming patterns.  
-- Learn how to find and use Javascript libraries.  
-- Use javascript/jquery to manipulate html elements.  
-- Use javascript for server-side coding.  
-- Use developer tools like Git, GitHub, Chrome Dev Tools, Bower, npm, and Grunt.  
-- Learn how to build a wide range of projects with javascript, from the server to the client, from game development to data analysis.  
+## Target audience
+This book is meant for javascript beginners, but will be useful for anyone that wants to broaden their understanding of javascript. Maybe you've written with jQuery for years and want to get an introduction to server-side code, mapping, or data visualization. Or maybe you've created client-side applications without the use of any development tools like bower, browserify, or grunt, and you want to streamline your development process.
 
-### Topics the book will cover:
-- Writing your first Javascript ever!  
-- Writing code in the browser.  
-- Need an html/css refresher? Get refreshed!  
-- Mapping with leaflet, mapbox, and google maps.  
-- Creating charts with chart.js, vega.js, and d3.js.  
-- Animating with jquery, raphael.js, and other libraries.  
-- Simple game development using canvas, svg, animating html elements.  
-- Using game development frameworks like pixi.js, voxel.js, and others.  
-- Writing server-side javascript with node.js.  
-- Using web service APIs like twitter, tumblr, dropbox, and others.  
-- Javascript command line tools.  
-- Scraping the web with javascript.  
-- Real-time javascript with websockets.  
-- Writing client-side javascript with node.js tools.  
-- Creating javascript apps for use in Phonegap/Cordova.
-- Git & GitHub.  
-- Using Chrome's developer tools.  
-- Develop in a clean workspace with Vagrant & Virtualbox.  
-- So many tools!: Grunt, npm, bower, browserify, and more. Ease your development process.  
-- Building an API with javascript: client and server.  
-- Options for hosting javascript projects.  
+_Learn.js_ will introduce you to a wide range of tools and libraries, and whether you're a beginner or intermediate programmer, you're likely to find helpful material.
 
-### How to use this book
-You should complete the first few chapters in order. Initially, you'll learn js basics and how to use development tools. Next, you should work on the projects that interest you most.
+## Development tools
+The development tools for javascript have changed rapidly in recent years, and the popularity of server-side javascript has matured tools available for client-side developers.
 
-This book is under active development and will see ongoing updates. Learning to build a project with a specific javascript library is only useful for as long as that library is supported and the best solution to the problem. The tools we use for web development change regularly, so this book will morph along with the javascript development standards of the day.
+Learning development tools is one of the most difficult parts of starting to work with a programming language. 
+
+Which tools should I use? Are there best practices for workflows? How should I test code?
+
+There are many possible answers to the above questions, and this book won't give all of them, but because it will be a living document that is revised based on changing patterns and practices in the javascript world, we'll be able to create a guide that remains relevant.
+
+### Development tools the book will cover:
+- npm, the package manager for node.js, which is also often used for client-side javascript modules.
+- bower and component, two package management tools for client-side javascript.
+- browserify, a tool for bundling client side code as node-style modules.
+- grunt, a build tool that can automate repetitive development tasks.
+- Chrome developer tools.
+- Git and GitHub. This book won't be a full guide to git, but it will help you improve as a git user.
+- Vagrant and Virtualbox. Using these tools you can set up an instance of a linux operating system on your Mac or Windows machine and interact with it from the command line.
+- Phonegap/Cordova. This project allows developers to create mobile apps for multiple platforms based on one js/html/css codebase.
+- Hosting using Heroku and GitHub pages.
+- And other tools. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+## Libraries
+There are many different libraries available to javascript developers. It takes time just to learn how to find and use javascript libraries, how to tell which libraries will be effective and reliable, and when not to use a library.
+
+We'll show you the best places to look for javascript libraries, the best resources for keeping track of new releases of libraries, and where to go when you need help learning a new library.
+
+_Learn.js_ will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.
+
+### Some of the javascript libraries the book will cover:
+- jQuery.
+- leaflet.js, mapbox.js, gmaps.js, etc.
+- d3.js, chart.js, raphael.js, and vega.js.
+- pixi.js, voxel.js, and processing.js.
+- And other libraries. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+## Programming patterns
+Javascript is a very flexible language that can be employed using a number of styles and patterns. In this book we'll take a look at some of the most popular patterns, and develop a simple, clean coding style based on popular open-source style guides already available in the community.
+
+### Some coding styles and programming patterns the book will cover:
+- CommonJS and ECMAScript 6 modules.
+- Functional programming.
+- Prototypal inheritance.
+- Constructors.
+- And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).

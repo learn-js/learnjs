@@ -3,7 +3,6 @@ intro.txt
 
 mainmatter:
 chapter00.txt
-chapter01.txt
 
 backmatter:
 appendix.txt

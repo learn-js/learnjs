@@ -1,3 +1,5 @@
+## Additional resources
+
 ### javascript books:
 - [js for cats](https://github.com/maxogden/javascript-for-cats)
 - [eloquent javascript](http://eloquentjavascript.net/)

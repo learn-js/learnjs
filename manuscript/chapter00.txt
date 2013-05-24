@@ -8,9 +8,13 @@
 - Try out the Chrome javascript console
 - Learn about debugging and refactoring code.
 
-**You want to write javascript? OK, here's what we'll do:**
+We'll be writing a function that adds numbers. Simple. Almost too easy. But think about it as if you were building a calculator. You'll need functions that add, subtract, multiply, and divide, and depending on the complexity of the calculator, maybe even more than that.
+
+Our goal will be to create an add function that could be reused in various ways throughout our imaginary calculator program. We'll only make `add`, but if you want to experiment and actually make a calculator, that would be awesome! [Let me know how it goes](mailto:hi@learnjs.io).
 
 ### Writing javascript on paper.
+
+**You want to write javascript? OK, here's what we'll do:**
 
 - Take out a sheet of paper and a pen.
 - Write the following on the paper:
@@ -71,7 +75,7 @@ You can use pseudocode to experiment, and to define the outline of a program wit
 > If you haven't installed Chrome yet, do so now at [google.com/chrome](http://google.com/chrome)
 
 1. Open a Chrome window.
-2. Go to [learnjs.io](TODO).
+2. Go to [learnjs.io](http://learnjs.io).
 3. Click **View**, in the top menu, hover over **Developer**, then click **Javascript Console**. (TODO: edit for windows, linux, and mac)
 
 > You can also use a keyboard shortcut:
@@ -171,9 +175,9 @@ It returned this: `’15’`.
 Those numbers had quotes around them. Numbers in javascript do not have quotes around them, only strings. Instead of adding numbers, our program combined two strings.
 
 ### Walking like a duck
-Javascript is a dynamically-typed language. Remember how we created variables earlier that referenced specific values? Each value that a variable references has a type, and in javascript, you don't have to specify a type when you create a variable. You can change a variable's type later in the program, and you will interact with a variable in different ways depending on its type.
+Javascript is a dynamically-typed language. Remember how we created variables earlier that referenced specific values? Each value that a variable references has a type, and in javascript, you don't have to specify a type when you create a variable. You can change a variable's type later in the program, and you will interact with a variable in different ways depending on its type. Sometimes this is called duck typing. If the variable walks like a duck and talks like a duck, it is a duck.
 
-#### Here are common types:
+#### Here are common types in javascript:
 
 ##### Boolean: true or false
 
@@ -283,7 +287,7 @@ function add() {
 }
 ~~~~~~~~
 
-Cool. Now we can add any number of arguments to the `add` function and get the correct result!
+Cool. Now we can pass any number of arguments to the `add` function and get the correct result!
 With this change we can now pass any number of arguments to `add`, like this: 
 
 ~~~~~~~~
@@ -306,6 +310,7 @@ As long as `i` is less than 3, the loop will run again.
 
 Then we give the loop an increment value: `i++`. The `++` increases `i` by one with every loop.
 
+This might be the point where you get a little overwhelmed if you are new to programming. If so, I recommend you practice things like `for` loops over at [codecademy.com](http://codecademy.com).  It's a great site for building foundational knowledge of javascript basics.
 
 ### One last problem: ‘one’.
 
@@ -351,8 +356,11 @@ The new code that we added looks like this:
 ...
 ~~~~~~~~
 
-The function `isNaN` checks to see if `parseFloat(arguments[i]) is a number. If `isNaN` returns false, then we know that the argument is a number.
-This checks to see if an argument is a number, and if not, ignores it – but there’s still a problem with this. Ignoring values like `'one'` in our `add` function because it doesn't contain numbers is reasonable. The problem: this error fails silently. Any time there's a chance our function can fail because of misuse by yourself or another programmer, it's best for the code to send errors explaining why it fails. We want our code to complain when there is a problem.
+The function `isNaN` checks to see if `parseFloat(arguments[i])` is a number. If `isNaN` returns false, then we know that the argument is a number.
+
+This checks to see if an argument is a number, and if not, ignores it – but there’s still a problem with this. Ignoring values like `'one'` in our `add` function because it doesn't contain numbers is reasonable. The problem: this error fails silently. 
+
+Any time there's a chance our function can fail because of misuse by yourself or another programmer, it's best for the code to send errors explaining why it fails. We want our code to complain when there is a problem.
 
 Let's switch up our code so that if an argument is not a number, `add` throws an error, and if the argument _is_ a number, it gets added to the `total` variable.
 
@@ -377,13 +385,14 @@ add('one', 2);
 ~~~~~~~~
 
 It'll return an error with this text:
+
 ~~~~~~~~
 Error: Arguments to `add` must be numbers.
 ~~~~~~~~
 
 Good, that was our goal. Now any strings that can't be converted to numbers will result in this clear error rather than being ignored.
 
-### So here's what we covered:
+### Here is what we covered:
 
 #### Chrome javascript console
 We started using Chrome's javascript console in a really basic way as preparation for upcoming chapters.

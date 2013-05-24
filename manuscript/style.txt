@@ -1,9 +1,9 @@
-# Javascript style guide & syntax cheatsheet
+## Javascript style guide & syntax cheatsheet
 
 
-## Variables
+### Variables
 
-### Creating a variable:
+#### Creating a variable:
 
 ~~~~~~~~
 var nameOfVariable;
@@ -11,7 +11,7 @@ var nameOfVariable;
 
 > Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
 
-### Creating a variable that references a string:
+#### Creating a variable that references a string:
 
 ~~~~~~~~
 var thisIsAString = 'this is a string';
@@ -20,7 +20,7 @@ var thisIsAString = 'this is a string';
 Surround strings with single quotes.
 
 
-### Creating a variable that references a numer:
+#### Creating a variable that references a numer:
 
 ~~~~~~~~
 var thisIsANumber = 3.14;
@@ -28,7 +28,7 @@ var thisIsANumber = 3.14;
 
 Numbers do not have quotes around them.
 
-### Creating a variable that references an array:
+#### Creating a variable that references an array:
 
 ~~~~~~~~
 var thisIsAnArray = [1, "two", [3, 4]];
@@ -36,7 +36,7 @@ var thisIsAnArray = [1, "two", [3, 4]];
 
 Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
 
-### Accessing the values in an array:
+#### Accessing the values in an array:
 
 ~~~~~~~~
 thisIsAnArray[0];
@@ -50,7 +50,7 @@ thisIsAnArray[1];
 
 This returns the string 'two';
 
-#### How would you return the number `4` from the nested array?
+##### How would you return the number `4` from the nested array?
 
 Like this:
 
@@ -58,7 +58,7 @@ Like this:
 thisIsAnArray[2][1];
 ~~~~~~~~
 
-### Creating a variable that references an object:
+#### Creating a variable that references an object:
 
 var thisIsAnObject = {
   someString: 'some string value',
@@ -112,9 +112,9 @@ That goes for other attributes on an object, too: stick with dot notation unless
 For instance, it's more clear to use bracket notation in a situation like this:
 
 ~~~~~~~~
-for (var i=0; i >= 20; i++){
-  thisIsAnObject['numberedAttribute' + i];
+for (var key in object){
+  thisIsAnObject[key];
 }
 ~~~~~~~~
 
-This example is a little lame, because if you have 20 attributes on your object with the same name except they are numbered, you might be doing something weird. But this gives you an idea of how
+This gives you an idea of how to iterate through an object using a for...in loop.

@@ -57,7 +57,11 @@ Things like:
 ### Adding text and images to our microsite.
 
 ### Creating a pizza with code.
+We're going to use a javascript library called raphael.js
+
 
 ### Adding menu data using json.
+Let's say you're favorite pizza place is named Pizza Pi, and one of the employees is also a web developer. This awesome pizza artist decided to create a json feed of their menu, so customers can work with the data. Weird, right?
+
 
 ### Map your favorite pizza places.
