@@ -2,9 +2,12 @@ frontmatter:
 intro.txt
 
 mainmatter:
+intro-git.txt
+intro-grunt.txt
 chapter00.txt
 
 backmatter:
 appendix.txt
 style.txt
 resources.txt
+changelog.txt

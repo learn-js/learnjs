@@ -18,6 +18,9 @@
 - [dom enlightenmnet](http://domenlightenment.com/)
 
 ### Style guides:
+- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
+- [idiomatic html](https://github.com/necolas/idiomatic-html)
+- [idiomatic css](https://github.com/necolas/idiomatic-css)
 - [airbnb js style guide](https://github.com/airbnb/javascript)
 - [felixge node style guide](https://github.com/felixge/node-style-guide)
 - [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)

@@ -20,7 +20,7 @@ var thisIsAString = 'this is a string';
 Surround strings with single quotes.
 
 
-#### Creating a variable that references a numer:
+#### Creating a variable that references a number:
 
 ~~~~~~~~
 var thisIsANumber = 3.14;
