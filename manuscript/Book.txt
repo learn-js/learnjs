@@ -2,6 +2,8 @@ frontmatter:
 intro.txt
 
 mainmatter:
+basics.txt
+intro-console.txt
 intro-git.txt
 intro-grunt.txt
 chapter00.txt
