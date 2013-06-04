@@ -6,6 +6,7 @@ basics.txt
 intro-console.txt
 intro-git.txt
 intro-grunt.txt
+intro-functions.txt
 chapter00.txt
 
 backmatter:
