@@ -93,59 +93,180 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="hello-javascript-its-nice-to-meet-you">Hello, javascript. It&#x2019;s nice to meet you.</h2>
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="javascript-style-guide--syntax-cheatsheet">Javascript style guide &amp; syntax cheatsheet</h3>
+
+<h4 id="variables">Variables</h4>
+
+<h5 id="creating-a-variable">Creating a variable:</h5>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="lineno">1</code> <code class="n">console</code><code class="p">.</code><code class="n">log</code><code class="p">(</code><code class="err">'</code><code class="n">hello</code><code class="p">,</code> <code class="n">javascript</code><code class="p">.</code> <code class="n">it</code><code class="err">'</code><code class="n">s</code> <code class="n">nice</code> <code class="n">to</code> <code class="n">meet</code> <code class="n">you</code><code class="err">'</code><code class="p">);</code>
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">var</code> <code class="n">nameOfVariable</code><code class="p">;</code>
 </pre></div>
 
 </div>
-
-<p>Open up the browser Chrome.</p>
 
 <blockquote>
-  <p>I f you don&#x2019;t already have Chrome installed, download and install it now at <a href="http://google.com/chrome">google.com/chrome</a></p>
+  <p>Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.</p>
 </blockquote>
 
-<p>Now, use this keyboard shortcut on a Mac: command + option + j
-Or this for Windows/Linux: control + shift + j</p>
-
-<p>You just opened the javascript console.</p>
-
-<p><strong>Type in this code:</strong><br />
-~~~~~~~~
-console.log(&#x2018;what is this?&#x2019;);
-~~~~~~~~</p>
-
-<p>You just told the javascript console to print some text!</p>
-
-<p>Any time you put <code>console.log()</code> in javascript code that is run in the browser, whatever you put between the parenthese will show up in your browser&#x2019;s javascript console.</p>
-
-<p>As you learn javascript, <code>console.log()</code> will be your best friend. You will use it to help prototype new functionality and to debug your code.</p>
-
-<h3 id="your-first-challenge">Your first challenge:</h3>
-
-<p>Type this into the console:</p>
+<h5 id="creating-a-variable-that-references-a-string">Creating a variable that references a string:</h5>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="lineno">1</code> <code class="n">console</code><code class="p">.</code><code class="n">error</code><code class="p">(</code><code class="err">'</code><code class="n">this</code> <code class="n">is</code> <code class="n">an</code> <code class="n">error</code><code class="err">'</code><code class="p">);</code>
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">var</code> <code class="n">thisIsAString</code> <code class="o">=</code> <code class="err">'</code><code class="n">this</code> <code class="n">is</code> <code class="n">a</code> <code class="n">string</code><code class="err">'</code><code class="p">;</code>
 </pre></div>
 
 </div>
 
-<p>That&#x2019;s an error! Note how it shows up in red. And look in the bottom right corner of the browser. You&#x2019;ll see a little red circle with an x in the middle, and a number on its right side. That&#x2019;s a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.</p>
+<p>Surround strings with single quotes.</p>
 
-<p>With most errors you&#x2019;ll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We&#x2019;ll get into errors and debugging in more details later in the book.</p>
+<h5 id="creating-a-variable-that-references-a-number">Creating a variable that references a number:</h5>
 
-<h3 id="chrome-developer-tools">Chrome Developer Tools</h3>
-<p>The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has very good tools, and focusing on the tools of one browser helps keep the instructions simple.</p>
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">var</code> <code class="n">thisIsANumber</code> <code class="o">=</code> <code class="mf">3.14</code><code class="p">;</code>
+</pre></div>
 
-<p>Expect to learn more about Chrome&#x2019;s Developer Tools throughout the book. And check out the <a href="TODO">Browser Developer Tools</a> section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.</p>
+</div>
 
-<h3 id="recap-we-learned-that">Recap! We learned that:</h3>
-<ul><li>the javascript console and learned that we can type in javascript!</li>
-  <li>we can use code like <code>console.log()</code> and <code>console.error()</code> to print information to the console.</li>
-  <li>Chrome has a lot of useful tools, and later in the book we&#x2019;ll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.</li>
+<p>Numbers do not have quotes around them.</p>
+
+<h5 id="creating-a-variable-that-references-an-array">Creating a variable that references an array:</h5>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">var</code> <code class="n">thisIsAnArray</code> <code class="o">=</code> <code class="p">[</code><code class="mi">1</code><code class="p">,</code> <code class="s">"two"</code><code class="p">,</code> <code class="p">[</code><code class="mi">3</code><code class="p">,</code> <code class="mi">4</code><code class="p">]];</code>
+</pre></div>
+
+</div>
+
+<p>Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.</p>
+
+<h5 id="accessing-the-values-in-an-array">Accessing the values in an array:</h5>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnArray</code><code class="p">[</code><code class="mi">0</code><code class="p">];</code>
+</pre></div>
+
+</div>
+
+<p>The above will return the number <code>1</code>. Arrays use numbers as the index of their values, and with javascript an array&#x2019;s index always start at <code>0</code>, making <code>0</code> reference the first value of the array.</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnArray</code><code class="p">[</code><code class="mi">1</code><code class="p">];</code>
+</pre></div>
+
+</div>
+
+<p>This returns the string &#x2018;two&#x2019;;</p>
+
+<h6 id="how-would-you-return-the-number-4-from-the-nested-array">How would you return the number <code>4</code> from the nested array?</h6>
+
+<p>Like this:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnArray</code><code class="p">[</code><code class="mi">2</code><code class="p">][</code><code class="mi">1</code><code class="p">];</code>
+</pre></div>
+
+</div>
+
+<h5 id="creating-a-variable-that-references-an-object">Creating a variable that references an object:</h5>
+
+<p>var thisIsAnObject = {
+  someString: &#x2018;some string value&#x2019;,
+  someNumber: 1234,
+  someFunction: function(){
+    return &#x2018;a function that belongs to an object&#x2019;;
+  }
+}</p>
+
+<p>Here we&#x2019;re setting <code>someString</code> to <code>'some string value'</code>, <code>someNumber' to </code>1234<code>, and we're creating a function named </code>someFunction<code> that returns the string </code>&#x2018;a function that belongs to an object&#x2019;`. So how do we access these values?</p>
+
+<p>To get the value of <code>someString</code> using dot notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">.</code><code class="n">someString</code><code class="p">;</code>
+</pre></div>
+
+</div>
+
+<p>Or using bracket notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">[</code><code class="err">'</code><code class="n">someString</code><code class="err">'</code><code class="p">];</code>
+</pre></div>
+
+</div>
+
+<p>To get the value of <code>someNumber</code> using dot notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">.</code><code class="n">someNumber</code><code class="p">;</code>
+</pre></div>
+
+</div>
+
+<p>Or using bracket notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">[</code><code class="err">'</code><code class="n">someNumber</code><code class="err">'</code><code class="p">];</code>
+</pre></div>
+
+</div>
+
+<p>To use the function <code>someFunction</code> using dot notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">.</code><code class="n">someFunction</code><code class="p">();</code>
+</pre></div>
+
+</div>
+
+<p>Or using bracket notation:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">thisIsAnObject</code><code class="p">[</code><code class="err">'</code><code class="n">someFunction</code><code class="err">'</code><code class="p">]();</code>
+</pre></div>
+
+</div>
+
+<p>Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there&#x2019;s a good reason to use bracket notation.</p>
+
+<p>For instance, it&#x2019;s more clear to use bracket notation in a situation like this:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="k">for</code> <code class="p">(</code><code class="n">var</code> <code class="n">key</code> <code class="n">in</code> <code class="n">object</code><code class="p">){</code>
+<code class="lineno">2</code>   <code class="n">thisIsAnObject</code><code class="p">[</code><code class="n">key</code><code class="p">];</code>
+<code class="lineno">3</code> <code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>This gives you an idea of how to iterate through an object using a for&#x2026;in loop.</p>
+
+<h3 id="additional-resources">Additional resources</h3>
+
+<h4 id="javascript-books">javascript books:</h4>
+<ul><li><a href="https://github.com/maxogden/javascript-for-cats">js for cats</a></li>
+  <li><a href="http://eloquentjavascript.net/">eloquent javascript</a></li>
+  <li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">learning javascript design patterns</a></li>
+  <li><a href="http://addyosmani.com/writing-modular-js/">writing modular javascript</a></li>
+  <li><a href="http://jqfundamentals.com/">jquery fundamentals</a></li>
+  <li><a href="http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf">javascript enlightenment</a></li>
+</ul><h4 id="nodejs-books">node.js books:</h4>
+<ul><li><a href="https://github.com/maxogden/art-of-node">art of node</a></li>
+  <li><a href="https://github.com/substack/stream-handbook">stream handbook</a></li>
+  <li><a href="http://www.nodebeginner.org/">node beginner book</a></li>
+</ul><h4 id="htmljsdom-books">html/js/dom books:</h4>
+<ul><li><a href="http://diveintohtml5.info/">dive into html5</a></li>
+  <li><a href="http://domenlightenment.com/">dom enlightenmnet</a></li>
+</ul><h4 id="style-guides">Style guides:</h4>
+<ul><li><a href="https://github.com/rwldrn/idiomatic.js">idiomatic.js</a></li>
+  <li><a href="https://github.com/necolas/idiomatic-html">idiomatic html</a></li>
+  <li><a href="https://github.com/necolas/idiomatic-css">idiomatic css</a></li>
+  <li><a href="https://github.com/airbnb/javascript">airbnb js style guide</a></li>
+  <li><a href="https://github.com/felixge/node-style-guide">felixge node style guide</a></li>
+  <li><a href="http://contribute.jquery.org/style-guide/js/">jQuery&#x2019;s javascript style guide</a></li>
 </ul>
 </div>
 

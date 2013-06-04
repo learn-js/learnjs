@@ -1,0 +1,416 @@
+<div id="leanpub-toc">
+<h2>Table of Contents</h2>
+<ol class="toc">
+<li class="chapter"><a href="chap00.html#introduction">Introduction</a></li>
+<li class="section"><a href="chap00.html#thank-you">Thank you.</a></li>
+<li class="section"><a href="chap00.html#target-audience">Target audience</a></li>
+<li class="section"><a href="chap00.html#development-tools">Development tools</a></li>
+<li class="sub-section"><a href="chap00.html#development-tools-the-book-will-cover">Development tools the book will cover:</a></li>
+<li class="section"><a href="chap00.html#libraries">Libraries</a></li>
+<li class="sub-section"><a href="chap00.html#some-of-the-javascript-libraries-the-book-will-cover">Some of the javascript libraries the book will cover:</a></li>
+<li class="section"><a href="chap00.html#programming-patterns">Programming patterns</a></li>
+<li class="sub-section"><a href="chap00.html#some-coding-styles-and-programming-patterns-the-book-will-cover">Some coding styles and programming patterns the book will cover:</a></li>
+<li class="chapter"><a href="chap01.html#the-basics">1. The Basics</a></li>
+<li class="section"><a href="chap01.html#in-this-section-well-get-started-learning">In this section, we&#x2019;ll get started learning:</a></li>
+<li class="sub-section"><a href="chap01.html#chromes-developer-tools">Chrome&#x2019;s Developer Tools</a></li>
+<li class="sub-section"><a href="chap01.html#basic-html-and-css">Basic html and css</a></li>
+<li class="sub-section"><a href="chap01.html#javascript-syntax-variables-data-types-functions-and-style-guidelines">Javascript syntax, variables, data types, functions, and style guidelines</a></li>
+<li class="sub-section"><a href="chap01.html#nodejs-and-npm">Node.js and npm</a></li>
+<li class="sub-section"><a href="chap01.html#bower-and-grunt">Bower and grunt</a></li>
+<li class="sub-section"><a href="chap01.html#git-and-github">Git and GitHub</a></li>
+<li class="sub-section"><a href="chap01.html#testing-javascript">Testing javascript</a></li>
+<li class="chapter"><a href="chap02.html#hello-javascript-its-nice-to-meet-you">Hello, javascript. It&#x2019;s nice to meet you.</a></li>
+<li class="section"><a href="chap02.html#your-first-challenge">Your first challenge:</a></li>
+<li class="section"><a href="chap02.html#chrome-developer-tools">Chrome Developer Tools</a></li>
+<li class="section"><a href="chap02.html#recap-we-learned-that">Recap! We learned that:</a></li>
+<li class="chapter"><a href="chap03.html#introduction-to-git--github">Introduction to git &amp; GitHub</a></li>
+<li class="section"><a href="chap03.html#get-on-github">Get on GitHub</a></li>
+<li class="section"><a href="chap03.html#create-a-site-for-yourself-using-github">Create a site for yourself using GitHub</a></li>
+<li class="sub-section"><a href="chap03.html#with-github-pages-you-can">With GitHub Pages you can:</a></li>
+<li class="chapter"><a href="chap04.html#introduction-to-gruntjs">Introduction to grunt.js</a></li>
+<li class="sub-section"><a href="chap04.html#outline-of-the-steps-in-this-tutorial">Outline of the steps in this tutorial:</a></li>
+<li class="sub-section"><a href="chap04.html#install-node">Install node:</a></li>
+<li class="sub-section"><a href="chap04.html#hey-packagejson-files-are-cool">Hey, package.json files are cool.</a></li>
+<li class="sub-section"><a href="chap04.html#project-setup">Project setup:</a></li>
+<li class="chapter"><a href="chap05.html#introduction-to-funtions">Introduction to funtions.</a></li>
+<li class="section"><a href="chap05.html#eating-digesting-and-pooping">Eating, digesting, and pooping.</a></li>
+<li class="section"><a href="chap05.html#lets-make-a-function-named-eat">Let&#x2019;s make a function named <code>eat</code>.</a></li>
+<li class="section"><a href="chap05.html#using-the-eat-function">Using the <code>eat</code> function:</a></li>
+<li class="sub-section"><a href="chap05.html#so-what-is-the-digest-function-doing">So what is the <code>digest</code> function doing?</a></li>
+<li class="chapter"><a href="chap06.html#chapter-0">CHAPTER 0</a></li>
+<li class="section"><a href="chap06.html#write-a-function-that-adds-numbers-and-make-it-awesome">Write a function that adds numbers, and make it awesome.</a></li>
+<li class="sub-section"><a href="chap06.html#our-goals-for-chapter-zero-are-simple">Our goals for chapter zero are simple:</a></li>
+<li class="sub-section"><a href="chap06.html#writing-javascript-on-paper">Writing javascript on paper.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#if-the-above-is-simple-math-whats-with-the-word-var-whats-that">If the above is simple math, what&#x2019;s with the word <code>var</code>? What&#x2019;s that?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#why-are-there-single-quotes-around-the-phrase-whatever-the-variable-should-reference">Why are there single quotes around the phrase <code>whatever the variable should reference</code>?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#wait-why-did-i-just-write-that-on-paper">Wait, why did I just write that on paper?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#so-whats-pseudocode">So, what&#x2019;s pseudocode?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#pseudocode-is-awesome">Pseudocode is awesome.</a></li>
+<li class="sub-section"><a href="chap06.html#now-lets-open-up-the-web-browser-chrome-and-do-some-experimenting">Now let&#x2019;s open up the web browser, Chrome, and do some experimenting.</a></li>
+<li class="sub-section"><a href="chap06.html#important">Important:</a></li>
+<li class="sub-section"><a href="chap06.html#lets-get-functional">Let&#x2019;s get functional.</a></li>
+<li class="sub-section"><a href="chap06.html#lets-add-with-a-function">Let&#x2019;s add with a function!</a></li>
+<li class="sub-section"><a href="chap06.html#hey-you-made-num-equal-the-usage-of-the-add-function">Hey, you made <code>num</code> equal the usage of the add function.</a></li>
+<li class="sub-section"><a href="chap06.html#wait-what-if-i-messed-up-the-adder">Wait, what if I messed up the adder?</a></li>
+<li class="sub-section"><a href="chap06.html#why-didnt-it-add">Why didn&#x2019;t it add?</a></li>
+<li class="sub-section"><a href="chap06.html#walking-like-a-duck">Walking like a duck</a></li>
+<li class="sub-sub-section"><a href="chap06.html#here-are-common-types-in-javascript">Here are common types in javascript:</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#boolean-true-or-false">Boolean: true or false</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#number-integer-or-float">Number: integer or float</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#string-text-in-quotes">String: text in quotes.</a></li>
+<li class="sub-section"><a href="chap06.html#back-to-our-addition-issue">Back to our addition issue:</a></li>
+<li class="sub-section"><a href="chap06.html#now-we-have-a-float-issue">Now we have a float issue.</a></li>
+<li class="sub-section"><a href="chap06.html#what-about-adding-more-than-two-numbers">What about adding more than two numbers?</a></li>
+<li class="sub-section"><a href="chap06.html#looper-cycling-through-a-functions-arguments">Looper: cycling through a function&#x2019;s arguments</a></li>
+<li class="sub-section"><a href="chap06.html#one-last-problem-one">One last problem: &#x2018;one&#x2019;.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#ignore-any-argument-that-is-not-a-number">Ignore any argument that is not a number.</a></li>
+<li class="sub-section"><a href="chap06.html#here-is-what-we-covered">Here is what we covered:</a></li>
+<li class="sub-sub-section"><a href="chap06.html#chrome-javascript-console">Chrome javascript console</a></li>
+<li class="sub-sub-section"><a href="chap06.html#basic-data-types">Basic data types</a></li>
+<li class="sub-sub-section"><a href="chap06.html#writing-functions">Writing functions.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#refactoring-code">Refactoring code.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#debugging-and-useful-errors">Debugging and useful errors.</a></li>
+<li class="sub-section"><a href="chap06.html#hey-adding-isnt-really-a-useful-function-lets-get-serious">Hey, adding isn&#x2019;t really a useful function. Let&#x2019;s get serious.</a></li>
+<li class="chapter"><a href="chap07.html#appendix">Appendix</a></li>
+<li class="section"><a href="chap07.html#javascript-style-guide--syntax-cheatsheet">Javascript style guide &amp; syntax cheatsheet</a></li>
+<li class="sub-section"><a href="chap07.html#variables">Variables</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable">Creating a variable:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-a-string">Creating a variable that references a string:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-a-number">Creating a variable that references a number:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-an-array">Creating a variable that references an array:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#accessing-the-values-in-an-array">Accessing the values in an array:</a></li>
+<li class="sub-sub-sub-section"><a href="chap07.html#how-would-you-return-the-number-4-from-the-nested-array">How would you return the number <code>4</code> from the nested array?</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-an-object">Creating a variable that references an object:</a></li>
+<li class="section"><a href="chap07.html#additional-resources">Additional resources</a></li>
+<li class="sub-section"><a href="chap07.html#javascript-books">javascript books:</a></li>
+<li class="sub-section"><a href="chap07.html#nodejs-books">node.js books:</a></li>
+<li class="sub-section"><a href="chap07.html#htmljsdom-books">html/js/dom books:</a></li>
+<li class="sub-section"><a href="chap07.html#style-guides">Style guides:</a></li>
+<li class="chapter"><a href="chap08.html#changelog">Changelog:</a></li>
+<li class="section"><a href="chap08.html#v030">v0.3.0</a></li>
+<li class="section"><a href="chap08.html#v020">v0.2.0:</a></li>
+<li class="section"><a href="chap08.html#v010">v0.1.0:</a></li>
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="introduction-to-gruntjs">Introduction to grunt.js</h2>
+
+<p>Grunt is a tool for managing the javascript, css, and html files of your
+web project, a task manager similar to Ruby&#x2019;s <code>rake</code>. You can run any
+arbitrary tasks you want, and there are a number of grunt plugins that
+make it easy to set up common tasks. Grunt is useful for running tests
+or for build steps like turning sass, stylus, or less files into css,
+concatenating files, or creating .zip or .tar.gz packages of your
+project.</p>
+
+<h4 id="outline-of-the-steps-in-this-tutorial">Outline of the steps in this tutorial:</h4>
+
+<ul><li>Install node.</li>
+  <li>Install grunt-cli.</li>
+  <li>Setup project.</li>
+  <li>Set up package.json.</li>
+  <li>Create Gruntfile.js.</li>
+  <li>Run grunt tasks.</li>
+  <li>Make an awesome project.</li>
+</ul><h4 id="install-node">Install node:</h4>
+
+<p>There are a few options for this, and I&#x2019;ve put them in my order of
+preference:</p>
+
+<p><strong>Use nvm to manage node versions</strong> This option gives you the most
+control, allows you to switch between versions of node similar to using
+rvm or rbenv for ruby. <a href="https://github.com/creationix/nvm" title="nvm">Get nvm here</a>.</p>
+
+<p><strong>Install using a package manager.</strong> This is a good option, but
+sometimes package managers can be out of date. If the node version
+you&#x2019;ll be using matters for your project, you should make sure that the
+version in the package manager works for you. <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager" title="installing node from package managers">Check out a list of
+package manager instructions here</a>.</p>
+
+<p>**Download an installer from nodejs.org.
+**[Here&#x2019;s the node.js download page][nodejs.org/download].</p>
+
+<p>Installing node gives us the node package manager <code>npm</code>. We&#x2019;ll use it to
+install grunt-cli, the command-line tool that is used to run grunt
+tasks. </p>
+
+<p>
+  <strong>Run this in your terminal after installing node.js:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">npm</code> <code class="n">intall</code> <code class="o">-</code><code class="n">g</code> <code class="n">grunt</code><code class="o">-</code><code class="n">cli</code>
+</pre></div>
+
+</div>
+
+<p>This installs the grunt command-line tool globally on your machine. Now
+you can run the <code>grunt </code>command!</p>
+
+<p>And &#x2026; it won&#x2019;t do anything.</p>
+
+<p>Bummer. <strong>But it will give you a message like this</strong>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">grunt</code><code class="o">-</code><code class="n">cli</code><code class="o">:</code> <code class="n">The</code> <code class="n">grunt</code> <code class="n">command</code> <code class="n">line</code> <code class="n">interface</code><code class="p">.</code> <code class="p">(</code><code class="n">v0</code><code class="mf">.1.6</code><code class="p">)</code>
+<code class="lineno">2</code>   <code class="n">Fatal</code> <code class="n">error</code><code class="o">:</code> <code class="n">Unable</code> <code class="n">to</code> <code class="n">find</code> <code class="n">local</code> <code class="n">grunt</code><code class="p">.</code>
+<code class="lineno">3</code>   <code class="n">If</code> <code class="n">you</code><code class="err">&#x2019;</code><code class="n">re</code> <code class="n">seeing</code> <code class="n">this</code> <code class="n">message</code><code class="p">,</code> <code class="n">either</code> <code class="n">a</code> <code class="n">Gruntfile</code> <code class="n">wasn</code><code class="err">&#x2019;</code><code class="n">t</code> <code class="n">found</code> <code class="n">or</code>
+<code class="lineno">4</code> <code class="n">grunt</code>
+<code class="lineno">5</code>   <code class="n">hasn</code><code class="err">&#x2019;</code><code class="n">t</code> <code class="n">been</code> <code class="n">installed</code> <code class="n">locally</code> <code class="n">to</code> <code class="n">your</code> <code class="n">project</code><code class="p">.</code> <code class="n">For</code> <code class="n">more</code> <code class="n">information</code>
+<code class="lineno">6</code> <code class="n">about</code>
+<code class="lineno">7</code>   <code class="n">installing</code> <code class="n">and</code> <code class="n">configuring</code> <code class="n">grunt</code><code class="p">,</code> <code class="n">please</code> <code class="n">see</code> <code class="n">the</code> <code class="n">Getting</code> <code class="n">Started</code>
+<code class="lineno">8</code> <code class="nl">guide:</code> <code class="p">[</code><code class="n">http</code><code class="o">:</code><code class="c1">//gruntjs.com/getting-started](http://gruntjs.com/getting-star\</code>
+<code class="lineno">9</code> <code class="c1">ted)</code>
+</pre></div>
+
+</div>
+
+<p>The grunt command looks for a locally installed version of grunt &#x2014; which
+you can include in your project as a development dependency in a
+package.json file.</p>
+
+<h4 id="hey-packagejson-files-are-cool">Hey, package.json files are cool.</h4>
+
+<p>You can use a package.json file for a lot of useful purposes. Primarily,
+it&#x2019;s used to list your project&#x2019;s dependencies on npm packages, as well
+as list the name, description, version, and source repository of the
+project. You can specify the type of license, version of node the
+project requires, the project&#x2019;s contributors, and more. Check out [this
+interactive package.json cheatsheet][http://package.json.nodejitsu.com/] for a nice rundown on the basics.</p>
+
+<p>So, our package.json will specify some development dependencies. </p>
+
+<p>
+  <strong>Some basic requirements:</strong>
+</p>
+
+<ul><li>We&#x2019;ll test the javascript with qunit.</li>
+  <li>We&#x2019;ll write scss and compile it to css, then minify the
+  css.</li>
+  <li>We&#x2019;ll concatenate and uglify our javascript files.</li>
+  <li>We&#x2019;ll use the <code>grunt watch</code> command to
+  automatically run grunt tasks when files are edited.</li>
+  <li>We&#x2019;ll want a little http server to check out our game as we&#x2019;re
+  developing it. </li>
+</ul><p>Some of the above requirements could be perceived as excessive, but they
+help make this a meaty and useful tutorial, so deal with it.</p>
+
+<p>
+  <strong>So, we&#x2019;ll need to use some grunt plugins. We&#x2019;ll use these ones:</strong>
+</p>
+
+<ul><li>[grunt-contrib-qunit][https://github.com/gruntjs/grunt-contrib-qunit]</li>
+  <li>[grunt-contrib-jshint][https://github.com/gruntjs/grunt-contrib-jshint]</li>
+  <li>[grunt-contrib-connect][https://github.com/gruntjs/grunt-contrib-connect]</li>
+  <li>[grunt-contrib-livereload][https://github.com/gruntjs/grunt-contrib-livereload]</li>
+  <li>[grunt-regarde][https://github.com/yeoman/grunt-regarde]</li>
+</ul><p>
+  <strong>That means our package.json file will look like this:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno"> 1</code> <code class="p">{</code> 
+<code class="lineno"> 2</code>   <code class="s">"name"</code><code class="o">:</code> <code class="s">"wicked-ooh-game"</code><code class="p">,</code> 
+<code class="lineno"> 3</code>   <code class="s">"version"</code><code class="o">:</code> <code class="s">"0.0.1"</code><code class="p">,</code> <code class="s">"author"</code><code class="o">:</code> <code class="s">"Super Big Tree &lt;seth@superbigtree.com&gt;"</code><code class="p">,</code> 
+<code class="lineno"> 4</code>   <code class="s">"description"</code><code class="o">:</code> <code class="s">"A silly game."</code><code class="p">,</code> 
+<code class="lineno"> 5</code>   <code class="s">"repository"</code><code class="o">:</code> <code class="p">{</code> 
+<code class="lineno"> 6</code>     <code class="s">"type"</code><code class="o">:</code> <code class="s">"git"</code><code class="p">,</code> 
+<code class="lineno"> 7</code>     <code class="s">"url"</code><code class="o">:</code> <code class="s">"https://github.com/your-profile/wicked-ooh-game.git"</code> 
+<code class="lineno"> 8</code>   <code class="p">},</code> 
+<code class="lineno"> 9</code>   <code class="s">"devDependencies"</code><code class="o">:</code> <code class="p">{</code> 
+<code class="lineno">10</code>       <code class="err">'</code><code class="n">grunt</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.4.0</code><code class="err">'</code><code class="p">,</code>
+<code class="lineno">11</code>       <code class="err">'</code><code class="n">grunt</code><code class="o">-</code><code class="n">contrib</code><code class="o">-</code><code class="n">qunit</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.2.0</code><code class="err">'</code><code class="p">,</code>
+<code class="lineno">12</code>       <code class="err">'</code><code class="n">grunt</code><code class="o">-</code><code class="n">contrib</code><code class="o">-</code><code class="n">jshint</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.1.1</code><code class="err">'</code><code class="p">,</code>
+<code class="lineno">13</code>       <code class="err">'</code><code class="n">grunt</code><code class="o">-</code><code class="n">contrib</code><code class="o">-</code><code class="n">connect</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.1.2</code><code class="err">'</code><code class="p">,</code>
+<code class="lineno">14</code>       <code class="err">'</code><code class="n">grunt</code><code class="o">-</code><code class="n">contrib</code><code class="o">-</code><code class="n">livereload</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.1.2</code><code class="err">'</code><code class="p">,</code>
+<code class="lineno">15</code>       <code class="err">'</code><code class="n">grunt</code><code class="o">-</code><code class="n">regarde</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="o">~</code><code class="mf">0.1.1</code><code class="err">'</code>
+<code class="lineno">16</code> <code class="p">},</code> 
+<code class="lineno">17</code>  <code class="s">"license"</code><code class="o">:</code> <code class="s">"MIT"</code><code class="p">,</code> 
+<code class="lineno">18</code>  <code class="s">"engines"</code><code class="o">:</code> <code class="p">{</code> 
+<code class="lineno">19</code>  <code class="s">"node"</code><code class="o">:</code> <code class="s">"&gt;=0.8"</code> 
+<code class="lineno">20</code>  <code class="p">}</code> 
+<code class="lineno">21</code> <code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>
+  <strong>Go to your terminal. Create a folder that you want to serve as the
+project&#x2019;s folder:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">cd</code> <code class="n">wherever</code><code class="o">/</code><code class="n">you</code><code class="o">/</code><code class="n">want</code><code class="o">/</code><code class="n">the</code><code class="o">/</code><code class="n">project</code><code class="o">/</code><code class="n">to</code><code class="o">/</code><code class="n">live</code>
+<code class="lineno">2</code> <code class="n">mkdir</code> <code class="n">wicked</code><code class="o">-</code><code class="n">ooh</code><code class="o">-</code><code class="n">game</code>
+<code class="lineno">3</code> <code class="n">cd</code> <code class="n">wicked</code><code class="o">-</code><code class="n">ooh</code><code class="o">-</code><code class="n">game</code>
+</pre></div>
+
+</div>
+
+<p>Now, create your package.json file:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">touch</code> <code class="n">package</code><code class="p">.</code><code class="n">json</code>
+</pre></div>
+
+</div>
+
+<p>Copy and paste the above package.json example into your package.json
+file using your favorite text editor. Save the file. <strong>Now, you can run
+this:</strong></p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">npm</code> <code class="n">install</code>
+</pre></div>
+
+</div>
+
+<p>to install all the dependencies.</p>
+
+<p>If you run the command and get an error like this at the end, then
+something is not ok:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">npm</code> <code class="n">ERR</code><code class="o">!</code> <code class="n">not</code> <code class="n">ok</code> <code class="n">code</code> <code class="mi">0</code>
+</pre></div>
+
+</div>
+
+<p>There&#x2019;s an error of some kind that will need to be worked out. For me,
+typically the problem is that I messed up the syntax or put the wrong
+version number for a dependency, so check things like that first.</p>
+
+<h4 id="project-setup">Project setup:</h4>
+
+<p>Let&#x2019;s make all our files and folders now!</p>
+
+<p>
+  <strong>This will make all the folders we want:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="o">&gt;</code> <code class="n">mkdir</code> <code class="o">-</code><code class="n">p</code> <code class="n">test</code> <code class="n">js</code> <code class="n">css</code><code class="o">/</code><code class="n">scss</code> <code class="n">img</code>
+</pre></div>
+
+</div>
+
+<p>
+  <strong>This will make the files we want:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">touch</code> <code class="n">js</code><code class="o">/</code><code class="n">player</code><code class="p">.</code><code class="n">js</code> <code class="n">js</code><code class="o">/</code><code class="n">game</code><code class="p">.</code><code class="n">js</code> <code class="n">js</code><code class="o">/</code><code class="n">enemies</code><code class="p">.</code><code class="n">js</code> <code class="n">js</code><code class="o">/</code><code class="n">ui</code><code class="p">.</code><code class="n">js</code> \
+<code class="lineno">2</code> <code class="n">touch</code> <code class="n">css</code><code class="o">/</code><code class="n">scss</code><code class="o">/</code><code class="n">main</code><code class="p">.</code><code class="n">scss</code> <code class="n">css</code><code class="o">/</code><code class="n">scss</code><code class="o">/</code><code class="n">reset</code><code class="p">.</code><code class="n">scss</code> <code class="n">css</code><code class="o">/</code><code class="n">scss</code><code class="o">/</code><code class="n">ui</code><code class="p">.</code><code class="n">scss</code> \
+<code class="lineno">3</code> <code class="n">touch</code> <code class="n">test</code><code class="o">/</code><code class="n">player</code><code class="p">.</code><code class="n">js</code> <code class="n">test</code><code class="o">/</code><code class="n">enemies</code><code class="p">.</code><code class="n">js</code> <code class="n">test</code><code class="o">/</code><code class="n">game</code><code class="p">.</code><code class="n">js</code> <code class="n">test</code><code class="o">/</code><code class="n">ui</code><code class="p">.</code><code class="n">js</code>
+</pre></div>
+
+</div>
+
+<p>Cool. Did that. <strong>Now we make the Gruntfile:</strong></p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">touch</code> <code class="n">Gruntfile</code><code class="p">.</code><code class="n">js</code>
+</pre></div>
+
+</div>
+
+<p>
+  <strong>Open Gruntfile.js in your favorite editor and paste in this:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="nx">module</code><code class="p">.</code><code class="nx">exports</code> <code class="o">=</code> <code class="kd">function</code><code class="p">(</code><code class="nx">grunt</code><code class="p">)</code> <code class="p">{</code>
+<code class="lineno">2</code>   <code class="nx">grunt</code><code class="p">.</code><code class="nx">initConfig</code><code class="p">({</code>
+<code class="lineno">3</code>     <code class="c1">// and here we do some cool stuff</code>
+<code class="lineno">4</code>   <code class="p">});</code>
+<code class="lineno">5</code> <code class="p">};</code>
+</pre></div>
+
+</div>
+
+<p>The above code is the required wrapper code to make a Gruntfile work.
+Now, remember our package.json file. Buds, we can use the values from
+that file in our Gruntfile.</p>
+
+<p>**Check it out: **Let&#x2019;s say we&#x2019;re making a javascript library and want
+to put stuff like the name, version, author, source repository, and
+license of the project in a multi-line comment at the top of the file.
+It would be a bummer to have to edit that by hand every time the file is
+compiled for a new release. Instead, we can use values from package.json
+in our Gruntfile!</p>
+
+<p>First step is to read the contents of package.json by <strong>putting this
+line in Gruntfile.js</strong>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">pkg</code><code class="o">:</code> <code class="n">grunt</code><code class="o">.</code><code class="na">file</code><code class="o">.</code><code class="na">readJSON</code><code class="o">(</code><code class="err">&#x2018;</code><code class="kd">package</code><code class="o">.</code><code class="na">json</code><code class="err">&#x2019;</code><code class="o">);</code>
+</pre></div>
+
+</div>
+
+<p>A package.json file is just JSON, right? Yeah, so it&#x2019;s easy to get at
+the values to do cool stuff.</p>
+
+<p>For fun, let&#x2019;s see what it takes to run a custom task inside a
+Gruntfile, and have it log some attributes from the package.json file.
+Alright? OK.</p>
+
+<p>This is a really simple task that logs the package name and
+version to the console, shown here as the complete Gruntfile.js:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno"> 1</code> <code class="x">module.exports = function(grunt) {</code>
+<code class="lineno"> 2</code> <code class="x">  grunt.initConfig({</code>
+<code class="lineno"> 3</code> <code class="x">    // read the json file</code>
+<code class="lineno"> 4</code> <code class="x">    pkg: grunt.file.readJSON('package.json'),</code>
+<code class="lineno"> 5</code> 
+<code class="lineno"> 6</code> <code class="x">    log: {</code>
+<code class="lineno"> 7</code> <code class="x">      // this is the name of the project in package.json</code>
+<code class="lineno"> 8</code> <code class="x">      name: '</code><code class="cp">&lt;%=</code> <code class="n">pkg</code><code class="o">.</code><code class="n">name</code> <code class="cp">%&gt;</code><code class="x">', </code>
+<code class="lineno"> 9</code> 
+<code class="lineno">10</code> <code class="x">      // the version of the project in package.json</code>
+<code class="lineno">11</code> <code class="x">      version: '</code><code class="cp">&lt;%=</code> <code class="n">pkg</code><code class="o">.</code><code class="n">version</code> <code class="cp">%&gt;</code><code class="x">' </code>
+<code class="lineno">12</code> <code class="x">    }</code>
+<code class="lineno">13</code> <code class="x">  });</code>
+<code class="lineno">14</code> 
+<code class="lineno">15</code> <code class="x">  grunt.registerMultiTask('log', 'Log project details.', function() {     </code>
+<code class="lineno">16</code> <code class="x">    // because this uses the registerMultiTask function it runs grunt.log.w\</code>
+<code class="lineno">17</code> <code class="x">riteln()     </code>
+<code class="lineno">18</code> <code class="x">    // for each attribute in the above log: {} object     </code>
+<code class="lineno">19</code> <code class="x">    grunt.log.writeln(this.target + ': ' + this.data);   </code>
+<code class="lineno">20</code> <code class="x">  });</code>
+<code class="lineno">21</code> <code class="x">};</code>
+</pre></div>
+
+</div>
+
+<p>
+  <strong>You can now run your task on the command line!:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">grunt</code> <code class="n">log</code>
+</pre></div>
+
+</div>
+
+<p>
+  <strong>You should get output like this:</strong>
+</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">Running</code> <code class="err">&#x201C;</code><code class="n">log</code><code class="o">:</code><code class="n">name</code><code class="err">&#x201D;</code> <code class="p">(</code><code class="n">log</code><code class="p">)</code> <code class="n">task</code> 
+<code class="lineno">2</code> <code class="nl">name:</code> <code class="n">wicked</code><code class="o">-</code><code class="n">ooh</code><code class="o">-</code><code class="n">game</code>
+<code class="lineno">3</code> <code class="n">Running</code> <code class="err">&#x201C;</code><code class="n">log</code><code class="o">:</code><code class="n">version</code><code class="err">&#x201D;</code> <code class="p">(</code><code class="n">log</code><code class="p">)</code> <code class="n">task</code> 
+<code class="lineno">4</code> <code class="nl">version:</code> <code class="mf">0.0.1</code>
+<code class="lineno">5</code> <code class="n">Done</code><code class="p">,</code> <code class="n">without</code> <code class="n">errors</code><code class="p">.</code>
+</pre></div>
+
+</div>
+
+<p>If you didn&#x2019;t get output like that, check your Gruntfile for typos. If you did get output like that: awesome! So we&#x2019;ve made it pretty far. We&#x2019;ve set up a project with a bunch of files and folders, created a package.json file with a list of devDependencies, installed the dependencies, and tried out a simple Gruntfile for running arbitrary tasks.</p>
+
+<p>If this seems like a lot, like it&#x2019;s beating up your brain, don&#x2019;t worry. After a few times of starting a project like this these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don&#x2019;t have to write the boilerplate every time. Or use a project like yeoman for its code generators. That&#x2019;s up to you, but when first learning it&#x2019;s a reasonable idea to start from scratch and see how
+everything works.</p>
+</div>
+

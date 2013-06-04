@@ -93,59 +93,95 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="hello-javascript-its-nice-to-meet-you">Hello, javascript. It&#x2019;s nice to meet you.</h2>
+<h2 id="introduction-to-funtions">Introduction to funtions.</h2>
+
+<h3 id="eating-digesting-and-pooping">Eating, digesting, and pooping.</h3>
+
+<p>A function is a block of code that takes input, processes that input, then then produces output.</p>
+
+<p>You can think of it like eating, digestion, and pooping.</p>
+
+<p>And when we use a number of functions in succession, it&#x2019;s almost like in that movie The Human Centipede, only less gross.</p>
+
+<h3 id="lets-make-a-function-named-eat">Let&#x2019;s make a function named <code>eat</code>.</h3>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="lineno">1</code> <code class="n">console</code><code class="p">.</code><code class="n">log</code><code class="p">(</code><code class="err">'</code><code class="n">hello</code><code class="p">,</code> <code class="n">javascript</code><code class="p">.</code> <code class="n">it</code><code class="err">'</code><code class="n">s</code> <code class="n">nice</code> <code class="n">to</code> <code class="n">meet</code> <code class="n">you</code><code class="err">'</code><code class="p">);</code>
+<div class="highlight"><pre><code class="lineno">1</code> <code class="c1">// take input / eat food</code>
+<code class="lineno">2</code> <code class="k">function</code> <code class="n">eat</code><code class="p">(</code><code class="n">food</code><code class="p">){</code>
+<code class="lineno">3</code>   
+<code class="lineno">4</code>   <code class="c1">// process the input / digest the food</code>
+<code class="lineno">5</code>   <code class="k">var</code> <code class="n">poop</code> <code class="o">=</code> <code class="n">digest</code><code class="p">(</code><code class="n">food</code><code class="p">);</code>
+<code class="lineno">6</code> 
+<code class="lineno">7</code>   <code class="c1">// send output / poop</code>
+<code class="lineno">8</code>   <code class="k">return</code> <code class="n">poop</code><code class="p">;</code>
+<code class="lineno">9</code> <code class="p">}</code>
 </pre></div>
 
 </div>
 
-<p>Open up the browser Chrome.</p>
+<p>The above example should make sense just from reading it, except the <code>.split</code> part.</p>
 
-<blockquote>
-  <p>I f you don&#x2019;t already have Chrome installed, download and install it now at <a href="http://google.com/chrome">google.com/chrome</a></p>
-</blockquote>
+<p>Note that lines that start with <code>//</code> are comments, they get ignored when the code is run.</p>
 
-<p>Now, use this keyboard shortcut on a Mac: command + option + j
-Or this for Windows/Linux: control + shift + j</p>
+<p>To create a function, we first write <code>function</code>. Next, we can name the function, and in this case it is named <code>eat</code>.</p>
 
-<p>You just opened the javascript console.</p>
+<p>Inside of parentheses we specify the input, also called arguments. We only have one argument in this case, named <code>food</code>.</p>
 
-<p><strong>Type in this code:</strong><br />
-~~~~~~~~
-console.log(&#x2018;what is this?&#x2019;);
-~~~~~~~~</p>
+<p>Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.</p>
 
-<p>You just told the javascript console to print some text!</p>
+<p>We create a variable named <code>poop</code>, which contains a &#x201C;digested&#x201D; form of the <code>food</code> argument. Here we&#x2019;re using another function named <code>digest</code> that is using the <code>food</code> argument as its own input. </p>
 
-<p>Any time you put <code>console.log()</code> in javascript code that is run in the browser, whatever you put between the parenthese will show up in your browser&#x2019;s javascript console.</p>
+<p>Finally, we <code>return poop;</code> so that the output of this function can be used in other parts of our code.</p>
 
-<p>As you learn javascript, <code>console.log()</code> will be your best friend. You will use it to help prototype new functionality and to debug your code.</p>
+<h3 id="using-the-eat-function">Using the <code>eat</code> function:</h3>
 
-<h3 id="your-first-challenge">Your first challenge:</h3>
-
-<p>Type this into the console:</p>
+<p>We can use the <code>eat</code> function like this:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="lineno">1</code> <code class="n">console</code><code class="p">.</code><code class="n">error</code><code class="p">(</code><code class="err">'</code><code class="n">this</code> <code class="n">is</code> <code class="n">an</code> <code class="n">error</code><code class="err">'</code><code class="p">);</code>
+<div class="highlight"><pre><code class="lineno">1</code> <code class="n">eat</code><code class="p">(</code><code class="err">'</code><code class="n">pizza</code><code class="err">'</code><code class="p">);</code>
 </pre></div>
 
 </div>
 
-<p>That&#x2019;s an error! Note how it shows up in red. And look in the bottom right corner of the browser. You&#x2019;ll see a little red circle with an x in the middle, and a number on its right side. That&#x2019;s a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.</p>
+<p>When we run this, it&#x2019;ll return something like <code>zpzia</code>, <code>apizz</code>, or <code>pzazi</code>.
+You know, something random like that.</p>
 
-<p>With most errors you&#x2019;ll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We&#x2019;ll get into errors and debugging in more details later in the book.</p>
+<h4 id="so-what-is-the-digest-function-doing">So what is the <code>digest</code> function doing?</h4>
 
-<h3 id="chrome-developer-tools">Chrome Developer Tools</h3>
-<p>The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has very good tools, and focusing on the tools of one browser helps keep the instructions simple.</p>
+<p>You&#x2019;ve probably already guessed that it is a functino that randomly shuffles letters in a string. In real projects you would want to name it something a little more clear, like<code>shuffleLetters()</code>.</p>
 
-<p>Expect to learn more about Chrome&#x2019;s Developer Tools throughout the book. And check out the <a href="TODO">Browser Developer Tools</a> section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.</p>
+<p>Here&#x2019;s an example implementation of the <code>shuffleLetters()</code> function using our food/poop language:</p>
 
-<h3 id="recap-we-learned-that">Recap! We learned that:</h3>
-<ul><li>the javascript console and learned that we can type in javascript!</li>
-  <li>we can use code like <code>console.log()</code> and <code>console.error()</code> to print information to the console.</li>
-  <li>Chrome has a lot of useful tools, and later in the book we&#x2019;ll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.</li>
-</ul>
+<div class="code-block">
+<div class="highlight"><pre><code class="lineno"> 1</code> <code class="kd">function</code> <code class="nx">digest</code><code class="p">(</code><code class="nx">food</code><code class="p">){</code>
+<code class="lineno"> 2</code>   <code class="kd">var</code> <code class="nx">food</code> <code class="o">=</code> <code class="nx">food</code><code class="p">.</code><code class="nx">split</code><code class="p">(</code><code class="s1">''</code><code class="p">)</code>
+<code class="lineno"> 3</code>   <code class="kd">var</code> <code class="nx">digesting</code> <code class="o">=</code> <code class="nx">food</code><code class="p">.</code><code class="nx">length</code><code class="p">,</code> <code class="nx">digested</code><code class="p">,</code> <code class="nx">randomFoodPart</code><code class="p">;</code>
+<code class="lineno"> 4</code> 
+<code class="lineno"> 5</code>   <code class="k">while</code> <code class="p">(</code><code class="nx">digesting</code><code class="p">)</code> <code class="p">{</code>
+<code class="lineno"> 6</code> 
+<code class="lineno"> 7</code>     <code class="nx">randomFoodPart</code> <code class="o">=</code> <code class="nb">Math</code><code class="p">.</code><code class="nx">floor</code><code class="p">(</code><code class="nb">Math</code><code class="p">.</code><code class="nx">random</code><code class="p">()</code> <code class="o">*</code> <code class="nx">digesting</code><code class="o">--</code><code class="p">);</code>
+<code class="lineno"> 8</code> 
+<code class="lineno"> 9</code>     <code class="nx">digested</code> <code class="o">=</code> <code class="nx">food</code><code class="cp">[</code><code class="nx">digesting</code><code class="cp">]</code><code class="p">;</code>
+<code class="lineno">10</code> 
+<code class="lineno">11</code>     <code class="nx">food</code><code class="cp">[</code><code class="nx">digesting</code><code class="cp">]</code> <code class="o">=</code> <code class="nx">food</code><code class="cp">[</code><code class="nx">randomFoodPart</code><code class="cp">]</code><code class="p">;</code>
+<code class="lineno">12</code> 
+<code class="lineno">13</code>     <code class="nx">food</code><code class="cp">[</code><code class="nx">randomFoodPart</code><code class="cp">]</code> <code class="o">=</code> <code class="nx">digested</code><code class="p">;</code>
+<code class="lineno">14</code>   <code class="p">}</code>
+<code class="lineno">15</code> 
+<code class="lineno">16</code>   <code class="kd">var</code> <code class="nx">poop</code> <code class="o">=</code> <code class="nx">food</code><code class="p">.</code><code class="nx">join</code><code class="p">(</code><code class="s1">''</code><code class="p">);</code>
+<code class="lineno">17</code> 
+<code class="lineno">18</code>   <code class="k">return</code> <code class="nx">poop</code><code class="p">;</code>
+<code class="lineno">19</code> <code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>
+  <em>Adapted from <a href="http://bost.ocks.org/mike/shuffle">Mike Bostocks&#x2019;s Fischer-Yates Shuffle</a>.</em>
+</p>
+
+<p>You&#x2019;re probably aware that this <code>digest</code> function is doing the heavy lifting, while the <code>eat</code> function is just a wrapper around <code>digest</code>.</p>
+
+<p>If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?</p>
 </div>
 

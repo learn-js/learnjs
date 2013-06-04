@@ -1,104 +1,159 @@
-<div id="leanpub-main">
-<h2 id="introduction">Introduction</h2>
-
-<h4 id="welcome-to-the-land-of-javascript">Welcome to the Land of Javascript</h4>
-<p>With this guidebook, you will learn to navigate the many winding paths of creating projects with the programming language of the browser: javascript.</p>
-
-<p>This book will start with basic javascript programming and development tools, then gradually increase in difficulty. The approach: a series of projects you will complete, each one building on the skills you learned.</p>
-
-<p>You&#xE2;&#x20AC;&#x2122;ll learn a lot about javascript from this book, its purpose is not to be a reference guide to the intricacies of the language. <em>Learn.js</em> will familiarize you with a wide range of development tools common to javascript development, and you&#xE2;&#x20AC;&#x2122;ll become proficient at using those tools through project-based learning.</p>
-
-<h4 id="goals-you-will">Goals. You will:</h4>
-<ul><li>Learn Javascript syntax, functions, data types, and programming patterns.  </li>
-  <li>Learn how to find and use Javascript libraries.  </li>
-  <li>Use javascript/jquery to manipulate html elements.  </li>
-  <li>Use javascript for server-side coding.  </li>
-  <li>Use developer tools like Git, GitHub, Chrome Dev Tools, Bower, npm, and Grunt.  </li>
-  <li>Learn how to build a wide range of projects with javascript, from the server to the client, from game development to data analysis.  </li>
-</ul><h4 id="topics-the-book-will-cover">Topics the book will cover:</h4>
-<ul><li>Writing your first Javascript ever!  </li>
-  <li>Writing code in the browser.  </li>
-  <li>Need an html/css refresher? Get refreshed!  </li>
-  <li>Mapping with leaflet, mapbox, and google maps.  </li>
-  <li>Creating charts with chart.js, vega.js, and d3.js.  </li>
-  <li>Animating with jquery, raphael.js, and other libraries.  </li>
-  <li>Simple game development using canvas, svg, animating html elements.  </li>
-  <li>Using game development frameworks like pixi.js, voxel.js, and others.  </li>
-  <li>Writing server-side javascript with node.js.  </li>
-  <li>Using web service APIs like twitter, tumblr, dropbox, and others.  </li>
-  <li>Javascript command line tools.  </li>
-  <li>Scraping the web with javascript.  </li>
-  <li>Real-time javascript with websockets.  </li>
-  <li>Writing client-side javascript with node.js tools.  </li>
-  <li>Creating javascript apps for use in Phonegap/Cordova.</li>
-  <li>Git &amp; GitHub.  </li>
-  <li>Using Chrome&#x2019;s developer tools.  </li>
-  <li>Develop in a clean workspace with Vagrant &amp; Virtualbox.  </li>
-  <li>So many tools!: Grunt, npm, bower, browserify, and more. Ease your development process.  </li>
-  <li>Building an API with javascript: client and server.  </li>
-  <li>Options for hosting javascript projects.  </li>
-</ul><h4 id="how-to-use-this-book">How to use this book</h4>
-<p>You should complete the first few chapters in order. Initially, you&#x2019;ll learn js basics and how to use development tools. Next, you should work on the projects that interest you most.</p>
-
-<p>This book is under active development and will see ongoing updates. Learning to build a project with a specific javascript library is only useful for as long as that library is supported and the best solution to the problem. The tools we use for web development change regularly, so this book will morph along with the javascript development standards of the day.</p>
-
-<!-- begin mainmatter -->
-</div>
 <div id="leanpub-toc">
 <h2>Table of Contents</h2>
 <ol class="toc">
 <li class="chapter"><a href="chap00.html#introduction">Introduction</a></li>
-<li class="sub-section"><a href="chap00.html#welcome-to-the-land-of-javascript">Welcome to the Land of Javascript</a></li>
-<li class="sub-section"><a href="chap00.html#goals-you-will">Goals. You will:</a></li>
-<li class="sub-section"><a href="chap00.html#topics-the-book-will-cover">Topics the book will cover:</a></li>
-<li class="sub-section"><a href="chap00.html#how-to-use-this-book">How to use this book</a></li>
-<li class="chapter"><a href="chap01.html#chapter-0">CHAPTER 0</a></li>
-<li class="section"><a href="chap01.html#write-a-function-that-adds-numbers-and-make-it-awesome">Write a function that adds numbers, and make it awesome.</a></li>
-<li class="sub-section"><a href="chap01.html#our-goals-for-chapter-zero-are-simple">Our goals for chapter zero are simple:</a></li>
-<li class="sub-section"><a href="chap01.html#writing-javascript-on-paper">Writing javascript on paper.</a></li>
-<li class="sub-sub-section"><a href="chap01.html#if-the-above-is-simple-math-whats-with-the-word-var-whats-that">If the above is simple math, what&#x2019;s with the word <code>var</code>? What&#x2019;s that?</a></li>
-<li class="sub-sub-section"><a href="chap01.html#why-are-there-single-quotes-around-the-phrase-whatever-the-variable-should-reference">Why are there single quotes around the phrase <code>whatever the variable should reference</code>?</a></li>
-<li class="sub-sub-section"><a href="chap01.html#wait-why-did-i-just-write-that-on-paper">Wait, why did I just write that on paper?</a></li>
-<li class="sub-sub-section"><a href="chap01.html#so-whats-pseudocode">So, what&#x2019;s pseudocode?</a></li>
-<li class="sub-sub-section"><a href="chap01.html#pseudocode-is-awesome">Pseudocode is awesome.</a></li>
-<li class="sub-section"><a href="chap01.html#now-lets-open-up-the-web-browser-chrome-and-do-some-experimenting">Now let&#x2019;s open up the web browser, Chrome, and do some experimenting.</a></li>
-<li class="sub-section"><a href="chap01.html#important">Important:</a></li>
-<li class="sub-section"><a href="chap01.html#lets-get-functional">Let&#x2019;s get functional.</a></li>
-<li class="sub-section"><a href="chap01.html#lets-add-with-a-function">Let&#x2019;s add with a function!</a></li>
-<li class="sub-section"><a href="chap01.html#hey-you-made-num-equal-the-usage-of-the-add-function">Hey, you made <code>num</code> equal the usage of the add function.</a></li>
-<li class="sub-section"><a href="chap01.html#wait-what-if-i-messed-up-the-adder">Wait, what if I messed up the adder?</a></li>
-<li class="sub-section"><a href="chap01.html#why-didnt-it-add">Why didn&#x2019;t it add?</a></li>
-<li class="sub-section"><a href="chap01.html#walking-like-a-duck">Walking like a duck</a></li>
-<li class="sub-sub-section"><a href="chap01.html#here-are-common-types">Here are common types:</a></li>
-<li class="sub-sub-sub-section"><a href="chap01.html#boolean-true-or-false">Boolean: true or false</a></li>
-<li class="sub-sub-sub-section"><a href="chap01.html#number-integer-or-float">Number: integer or float</a></li>
-<li class="sub-sub-sub-section"><a href="chap01.html#string-text-in-quotes">String: text in quotes.</a></li>
-<li class="sub-section"><a href="chap01.html#back-to-our-addition-issue">Back to our addition issue:</a></li>
-<li class="sub-section"><a href="chap01.html#now-we-have-a-float-issue">Now we have a float issue.</a></li>
-<li class="sub-section"><a href="chap01.html#what-about-adding-more-than-two-numbers">What about adding more than two numbers?</a></li>
-<li class="sub-section"><a href="chap01.html#looper-cycling-through-a-functions-arguments">Looper: cycling through a function&#x2019;s arguments</a></li>
-<li class="sub-section"><a href="chap01.html#one-last-problem-one">One last problem: &#x2018;one&#x2019;.</a></li>
-<li class="sub-sub-section"><a href="chap01.html#ignore-any-argument-that-is-not-a-number">Ignore any argument that is not a number.</a></li>
-<li class="sub-section"><a href="chap01.html#so-heres-what-we-covered">So here&#x2019;s what we covered:</a></li>
-<li class="sub-sub-section"><a href="chap01.html#chrome-javascript-console">Chrome javascript console</a></li>
-<li class="sub-sub-section"><a href="chap01.html#basic-data-types">Basic data types</a></li>
-<li class="sub-sub-section"><a href="chap01.html#writing-functions">Writing functions.</a></li>
-<li class="sub-sub-section"><a href="chap01.html#refactoring-code">Refactoring code.</a></li>
-<li class="sub-sub-section"><a href="chap01.html#debugging-and-useful-errors">Debugging and useful errors.</a></li>
-<li class="sub-section"><a href="chap01.html#hey-adding-isnt-really-a-useful-function-lets-get-serious">Hey, adding isn&#x2019;t really a useful function. Let&#x2019;s get serious.</a></li>
-<li class="chapter"><a href="chap02.html#appendix">Appendix</a></li>
-<li class="chapter"><a href="chap03.html#javascript-style-guide--syntax-cheatsheet">Javascript style guide &amp; syntax cheatsheet</a></li>
-<li class="section"><a href="chap03.html#variables">Variables</a></li>
-<li class="sub-section"><a href="chap03.html#creating-a-variable">Creating a variable:</a></li>
-<li class="sub-section"><a href="chap03.html#creating-a-variable-that-references-a-string">Creating a variable that references a string:</a></li>
-<li class="sub-section"><a href="chap03.html#creating-a-variable-that-references-a-numer">Creating a variable that references a numer:</a></li>
-<li class="sub-section"><a href="chap03.html#creating-a-variable-that-references-an-array">Creating a variable that references an array:</a></li>
-<li class="sub-section"><a href="chap03.html#accessing-the-values-in-an-array">Accessing the values in an array:</a></li>
-<li class="sub-sub-section"><a href="chap03.html#how-would-you-return-the-number-4-from-the-nested-array">How would you return the number <code>4</code> from the nested array?</a></li>
-<li class="sub-section"><a href="chap03.html#creating-a-variable-that-references-an-object">Creating a variable that references an object:</a></li>
-<li class="sub-section"><a href="chap03.html#javascript-books">javascript books:</a></li>
-<li class="sub-section"><a href="chap03.html#nodejs-books">node.js books:</a></li>
-<li class="sub-section"><a href="chap03.html#htmljsdom-books">html/js/dom books:</a></li>
-<li class="sub-section"><a href="chap03.html#style-guides">Style guides:</a></li>
+<li class="section"><a href="chap00.html#thank-you">Thank you.</a></li>
+<li class="section"><a href="chap00.html#target-audience">Target audience</a></li>
+<li class="section"><a href="chap00.html#development-tools">Development tools</a></li>
+<li class="sub-section"><a href="chap00.html#development-tools-the-book-will-cover">Development tools the book will cover:</a></li>
+<li class="section"><a href="chap00.html#libraries">Libraries</a></li>
+<li class="sub-section"><a href="chap00.html#some-of-the-javascript-libraries-the-book-will-cover">Some of the javascript libraries the book will cover:</a></li>
+<li class="section"><a href="chap00.html#programming-patterns">Programming patterns</a></li>
+<li class="sub-section"><a href="chap00.html#some-coding-styles-and-programming-patterns-the-book-will-cover">Some coding styles and programming patterns the book will cover:</a></li>
+<li class="chapter"><a href="chap01.html#the-basics">1. The Basics</a></li>
+<li class="section"><a href="chap01.html#in-this-section-well-get-started-learning">In this section, we&#x2019;ll get started learning:</a></li>
+<li class="sub-section"><a href="chap01.html#chromes-developer-tools">Chrome&#x2019;s Developer Tools</a></li>
+<li class="sub-section"><a href="chap01.html#basic-html-and-css">Basic html and css</a></li>
+<li class="sub-section"><a href="chap01.html#javascript-syntax-variables-data-types-functions-and-style-guidelines">Javascript syntax, variables, data types, functions, and style guidelines</a></li>
+<li class="sub-section"><a href="chap01.html#nodejs-and-npm">Node.js and npm</a></li>
+<li class="sub-section"><a href="chap01.html#bower-and-grunt">Bower and grunt</a></li>
+<li class="sub-section"><a href="chap01.html#git-and-github">Git and GitHub</a></li>
+<li class="sub-section"><a href="chap01.html#testing-javascript">Testing javascript</a></li>
+<li class="chapter"><a href="chap02.html#hello-javascript-its-nice-to-meet-you">Hello, javascript. It&#x2019;s nice to meet you.</a></li>
+<li class="section"><a href="chap02.html#your-first-challenge">Your first challenge:</a></li>
+<li class="section"><a href="chap02.html#chrome-developer-tools">Chrome Developer Tools</a></li>
+<li class="section"><a href="chap02.html#recap-we-learned-that">Recap! We learned that:</a></li>
+<li class="chapter"><a href="chap03.html#introduction-to-git--github">Introduction to git &amp; GitHub</a></li>
+<li class="section"><a href="chap03.html#get-on-github">Get on GitHub</a></li>
+<li class="section"><a href="chap03.html#create-a-site-for-yourself-using-github">Create a site for yourself using GitHub</a></li>
+<li class="sub-section"><a href="chap03.html#with-github-pages-you-can">With GitHub Pages you can:</a></li>
+<li class="chapter"><a href="chap04.html#introduction-to-gruntjs">Introduction to grunt.js</a></li>
+<li class="sub-section"><a href="chap04.html#outline-of-the-steps-in-this-tutorial">Outline of the steps in this tutorial:</a></li>
+<li class="sub-section"><a href="chap04.html#install-node">Install node:</a></li>
+<li class="sub-section"><a href="chap04.html#hey-packagejson-files-are-cool">Hey, package.json files are cool.</a></li>
+<li class="sub-section"><a href="chap04.html#project-setup">Project setup:</a></li>
+<li class="chapter"><a href="chap05.html#introduction-to-funtions">Introduction to funtions.</a></li>
+<li class="section"><a href="chap05.html#eating-digesting-and-pooping">Eating, digesting, and pooping.</a></li>
+<li class="section"><a href="chap05.html#lets-make-a-function-named-eat">Let&#x2019;s make a function named <code>eat</code>.</a></li>
+<li class="section"><a href="chap05.html#using-the-eat-function">Using the <code>eat</code> function:</a></li>
+<li class="sub-section"><a href="chap05.html#so-what-is-the-digest-function-doing">So what is the <code>digest</code> function doing?</a></li>
+<li class="chapter"><a href="chap06.html#chapter-0">CHAPTER 0</a></li>
+<li class="section"><a href="chap06.html#write-a-function-that-adds-numbers-and-make-it-awesome">Write a function that adds numbers, and make it awesome.</a></li>
+<li class="sub-section"><a href="chap06.html#our-goals-for-chapter-zero-are-simple">Our goals for chapter zero are simple:</a></li>
+<li class="sub-section"><a href="chap06.html#writing-javascript-on-paper">Writing javascript on paper.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#if-the-above-is-simple-math-whats-with-the-word-var-whats-that">If the above is simple math, what&#x2019;s with the word <code>var</code>? What&#x2019;s that?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#why-are-there-single-quotes-around-the-phrase-whatever-the-variable-should-reference">Why are there single quotes around the phrase <code>whatever the variable should reference</code>?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#wait-why-did-i-just-write-that-on-paper">Wait, why did I just write that on paper?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#so-whats-pseudocode">So, what&#x2019;s pseudocode?</a></li>
+<li class="sub-sub-section"><a href="chap06.html#pseudocode-is-awesome">Pseudocode is awesome.</a></li>
+<li class="sub-section"><a href="chap06.html#now-lets-open-up-the-web-browser-chrome-and-do-some-experimenting">Now let&#x2019;s open up the web browser, Chrome, and do some experimenting.</a></li>
+<li class="sub-section"><a href="chap06.html#important">Important:</a></li>
+<li class="sub-section"><a href="chap06.html#lets-get-functional">Let&#x2019;s get functional.</a></li>
+<li class="sub-section"><a href="chap06.html#lets-add-with-a-function">Let&#x2019;s add with a function!</a></li>
+<li class="sub-section"><a href="chap06.html#hey-you-made-num-equal-the-usage-of-the-add-function">Hey, you made <code>num</code> equal the usage of the add function.</a></li>
+<li class="sub-section"><a href="chap06.html#wait-what-if-i-messed-up-the-adder">Wait, what if I messed up the adder?</a></li>
+<li class="sub-section"><a href="chap06.html#why-didnt-it-add">Why didn&#x2019;t it add?</a></li>
+<li class="sub-section"><a href="chap06.html#walking-like-a-duck">Walking like a duck</a></li>
+<li class="sub-sub-section"><a href="chap06.html#here-are-common-types-in-javascript">Here are common types in javascript:</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#boolean-true-or-false">Boolean: true or false</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#number-integer-or-float">Number: integer or float</a></li>
+<li class="sub-sub-sub-section"><a href="chap06.html#string-text-in-quotes">String: text in quotes.</a></li>
+<li class="sub-section"><a href="chap06.html#back-to-our-addition-issue">Back to our addition issue:</a></li>
+<li class="sub-section"><a href="chap06.html#now-we-have-a-float-issue">Now we have a float issue.</a></li>
+<li class="sub-section"><a href="chap06.html#what-about-adding-more-than-two-numbers">What about adding more than two numbers?</a></li>
+<li class="sub-section"><a href="chap06.html#looper-cycling-through-a-functions-arguments">Looper: cycling through a function&#x2019;s arguments</a></li>
+<li class="sub-section"><a href="chap06.html#one-last-problem-one">One last problem: &#x2018;one&#x2019;.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#ignore-any-argument-that-is-not-a-number">Ignore any argument that is not a number.</a></li>
+<li class="sub-section"><a href="chap06.html#here-is-what-we-covered">Here is what we covered:</a></li>
+<li class="sub-sub-section"><a href="chap06.html#chrome-javascript-console">Chrome javascript console</a></li>
+<li class="sub-sub-section"><a href="chap06.html#basic-data-types">Basic data types</a></li>
+<li class="sub-sub-section"><a href="chap06.html#writing-functions">Writing functions.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#refactoring-code">Refactoring code.</a></li>
+<li class="sub-sub-section"><a href="chap06.html#debugging-and-useful-errors">Debugging and useful errors.</a></li>
+<li class="sub-section"><a href="chap06.html#hey-adding-isnt-really-a-useful-function-lets-get-serious">Hey, adding isn&#x2019;t really a useful function. Let&#x2019;s get serious.</a></li>
+<li class="chapter"><a href="chap07.html#appendix">Appendix</a></li>
+<li class="section"><a href="chap07.html#javascript-style-guide--syntax-cheatsheet">Javascript style guide &amp; syntax cheatsheet</a></li>
+<li class="sub-section"><a href="chap07.html#variables">Variables</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable">Creating a variable:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-a-string">Creating a variable that references a string:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-a-number">Creating a variable that references a number:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-an-array">Creating a variable that references an array:</a></li>
+<li class="sub-sub-section"><a href="chap07.html#accessing-the-values-in-an-array">Accessing the values in an array:</a></li>
+<li class="sub-sub-sub-section"><a href="chap07.html#how-would-you-return-the-number-4-from-the-nested-array">How would you return the number <code>4</code> from the nested array?</a></li>
+<li class="sub-sub-section"><a href="chap07.html#creating-a-variable-that-references-an-object">Creating a variable that references an object:</a></li>
+<li class="section"><a href="chap07.html#additional-resources">Additional resources</a></li>
+<li class="sub-section"><a href="chap07.html#javascript-books">javascript books:</a></li>
+<li class="sub-section"><a href="chap07.html#nodejs-books">node.js books:</a></li>
+<li class="sub-section"><a href="chap07.html#htmljsdom-books">html/js/dom books:</a></li>
+<li class="sub-section"><a href="chap07.html#style-guides">Style guides:</a></li>
+<li class="chapter"><a href="chap08.html#changelog">Changelog:</a></li>
+<li class="section"><a href="chap08.html#v030">v0.3.0</a></li>
+<li class="section"><a href="chap08.html#v020">v0.2.0:</a></li>
+<li class="section"><a href="chap08.html#v010">v0.1.0:</a></li>
 </ol>
 </div>
+<div id="leanpub-main">
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="thank-you">Thank you.</h3>
+
+<p>You believed in this project enough to get involved early, and your support is making it possible. This release went out on May 23, 2013, and it was the first release of <em>Learn.js</em>. You&#x2019;re a serious early adopter, and that&#x2019;s awesome.</p>
+
+<p>Because you got the book so early, you&#x2019;re in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you&#x2019;d like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.</p>
+
+<p>This book is highly inspired by the lean publishing model (<a href="https://leanpub.com/manifesto">read more about it</a>) proposed by Peter Armstrong, founder of leanpub.com. I&#x2019;m releasing the book early to get feedback from you, dear readers, so that together we can make the best book about javascript tools and libraries possible.</p>
+
+<p>This book is looking pretty sparse right now at v0.1.0, but I&#x2019;ll be releasing updates weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by filling out a survey asking what development tools, libraries, and programming patterns you&#x2019;d be most interested in seeing covered.</p>
+
+<p>The goal: produce a book of roughly 200 pages by the end of July. You&#x2019;re a big part of making that goal real. Thank you.</p>
+
+<h3 id="target-audience">Target audience</h3>
+<p>This book is meant for javascript beginners, but will be useful for anyone that wants to broaden their understanding of javascript. Maybe you&#x2019;ve written with jQuery for years and want to get an introduction to server-side code, mapping, or data visualization. Or maybe you&#x2019;ve created client-side applications without the use of any development tools like bower, browserify, or grunt, and you want to streamline your development process.</p>
+
+<p><em>Learn.js</em> will introduce you to a wide range of tools and libraries, and whether you&#x2019;re a beginner or intermediate programmer, you&#x2019;re likely to find helpful material.</p>
+
+<h3 id="development-tools">Development tools</h3>
+<p>The development tools for javascript have changed rapidly in recent years, and the popularity of server-side javascript has matured tools available for client-side developers.</p>
+
+<p>Learning development tools is one of the most difficult parts of starting to work with a programming language. </p>
+
+<p>Which tools should I use? Are there best practices for workflows? How should I test code?</p>
+
+<p>There are many possible answers to the above questions, and this book won&#x2019;t give all of them, but because it will be a living document that is revised based on changing patterns and practices in the javascript world, we&#x2019;ll be able to create a guide that remains relevant.</p>
+
+<h4 id="development-tools-the-book-will-cover">Development tools the book will cover:</h4>
+<ul><li>npm, the package manager for node.js, which is also often used for client-side javascript modules.</li>
+  <li>bower and component, two package management tools for client-side javascript.</li>
+  <li>browserify, a tool for bundling client side code as node-style modules.</li>
+  <li>grunt, a build tool that can automate repetitive development tasks.</li>
+  <li>Chrome developer tools.</li>
+  <li>Git and GitHub. This book won&#x2019;t be a full guide to git, but it will help you improve as a git user.</li>
+  <li>Vagrant and Virtualbox. Using these tools you can set up an instance of a linux operating system on your Mac or Windows machine and interact with it from the command line.</li>
+  <li>Phonegap/Cordova. This project allows developers to create mobile apps for multiple platforms based on one js/html/css codebase.</li>
+  <li>Hosting using Heroku and GitHub pages.</li>
+  <li>And other tools. <a href="http://hi@learnjs.io">Let us know what you&#x2019;d like to see covered</a>.</li>
+</ul><h3 id="libraries">Libraries</h3>
+<p>There are many different libraries available to javascript developers. It takes time just to learn how to find and use javascript libraries, how to tell which libraries will be effective and reliable, and when not to use a library.</p>
+
+<p>We&#x2019;ll show you the best places to look for javascript libraries, the best resources for keeping track of new releases of libraries, and where to go when you need help learning a new library.</p>
+
+<p><em>Learn.js</em> will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.</p>
+
+<h4 id="some-of-the-javascript-libraries-the-book-will-cover">Some of the javascript libraries the book will cover:</h4>
+<ul><li>jQuery.</li>
+  <li>leaflet.js, mapbox.js, gmaps.js, etc.</li>
+  <li>d3.js, chart.js, raphael.js, and vega.js.</li>
+  <li>pixi.js, voxel.js, and processing.js.</li>
+  <li>And other libraries. <a href="http://hi@learnjs.io">Let us know what you&#x2019;d like to see covered</a>.</li>
+</ul><h3 id="programming-patterns">Programming patterns</h3>
+<p>Javascript is a very flexible language that can be employed using a number of styles and patterns. In this book we&#x2019;ll take a look at some of the most popular patterns, and develop a simple, clean coding style based on popular open-source style guides already available in the community.</p>
+
+<h4 id="some-coding-styles-and-programming-patterns-the-book-will-cover">Some coding styles and programming patterns the book will cover:</h4>
+<ul><li>CommonJS and ECMAScript 6 modules.</li>
+  <li>Functional programming.</li>
+  <li>Prototypal inheritance.</li>
+  <li>Constructors.</li>
+  <li>And other patterns. <a href="http://hi@learnjs.io">Let us know what you&#x2019;d like to see covered</a>.</li>
+</ul><!-- begin mainmatter -->
+</div>
+
