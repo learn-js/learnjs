@@ -1,0 +1,7 @@
+# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, and more. Thank you!
+
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
