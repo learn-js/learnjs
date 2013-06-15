@@ -3,14 +3,17 @@ intro.txt
 
 mainmatter:
 basics.txt
-intro-console.txt
+intro-chromedevtools.txt
+intro-node.txt
 intro-git.txt
 intro-grunt.txt
 intro-functions.txt
 chapter00.txt
+simpleinteractionexample.txt
 
 backmatter:
 appendix.txt
 style.txt
 resources.txt
 changelog.txt
+contributors.txt

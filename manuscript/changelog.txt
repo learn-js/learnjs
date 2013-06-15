@@ -1,5 +1,10 @@
 # Changelog:
 
+## v0.3.1
+- start intro to node section
+- add contributors list
+- add simple keyboard interaction example
+
 ## v0.3.0
 - start Basics section
 - add intro to Chrome Developer Tools

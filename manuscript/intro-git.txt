@@ -30,3 +30,5 @@ GitHub has a useful service called [GitHub Pages](http://pages.github.com) that 
 - use a custom domain name if you want!
 
 Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn about it in detail.
+
+> _This section is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
