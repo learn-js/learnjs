@@ -1,12 +1,12 @@
-# Introduction to funtions.
+# Introduction to functions.
 
 ## Eating, digesting, and pooping.
 
-A function is a block of code that takes input, processes that input, then then produces output.
+A function is a block of code that takes input, processes that input, and then produces output.
 
-You can think of it like eating, digestion, and pooping.
+You can think of it like eating, digesting, and pooping.
 
-And when we use a number of functions in succession, it's almost like in that movie The Human Centipede, only less gross.
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
 
 ## Let's make a function named `eat`.
 
@@ -22,13 +22,13 @@ function eat(food){
 }
 ~~~~~~~~
 
-The above example should make sense just from reading it, except the `.split` part.
+The above example should make sense just from reading it.
 
-Note that lines that start with `//` are comments, they get ignored when the code is run.
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
 
 To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
 
-Inside of parentheses we specify the input, also called arguments. We only have one argument in this case, named `food`.
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
 
 Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
 
@@ -49,9 +49,9 @@ You know, something random like that.
 
 ### So what is the `digest` function doing?
 
-You've probably already guessed that it is a functino that randomly shuffles letters in a string. In real projects you would want to name it something a little more clear, like`shuffleLetters()`.
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
 
-Here's an example implementation of the `shuffleLetters()` function using our food/poop language:
+Here's an example of the `shuffleLetters()` function using our food/poop language:
 
 ~~~~~~~~
 function digest(food){
@@ -80,3 +80,4 @@ _Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/
 You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
 
 If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
