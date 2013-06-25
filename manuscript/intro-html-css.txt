@@ -77,7 +77,7 @@ We've given this `p` element a class of `highlight`, so let's add some css that 
 
 ~~~~~~~~
 p.highlight {
-  background-color: 'yellow';
+  background-color: yellow;
 }
 ~~~~~~~~
 
@@ -99,7 +99,7 @@ Here's what it looks like to embed css in your html file.
   <style>
 
     p.highlight {
-      background-color: 'yellow';
+      background-color: yellow;
     }
 
   </style>
@@ -253,4 +253,15 @@ The `div` is centered by using `auto` for the left and right margins (the order 
 ### More resources
 This gives you an intro to some of the html and css concepts we'll use most often in the book. 
 
-To learn html and css in more depth, check out these resources:
+#### To learn html and css in more depth, check out these resources:
+**[Don't Fear The Internet](http://www.dontfeartheinternet.com/)**  
+This is a wonderful introduction to html and css. Watch, enjoy, and follow along.
+
+**[Web fundamentals track at codecademy.com](http://www.codecademy.com/tracks/web)**  
+After you've had your fears eased by Don't Fear The Internet, check out the codecademy.com web fundamentals course. It'll get you some nitty gritty experience with the basics.
+
+**[Mozilla Documentation](https://developer.mozilla.org/en-US/)**  
+Have a question about some css property or html element? The Mozilla Developer Network has awesome documentation. If you're searching on google.com for anything css/html/js related, add the abbreviation "mdn" to your search query to see results from Mozilla Documentation. This site also has a bunch of introductory tutorials that are really useful.
+
+**[WebPlatform.org](http://www.webplatform.org/)**  
+This is a newer resource, but a good one. It's got a great design and well-organized resources.
