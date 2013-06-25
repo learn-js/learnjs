@@ -4,6 +4,7 @@ intro.txt
 mainmatter:
 basics.txt
 intro-chromedevtools.txt
+intro-html-css.txt
 intro-node.txt
 intro-git.txt
 intro-grunt.txt

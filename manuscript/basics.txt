@@ -1,4 +1,4 @@
-# 1. The Basics
+# THE BASICS
 
 ## In this section, we'll get started learning:
 
@@ -14,8 +14,8 @@ Here we'll go over the basic parts of javascript. We'll cover the equivalents of
 ### Node.js and npm
 Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
 
-### Bower and grunt
-Two of the command line tools we'll use most commonly in this book are bower and grunt. Bower is a package manager for client-side javascript and css, and grunt is a build tool we'll use to automate repetitive tasks in javascript development.
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
 
 ### Git and GitHub
 Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
