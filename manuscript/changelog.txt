@@ -1,4 +1,9 @@
-# Changelog:
+# Changelog
+
+## v0.3.2
+- Substantial copy editing
+- Start chapter 1 about making an rpg game
+- Rearrange and edit Basics intro section
 
 ## v0.3.1
 - start intro to node section
