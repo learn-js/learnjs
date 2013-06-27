@@ -10,7 +10,7 @@ intro-git.txt
 intro-grunt.txt
 intro-functions.txt
 chapter00.txt
-simpleinteractionexample.txt
+chapter01.txt
 
 backmatter:
 appendix.txt
