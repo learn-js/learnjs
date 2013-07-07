@@ -7,6 +7,7 @@ intro-chromedevtools.txt
 intro-html-css.txt
 intro-node.txt
 intro-git.txt
+intro-browserify.txt
 intro-grunt.txt
 intro-functions.txt
 chapter00.txt
