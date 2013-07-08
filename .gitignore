@@ -1,3 +1,4 @@
+node_modules
 .DS_Store
 .dropbox
 Icon
@@ -5,3 +6,4 @@ preview
 releases/*/*
 published
 site
+preface.md
