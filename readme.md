@@ -4,7 +4,11 @@
 Like the book? You can purchase it at [learnjs.io](http://learnjs.io);
 
 
-is release went out on May 23, 2013, and it was the first release of _Learn.js_. You're a serious early adopter, and that's awesome.
+# Introduction 
+
+## Thank you. 
+
+You believed in this project enough to get involved early, and your support is making it possible. This release went out on May 23, 2013, and it was the first release of _Learn.js_. You're a serious early adopter, and that's awesome.
 
 Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
 
@@ -140,99 +144,6 @@ Expect to learn more about Chrome's Developer Tools throughout the book. Check o
 - the javascript console and learned that we can type in javascript!
 - we can use code like `console.log()` and `console.error()` to print information to the console.
 - Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
-
-
-# Introduction to browserify.
-
-There's all this wonderful code on `npm`, the node.js package manager.
-
-What if we could use that code in the browser?
-
-## Hey, we can. Use browserify.
-
-With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
-
-We can also write our browser-side javascript in the node.js style by using `require`.
-
-Install browserify:
-
-```
-npm install -g browserify
-```
-
-We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
-
-### Brief example:
-
-```
-// require the core node events module
-var EventEmitter = require('events').EventEmitter;
-
-//create a new event emitter
-var emitter = new EventEmitter;
-
-// set up a listener for the event
-emitter.on('pizza', function(message){
-  console.log(message);
-});
-
-// emit an event
-emitter.emit('pizza', 'pizza is extremely yummy');
-```
-
-Put the above code in a file named index.js.
-
-Now, to be able to run this code in the browser, enter this command in the terminal:
-
-```
-browserify index.js > bundle.js
-```
-
-The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
-
-You can include bundle.js in your html now like any other javascript file.
-
-Example:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>node / browserify example</title>
-</head>
-<body>
-
-<script src="./bundle.js"></script>
-</body>
-</html>
-```
-
-That's it! Now you can use node modules and `require` in the browser!
-
-## Live reload development environment
-If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
-
-**Enter beefy!**
-
-`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
-
-Install beefy:
-
-```
-npm install -g beefy
-```
-
-Now, run this:
-
-```
-beefy index.js:bundle.js --live
-```
-
-The `--live` option enables the live reload functionality of beefy.
-
-This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
-
-You'll see `pizza is extremely yummy` in the javascript console!
 
 
 # HTML & CSS: an introduction
@@ -505,6 +416,166 @@ This is a newer resource, but a good one. It's got a great design and well-organ
 
 
 
+# getting started with node.
+
+Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+
+## In this book, we'll use node in these ways:
+- Install command line tools available through node's package manager, `npm`.
+- Create basic web servers to serve static content to our web browser.
+- Experiment with real-time, multi-user applications.
+
+## To learn node in detail, read these resources in this order:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [streams handbook](https://github.com/substack/stream-handbook)
+
+## Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+### Use nvm to manage node versions.
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+### Install using a package manager. 
+This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+### Download an installer from nodejs.org.
+[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Introduction to git & GitHub
+
+Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
+
+**Use git.**
+
+Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
+
+There are many other bonuses to using git, which are mostly out of this book's scope.
+
+The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
+
+## Get on GitHub
+If you haven't already, create an account at [github.com](http://github.com).
+
+GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
+
+In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
+
+GitHub has become the de facto code hosting service for most open source communities.
+
+## Create a site for yourself using GitHub
+
+GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
+
+### With GitHub Pages you can:
+- design a website any way you want by having complete control over the html, css, and javascript.
+- use simple templates for getting started using GitHub Pages.
+- create sites for yourself and all of your projects hosted on GitHub.
+- use a custom domain name if you want!
+
+Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Introduction to browserify.
+
+There's all this wonderful code on `npm`, the node.js package manager.
+
+What if we could use that code in the browser?
+
+## Hey, we can. Use browserify.
+
+With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
+
+We can also write our browser-side javascript in the node.js style by using `require`.
+
+Install browserify:
+
+```
+npm install -g browserify
+```
+
+We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
+
+### Brief example:
+
+```
+// require the core node events module
+var EventEmitter = require('events').EventEmitter;
+
+//create a new event emitter
+var emitter = new EventEmitter;
+
+// set up a listener for the event
+emitter.on('pizza', function(message){
+  console.log(message);
+});
+
+// emit an event
+emitter.emit('pizza', 'pizza is extremely yummy');
+```
+
+Put the above code in a file named index.js.
+
+Now, to be able to run this code in the browser, enter this command in the terminal:
+
+```
+browserify index.js > bundle.js
+```
+
+The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
+
+You can include bundle.js in your html now like any other javascript file.
+
+Example:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>node / browserify example</title>
+</head>
+<body>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+```
+
+That's it! Now you can use node modules and `require` in the browser!
+
+## Live reload development environment
+If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
+
+**Enter beefy!**
+
+`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
+
+Install beefy:
+
+```
+npm install -g beefy
+```
+
+Now, run this:
+
+```
+beefy index.js:bundle.js --live
+```
+
+The `--live` option enables the live reload functionality of beefy.
+
+This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
+
+You'll see `pizza is extremely yummy` in the javascript console!
+
+
 # Introduction to grunt.js
 
 Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
@@ -725,6 +796,92 @@ Done, without errors.
 If you didn't get output like that, check your Gruntfile for typos. If you did get output like that: Awesome! So we've made it pretty far. We've set up a project with a bunch of files and folders, created a package.json file with a list of devDependencies, installed the dependencies, and tried out a simple Gruntfile for running arbitrary tasks.
 
 If this seems like a lot, like it's beating up your brain, don't worry. After a few times of starting a project like this, these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don't have to write the boilerplate every time. Or you could use a project like yeoman for its code generators. That's up to you, but when first learning this it's a reasonable idea to start from scratch and see how everything works.
+
+
+
+# Introduction to functions.
+
+## Eating, digesting, and pooping.
+
+A function is a block of code that takes input, processes that input, and then produces output.
+
+You can think of it like eating, digesting, and pooping.
+
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+
+## Let's make a function named `eat`.
+
+```
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
+```
+
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
+
+```
+eat('pizza');
+```
+
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
+
+```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
+
+  while (digesting) {
+
+    randomFoodPart = Math.floor(Math.random() * digesting--);
+
+    digested = food[digesting];
+
+    food[digesting] = food[randomFoodPart];
+
+    food[randomFoodPart] = digested;
+  }
+
+  var poop = food.join('');
+
+  return poop;
+}
+```
+
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
 
 
 
@@ -1143,284 +1300,6 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!
 
 
-# Introduction to functions.
-
-## Eating, digesting, and pooping.
-
-A function is a block of code that takes input, processes that input, and then produces output.
-
-You can think of it like eating, digesting, and pooping.
-
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
-
-## Let's make a function named `eat`.
-
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-
-
-
-# Appendix
-
-
-# getting started with node.
-
-Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
-
-## In this book, we'll use node in these ways:
-- Install command line tools available through node's package manager, `npm`.
-- Create basic web servers to serve static content to our web browser.
-- Experiment with real-time, multi-user applications.
-
-## To learn node in detail, read these resources in this order:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [streams handbook](https://github.com/substack/stream-handbook)
-
-## Install node:
-
-There are a few options for this, and I've put them in my order of preference:
-
-### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
-
-### Install using a package manager. 
-This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
-
-### Download an installer from nodejs.org.
-[Here's the node.js download page][nodejs.org/download].
-
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-## Javascript style guide & syntax cheatsheet
-
-
-### Variables
-
-#### Creating a variable:
-
-```
-var nameOfVariable;
-```
-
-> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
-
-#### Creating a variable that references a string:
-
-```
-var thisIsAString = 'this is a string';
-```
-
-Surround strings with single quotes.
-
-
-#### Creating a variable that references a number:
-
-```
-var thisIsANumber = 3.14;
-```
-
-Numbers do not have quotes around them.
-
-#### Creating a variable that references an array:
-
-```
-var thisIsAnArray = [1, "two", [3, 4]];
-```
-
-Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
-
-#### Accessing the values in an array:
-
-```
-thisIsAnArray[0];
-```
-
-The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
-
-```
-thisIsAnArray[1];
-```
-
-This returns the string 'two';
-
-##### How would you return the number `4` from the nested array?
-
-Like this:
-
-```
-thisIsAnArray[2][1];
-```
-
-#### Creating a variable that references an object:
-
-var thisIsAnObject = {
-  someString: 'some string value',
-  someNumber: 1234,
-  someFunction: function(){
-    return 'a function that belongs to an object';
-  }
-}
-
-Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
-
-To get the value of `someString` using dot notation:
-
-```
-thisIsAnObject.someString;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someString'];
-```
-
-To get the value of `someNumber` using dot notation:
-
-```
-thisIsAnObject.someNumber;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someNumber'];
-```
-
-To use the function `someFunction` using dot notation:
-
-```
-thisIsAnObject.someFunction();
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someFunction']();
-```
-
-Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
-That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
-
-For instance, it's more clear to use bracket notation in a situation like this:
-
-```
-for (var key in object){
-  thisIsAnObject[key];
-}
-```
-
-This gives you an idea of how to iterate through an object using a for...in loop.
-
-
-# Introduction to git & GitHub
-
-Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
-
-**Use git.**
-
-Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
-
-There are many other bonuses to using git, which are mostly out of this book's scope.
-
-The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
-
-## Get on GitHub
-If you haven't already, create an account at [github.com](http://github.com).
-
-GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
-
-In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
-
-GitHub has become the de facto code hosting service for most open source communities.
-
-## Create a site for yourself using GitHub
-
-GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
-
-### With GitHub Pages you can:
-- design a website any way you want by having complete control over the html, css, and javascript.
-- use simple templates for getting started using GitHub Pages.
-- create sites for yourself and all of your projects hosted on GitHub.
-- use a custom domain name if you want!
-
-Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
 # Chapter 1
 
 ## Make a simple game
@@ -1613,6 +1492,131 @@ startGame();
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
+# Appendix
+
+
+## Javascript style guide & syntax cheatsheet
+
+
+### Variables
+
+#### Creating a variable:
+
+```
+var nameOfVariable;
+```
+
+> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
+
+#### Creating a variable that references a string:
+
+```
+var thisIsAString = 'this is a string';
+```
+
+Surround strings with single quotes.
+
+
+#### Creating a variable that references a number:
+
+```
+var thisIsANumber = 3.14;
+```
+
+Numbers do not have quotes around them.
+
+#### Creating a variable that references an array:
+
+```
+var thisIsAnArray = [1, "two", [3, 4]];
+```
+
+Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+
+#### Accessing the values in an array:
+
+```
+thisIsAnArray[0];
+```
+
+The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+
+```
+thisIsAnArray[1];
+```
+
+This returns the string 'two';
+
+##### How would you return the number `4` from the nested array?
+
+Like this:
+
+```
+thisIsAnArray[2][1];
+```
+
+#### Creating a variable that references an object:
+
+var thisIsAnObject = {
+  someString: 'some string value',
+  someNumber: 1234,
+  someFunction: function(){
+    return 'a function that belongs to an object';
+  }
+}
+
+Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+
+To get the value of `someString` using dot notation:
+
+```
+thisIsAnObject.someString;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someString'];
+```
+
+To get the value of `someNumber` using dot notation:
+
+```
+thisIsAnObject.someNumber;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someNumber'];
+```
+
+To use the function `someFunction` using dot notation:
+
+```
+thisIsAnObject.someFunction();
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someFunction']();
+```
+
+Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
+
+For instance, it's more clear to use bracket notation in a situation like this:
+
+```
+for (var key in object){
+  thisIsAnObject[key];
+}
+```
+
+This gives you an idea of how to iterate through an object using a for...in loop.
+
+
 ## Additional resources
 
 ### javascript books:
@@ -1642,16 +1646,6 @@ startGame();
 
 
 
-# Contributors
-These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
-
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
-
-
 # Changelog
 
 ## v0.3.2
@@ -1678,3 +1672,13 @@ Sam Sermeno - copy editing
 - first release
 - intro to functions - create an add function
 - appendix with initial style guide and additional resources
+
+
+# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
+
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
