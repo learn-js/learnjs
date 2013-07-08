@@ -19,9 +19,8 @@ function build(){
     .lines
     .forEach(function(line){
       if ( contains(exclude, line) ){
-        console.log(line.toString())
         fs.readFile(book + line, function(err, data){
-          data = data.toString().replace(/~~~~~~~~/gi, '```');
+          data = '\n\n\n' + data.toString().replace(/~~~~~~~~/gi, '```');
           fs.appendFile(readme, data, function(err){
             if (err){ throw err; }
           })
