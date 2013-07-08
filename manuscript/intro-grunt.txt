@@ -137,11 +137,11 @@ Let's make all our files and folders now!
 
 **This will make the files we want:**
 
-~~~~~~~~~
+~~~~~~~~
 touch js/player.js js/game.js js/enemies.js js/ui.js \
 touch css/scss/main.scss css/scss/reset.scss css/scss/ui.scss \
 touch test/player.js test/enemies.js test/game.js test/ui.js
-~~~~~~~~~
+~~~~~~~~
 
 Cool. Did that. **Now we make the Gruntfile:**
 
