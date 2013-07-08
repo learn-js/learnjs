@@ -2,7 +2,7 @@
 
 ## Thank you. 
 
-You believed in this project enough to get involved early, and your support is making it possible. This release went out on May 23, 2013, and it was the first release of _Learn.js_. You're a serious early adopter, and that's awesome.
+You believed in this project enough to get involved early, and your support is making it possible. The first release of _Learn.js_ went out on May 23, 2013. If you've purchased the book you are a serious early adopter, and that's awesome.
 
 Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
 
