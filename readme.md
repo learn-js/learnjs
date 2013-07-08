@@ -15,7 +15,7 @@ Because you got the book so early, you're in a unique position to guide the dire
 
 This book is highly inspired by the lean publishing model ([read more about it](https://leanpub.com/manifesto)) proposed by Peter Armstrong, founder of leanpub.com. I'm releasing the book early to get feedback from you, dear readers, so that together we can make the best book about javascript tools and libraries possible.
 
-This book is looking pretty sparse right now at v0.1.0, but I'll be releasing updates weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by filling out a survey asking what development tools, libraries, and programming patterns you'd be most interested in seeing covered.
+I'll be releasing updates semi-weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by letting me know what development tools, libraries, and programming patterns you'd be most interested in seeing covered.
 
 The goal: produce a book of roughly 200 pages by the end of July. You're a big part of making that goal real. Thank you.
 
