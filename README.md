@@ -555,7 +555,310 @@ The `--live` option enables the live reload functionality of beefy.
 
 This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
 
-You'll see `pizza is extremely yummy` in the javascript console!# CHAPTER 0
+You'll see `pizza is extremely yummy` in the javascript console!# Introduction to grunt.js
+
+Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
+
+### Outline of the steps in this tutorial:
+
+-   Install node.
+-   Install grunt-cli.
+-   Setup project.
+-   Set up package.json.
+-   Create Gruntfile.js.
+-   Run grunt tasks.
+-   Make an awesome project.
+
+### Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+**Use nvm to manage node versions** This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+**Install using a package manager.** This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+**Download an installer from nodejs.org.
+**[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+**Run this in your terminal after installing node.js:**
+
+```
+npm intall -g grunt-cli
+```
+
+This installs the grunt command-line tool globally on your machine. Now you can run the `grunt `command!
+
+And, it won't do anything.
+
+Bummer. **But it will give you a message like this**:
+
+```
+grunt-cli: The grunt command line interface. (v0.1.6)
+  Fatal error: Unable to find local grunt.
+  If you're seeing this message, either a Gruntfile wasn't found or grunt hasn't been installed locally to your project. For more information about installing and configuring grunt, please see the Getting Started guide: [http://gruntjs.com/getting-started](http://gruntjs.com/getting-started)
+```
+
+The grunt command looks for a locally installed version of grunt, which you can include in your project as a development dependency in a package.json file.
+
+### Hey, package.json files are cool.
+
+You can use a package.json file for a lot of useful purposes. Primarily, it's used to list your project's dependencies on npm packages, as well as list the name, description, version, and source repository of the project. You can specify the type of license, version of node the project requires, the project's contributors, and more. Check out [this interactive package.json cheatsheet][http://package.json.nodejitsu.com/] for a nice rundown on the basics.
+
+So, our package.json will specify some development dependencies. 
+
+**Some basic requirements:**
+
+- We'll test the javascript with qunit.
+- We'll write scss and compile it to css, then minify the css.
+- We'll concatenate and uglify our javascript files.
+- We'll use the `grunt watch` command to automatically run grunt tasks when files are edited.
+- We'll want a little http server to check out our game as we're developing it. 
+
+Some of the above requirements could be perceived as excessive, but they help make this a meaty and useful tutorial, so deal with it.
+
+**So, we'll need to use some grunt plugins. We'll use these ones:**
+
+- [grunt-contrib-qunit][https://github.com/gruntjs/grunt-contrib-qunit]
+- [grunt-contrib-jshint][https://github.com/gruntjs/grunt-contrib-jshint]
+- [grunt-contrib-connect][https://github.com/gruntjs/grunt-contrib-connect]
+- [grunt-contrib-watch][https://github.com/gruntjs/grunt-contrib-watch]
+
+
+**That means our package.json file will look like this:**
+
+```
+{ 
+  "name": "your-project-name", 
+  "version": "0.0.1", "author": "Super Big Tree <seth@superbigtree.com>", 
+  "description": "A silly game.", 
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/your-profile/your-project-name.git" 
+  }, 
+  "devDependencies": { 
+      "grunt": "~0.4.0",
+      "grunt-contrib-qunit": "~0.2.0",
+      "grunt-contrib-jshint": "~0.1.1",
+      "grunt-contrib-connect": "~0.1.2",
+      "grunt-contrib-watch": "~0.4.4"
+}, 
+ "license": "MIT", 
+ "engines": { 
+ "node": ">=0.8" 
+ } 
+}
+```
+
+**Go to your terminal. Create a folder that you want to serve as the project's folder:**
+
+```
+cd wherever/you/want/the/project/to/live
+mkdir your-project-name
+cd your-project-name
+```
+
+Now, create your package.json file:
+
+```
+touch package.json
+```
+
+Copy and paste the above package.json example into your package.json file using your favorite text editor. Save the file. **Now, you can run
+this:**
+
+```
+npm install
+```
+
+to install all the dependencies.
+
+If you run the command and get an error like this at the end, then something is not ok:
+
+```
+npm ERR! not ok code 0
+```
+
+There's an error of some kind that will need to be worked out. For me, typically the problem is that I messed up the syntax or put the wrong version number for a dependency, so check things like that first.
+
+### Project setup:
+
+Let's make all our files and folders now!
+
+**This will make all the folders we want:**
+
+```
+> mkdir -p test js css/scss img
+```
+
+**This will make the files we want:**
+
+```
+touch js/player.js js/game.js js/enemies.js js/ui.js \
+touch css/scss/main.scss css/scss/reset.scss css/scss/ui.scss \
+touch test/player.js test/enemies.js test/game.js test/ui.js
+```
+
+Cool. Did that. **Now we make the Gruntfile:**
+
+```
+touch Gruntfile.js
+```
+
+**Open Gruntfile.js in your favorite editor and paste in this:**
+
+```
+module.exports = function(grunt) {
+  grunt.initConfig({
+    // and here we do some cool stuff
+  });
+};
+```
+
+The above code is the required wrapper code to make a Gruntfile work. Now, remember our package.json file. Buds, we can use the values from that file in our Gruntfile.
+
+**Check it out: **Let's say we're making a javascript library and want to put stuff like the name, version, author, source repository, and license of the project in a multi-line comment at the top of the file. It would be a bummer to have to edit that by hand every time the file is compiled for a new release. Instead, we can use values from package.json in our Gruntfile!
+
+First step is to read the contents of package.json by **putting this line in Gruntfile.js**:
+
+```
+pkg: grunt.file.readJSON('package.json');
+```
+
+A package.json file is just JSON, right? Yeah, so it's easy to get at the values to do cool stuff.
+
+For fun, let's see what it takes to run a custom task inside a Gruntfile, and have it log some attributes from the package.json file. Alright? OK.
+
+This is a really simple task that logs the package name and version to the console, shown here as the complete Gruntfile.js:
+
+```
+module.exports = function(grunt) {
+  grunt.initConfig({
+    // read the json file
+    pkg: grunt.file.readJSON('package.json'),
+
+    log: {
+      // this is the name of the project in package.json
+      name: '<%= pkg.name %>', 
+
+      // the version of the project in package.json
+      version: '<%= pkg.version %>' 
+    }
+  });
+
+  grunt.registerMultiTask('log', 'Log project details.', function() {     
+    // because this uses the registerMultiTask function it runs grunt.log.writeln()     
+    // for each attribute in the above log: {} object     
+    grunt.log.writeln(this.target + ': ' + this.data);   
+  });
+};
+```
+
+**You can now run your task on the command line!:**
+
+```
+grunt log
+```
+
+
+**You should get output like this:**
+
+```
+Running 'log:name' (log) task 
+name: your-project-name
+Running 'log:version' (log) task
+version: 0.0.1
+Done, without errors.
+```
+
+If you didn't get output like that, check your Gruntfile for typos. If you did get output like that: Awesome! So we've made it pretty far. We've set up a project with a bunch of files and folders, created a package.json file with a list of devDependencies, installed the dependencies, and tried out a simple Gruntfile for running arbitrary tasks.
+
+If this seems like a lot, like it's beating up your brain, don't worry. After a few times of starting a project like this, these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don't have to write the boilerplate every time. Or you could use a project like yeoman for its code generators. That's up to you, but when first learning this it's a reasonable idea to start from scratch and see how everything works.
+# Introduction to functions.
+
+## Eating, digesting, and pooping.
+
+A function is a block of code that takes input, processes that input, and then produces output.
+
+You can think of it like eating, digesting, and pooping.
+
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+
+## Let's make a function named `eat`.
+
+```
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
+```
+
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
+
+```
+eat('pizza');
+```
+
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
+
+```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
+
+  while (digesting) {
+
+    randomFoodPart = Math.floor(Math.random() * digesting--);
+
+    digested = food[digesting];
+
+    food[digesting] = food[randomFoodPart];
+
+    food[randomFoodPart] = digested;
+  }
+
+  var poop = food.join('');
+
+  return poop;
+}
+```
+
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
+# CHAPTER 0
 
 ## Write a function that adds numbers, and make it awesome.
 
@@ -967,267 +1270,7 @@ As we wrote and experimented use cases of the `add` function we identified ways 
 As you're getting started it probably feels like errors are just something to avoid. But, if we can embed useful errors in our code in places where we know there are likely problems, that can make debugging much easier.
 
 ### Hey, adding isn't really a useful function. Let's get serious.
-OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!# Appendix## Javascript style guide & syntax cheatsheet
-
-
-### Variables
-
-#### Creating a variable:
-
-```
-var nameOfVariable;
-```
-
-> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
-
-#### Creating a variable that references a string:
-
-```
-var thisIsAString = 'this is a string';
-```
-
-Surround strings with single quotes.
-
-
-#### Creating a variable that references a number:
-
-```
-var thisIsANumber = 3.14;
-```
-
-Numbers do not have quotes around them.
-
-#### Creating a variable that references an array:
-
-```
-var thisIsAnArray = [1, "two", [3, 4]];
-```
-
-Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
-
-#### Accessing the values in an array:
-
-```
-thisIsAnArray[0];
-```
-
-The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
-
-```
-thisIsAnArray[1];
-```
-
-This returns the string 'two';
-
-##### How would you return the number `4` from the nested array?
-
-Like this:
-
-```
-thisIsAnArray[2][1];
-```
-
-#### Creating a variable that references an object:
-
-var thisIsAnObject = {
-  someString: 'some string value',
-  someNumber: 1234,
-  someFunction: function(){
-    return 'a function that belongs to an object';
-  }
-}
-
-Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
-
-To get the value of `someString` using dot notation:
-
-```
-thisIsAnObject.someString;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someString'];
-```
-
-To get the value of `someNumber` using dot notation:
-
-```
-thisIsAnObject.someNumber;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someNumber'];
-```
-
-To use the function `someFunction` using dot notation:
-
-```
-thisIsAnObject.someFunction();
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someFunction']();
-```
-
-Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
-That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
-
-For instance, it's more clear to use bracket notation in a situation like this:
-
-```
-for (var key in object){
-  thisIsAnObject[key];
-}
-```
-
-This gives you an idea of how to iterate through an object using a for...in loop.## Additional resources
-
-### javascript books:
-- [js for cats](https://github.com/maxogden/javascript-for-cats)
-- [eloquent javascript](http://eloquentjavascript.net/)
-- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
-- [jquery fundamentals](http://jqfundamentals.com/)
-- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
-
-### node.js books:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [stream handbook](https://github.com/substack/stream-handbook)
-- [node beginner book](http://www.nodebeginner.org/)
-
-### html/js/dom books:
-- [dive into html5](http://diveintohtml5.info/)
-- [dom enlightenmnet](http://domenlightenment.com/)
-
-### Style guides:
-- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
-- [idiomatic html](https://github.com/necolas/idiomatic-html)
-- [idiomatic css](https://github.com/necolas/idiomatic-css)
-- [airbnb js style guide](https://github.com/airbnb/javascript)
-- [felixge node style guide](https://github.com/felixge/node-style-guide)
-- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
-# Changelog
-
-## v0.3.2
-- Substantial copy editing
-- Start chapter 1 about making an rpg game
-- Rearrange and edit Basics intro section
-
-## v0.3.1
-- start intro to node section
-- add contributors list
-- add simple keyboard interaction example
-
-## v0.3.0
-- start Basics section
-- add intro to Chrome Developer Tools
-- add intro to functions
-
-## v0.2.0:
-- added introduction to grunt.js
-- added introduction to git & GitHub
-- small typo fixes
-
-## v0.1.0:
-- first release
-- intro to functions - create an add function
-- appendix with initial style guide and additional resources# Contributors
-These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
-
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress# Introduction to functions.
-
-## Eating, digesting, and pooping.
-
-A function is a block of code that takes input, processes that input, and then produces output.
-
-You can think of it like eating, digesting, and pooping.
-
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
-
-## Let's make a function named `eat`.
-
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-# Chapter 1
+OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!# Chapter 1
 
 ## Make a simple game
 
@@ -1416,223 +1459,181 @@ window.addEventListener("keyup", function(e) {
 startGame();
 ```
 
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).# Introduction to grunt.js
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).# Appendix## Javascript style guide & syntax cheatsheet
 
-Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
 
-### Outline of the steps in this tutorial:
+### Variables
 
--   Install node.
--   Install grunt-cli.
--   Setup project.
--   Set up package.json.
--   Create Gruntfile.js.
--   Run grunt tasks.
--   Make an awesome project.
-
-### Install node:
-
-There are a few options for this, and I've put them in my order of preference:
-
-**Use nvm to manage node versions** This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
-
-**Install using a package manager.** This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
-
-**Download an installer from nodejs.org.
-**[Here's the node.js download page][nodejs.org/download].
-
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
-
-**Run this in your terminal after installing node.js:**
+#### Creating a variable:
 
 ```
-npm intall -g grunt-cli
+var nameOfVariable;
 ```
 
-This installs the grunt command-line tool globally on your machine. Now you can run the `grunt `command!
+> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
 
-And, it won't do anything.
-
-Bummer. **But it will give you a message like this**:
+#### Creating a variable that references a string:
 
 ```
-grunt-cli: The grunt command line interface. (v0.1.6)
-  Fatal error: Unable to find local grunt.
-  If you're seeing this message, either a Gruntfile wasn't found or grunt hasn't been installed locally to your project. For more information about installing and configuring grunt, please see the Getting Started guide: [http://gruntjs.com/getting-started](http://gruntjs.com/getting-started)
+var thisIsAString = 'this is a string';
 ```
 
-The grunt command looks for a locally installed version of grunt, which you can include in your project as a development dependency in a package.json file.
-
-### Hey, package.json files are cool.
-
-You can use a package.json file for a lot of useful purposes. Primarily, it's used to list your project's dependencies on npm packages, as well as list the name, description, version, and source repository of the project. You can specify the type of license, version of node the project requires, the project's contributors, and more. Check out [this interactive package.json cheatsheet][http://package.json.nodejitsu.com/] for a nice rundown on the basics.
-
-So, our package.json will specify some development dependencies. 
-
-**Some basic requirements:**
-
-- We'll test the javascript with qunit.
-- We'll write scss and compile it to css, then minify the css.
-- We'll concatenate and uglify our javascript files.
-- We'll use the `grunt watch` command to automatically run grunt tasks when files are edited.
-- We'll want a little http server to check out our game as we're developing it. 
-
-Some of the above requirements could be perceived as excessive, but they help make this a meaty and useful tutorial, so deal with it.
-
-**So, we'll need to use some grunt plugins. We'll use these ones:**
-
-- [grunt-contrib-qunit][https://github.com/gruntjs/grunt-contrib-qunit]
-- [grunt-contrib-jshint][https://github.com/gruntjs/grunt-contrib-jshint]
-- [grunt-contrib-connect][https://github.com/gruntjs/grunt-contrib-connect]
-- [grunt-contrib-watch][https://github.com/gruntjs/grunt-contrib-watch]
+Surround strings with single quotes.
 
 
-**That means our package.json file will look like this:**
+#### Creating a variable that references a number:
 
 ```
-{ 
-  "name": "your-project-name", 
-  "version": "0.0.1", "author": "Super Big Tree <seth@superbigtree.com>", 
-  "description": "A silly game.", 
-  "repository": { 
-    "type": "git", 
-    "url": "https://github.com/your-profile/your-project-name.git" 
-  }, 
-  "devDependencies": { 
-      "grunt": "~0.4.0",
-      "grunt-contrib-qunit": "~0.2.0",
-      "grunt-contrib-jshint": "~0.1.1",
-      "grunt-contrib-connect": "~0.1.2",
-      "grunt-contrib-watch": "~0.4.4"
-}, 
- "license": "MIT", 
- "engines": { 
- "node": ">=0.8" 
- } 
+var thisIsANumber = 3.14;
+```
+
+Numbers do not have quotes around them.
+
+#### Creating a variable that references an array:
+
+```
+var thisIsAnArray = [1, "two", [3, 4]];
+```
+
+Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+
+#### Accessing the values in an array:
+
+```
+thisIsAnArray[0];
+```
+
+The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+
+```
+thisIsAnArray[1];
+```
+
+This returns the string 'two';
+
+##### How would you return the number `4` from the nested array?
+
+Like this:
+
+```
+thisIsAnArray[2][1];
+```
+
+#### Creating a variable that references an object:
+
+var thisIsAnObject = {
+  someString: 'some string value',
+  someNumber: 1234,
+  someFunction: function(){
+    return 'a function that belongs to an object';
+  }
+}
+
+Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+
+To get the value of `someString` using dot notation:
+
+```
+thisIsAnObject.someString;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someString'];
+```
+
+To get the value of `someNumber` using dot notation:
+
+```
+thisIsAnObject.someNumber;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someNumber'];
+```
+
+To use the function `someFunction` using dot notation:
+
+```
+thisIsAnObject.someFunction();
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someFunction']();
+```
+
+Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
+
+For instance, it's more clear to use bracket notation in a situation like this:
+
+```
+for (var key in object){
+  thisIsAnObject[key];
 }
 ```
 
-**Go to your terminal. Create a folder that you want to serve as the project's folder:**
+This gives you an idea of how to iterate through an object using a for...in loop.## Additional resources
 
-```
-cd wherever/you/want/the/project/to/live
-mkdir your-project-name
-cd your-project-name
-```
+### javascript books:
+- [js for cats](https://github.com/maxogden/javascript-for-cats)
+- [eloquent javascript](http://eloquentjavascript.net/)
+- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
+- [jquery fundamentals](http://jqfundamentals.com/)
+- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
 
-Now, create your package.json file:
+### node.js books:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [stream handbook](https://github.com/substack/stream-handbook)
+- [node beginner book](http://www.nodebeginner.org/)
 
-```
-touch package.json
-```
+### html/js/dom books:
+- [dive into html5](http://diveintohtml5.info/)
+- [dom enlightenmnet](http://domenlightenment.com/)
 
-Copy and paste the above package.json example into your package.json file using your favorite text editor. Save the file. **Now, you can run
-this:**
+### Style guides:
+- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
+- [idiomatic html](https://github.com/necolas/idiomatic-html)
+- [idiomatic css](https://github.com/necolas/idiomatic-css)
+- [airbnb js style guide](https://github.com/airbnb/javascript)
+- [felixge node style guide](https://github.com/felixge/node-style-guide)
+- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
+# Changelog
 
-```
-npm install
-```
+## v0.3.2
+- Substantial copy editing
+- Start chapter 1 about making an rpg game
+- Rearrange and edit Basics intro section
 
-to install all the dependencies.
+## v0.3.1
+- start intro to node section
+- add contributors list
+- add simple keyboard interaction example
 
-If you run the command and get an error like this at the end, then something is not ok:
+## v0.3.0
+- start Basics section
+- add intro to Chrome Developer Tools
+- add intro to functions
 
-```
-npm ERR! not ok code 0
-```
+## v0.2.0:
+- added introduction to grunt.js
+- added introduction to git & GitHub
+- small typo fixes
 
-There's an error of some kind that will need to be worked out. For me, typically the problem is that I messed up the syntax or put the wrong version number for a dependency, so check things like that first.
+## v0.1.0:
+- first release
+- intro to functions - create an add function
+- appendix with initial style guide and additional resources# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
 
-### Project setup:
-
-Let's make all our files and folders now!
-
-**This will make all the folders we want:**
-
-```
-> mkdir -p test js css/scss img
-```
-
-**This will make the files we want:**
-
-```
-touch js/player.js js/game.js js/enemies.js js/ui.js \
-touch css/scss/main.scss css/scss/reset.scss css/scss/ui.scss \
-touch test/player.js test/enemies.js test/game.js test/ui.js
-```
-
-Cool. Did that. **Now we make the Gruntfile:**
-
-```
-touch Gruntfile.js
-```
-
-**Open Gruntfile.js in your favorite editor and paste in this:**
-
-```
-module.exports = function(grunt) {
-  grunt.initConfig({
-    // and here we do some cool stuff
-  });
-};
-```
-
-The above code is the required wrapper code to make a Gruntfile work. Now, remember our package.json file. Buds, we can use the values from that file in our Gruntfile.
-
-**Check it out: **Let's say we're making a javascript library and want to put stuff like the name, version, author, source repository, and license of the project in a multi-line comment at the top of the file. It would be a bummer to have to edit that by hand every time the file is compiled for a new release. Instead, we can use values from package.json in our Gruntfile!
-
-First step is to read the contents of package.json by **putting this line in Gruntfile.js**:
-
-```
-pkg: grunt.file.readJSON('package.json');
-```
-
-A package.json file is just JSON, right? Yeah, so it's easy to get at the values to do cool stuff.
-
-For fun, let's see what it takes to run a custom task inside a Gruntfile, and have it log some attributes from the package.json file. Alright? OK.
-
-This is a really simple task that logs the package name and version to the console, shown here as the complete Gruntfile.js:
-
-```
-module.exports = function(grunt) {
-  grunt.initConfig({
-    // read the json file
-    pkg: grunt.file.readJSON('package.json'),
-
-    log: {
-      // this is the name of the project in package.json
-      name: '<%= pkg.name %>', 
-
-      // the version of the project in package.json
-      version: '<%= pkg.version %>' 
-    }
-  });
-
-  grunt.registerMultiTask('log', 'Log project details.', function() {     
-    // because this uses the registerMultiTask function it runs grunt.log.writeln()     
-    // for each attribute in the above log: {} object     
-    grunt.log.writeln(this.target + ': ' + this.data);   
-  });
-};
-```
-
-**You can now run your task on the command line!:**
-
-```
-grunt log
-```
-
-
-**You should get output like this:**
-
-```
-Running 'log:name' (log) task 
-name: your-project-name
-Running 'log:version' (log) task
-version: 0.0.1
-Done, without errors.
-```
-
-If you didn't get output like that, check your Gruntfile for typos. If you did get output like that: Awesome! So we've made it pretty far. We've set up a project with a bunch of files and folders, created a package.json file with a list of devDependencies, installed the dependencies, and tried out a simple Gruntfile for running arbitrary tasks.
-
-If this seems like a lot, like it's beating up your brain, don't worry. After a few times of starting a project like this, these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don't have to write the boilerplate every time. Or you could use a project like yeoman for its code generators. That's up to you, but when first learning this it's a reasonable idea to start from scratch and see how everything works.
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
