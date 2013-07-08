@@ -324,9 +324,9 @@ Paste in the latest version of the `add` function to the Chrome javascript conso
 
 It should return something like this:
 
-~~~~~~~
+~~~~~~~~
 NaN
-~~~~~~~
+~~~~~~~~
 
 Let’s fix that. The problem: `NaN` means **not a number**. When we run `parseFloat` on a string like `’one’`, it returns `NaN`, and when we try to add `NaN` to a number, the whole sum becomes `NaN`.
 

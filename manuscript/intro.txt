@@ -1,6 +1,5 @@
 # Introduction 
 
-
 ## Thank you. 
 
 You believed in this project enough to get involved early, and your support is making it possible. This release went out on May 23, 2013, and it was the first release of _Learn.js_. You're a serious early adopter, and that's awesome.

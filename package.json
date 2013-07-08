@@ -1,0 +1,23 @@
+{
+  "name": "learnjs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/learn-js/learnjs.git"
+  },
+  "keywords": [
+    "book"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learn-js/learnjs/issues"
+  },
+  "dependencies": {
+    "lazy": "~1.0.11",
+    "concat-stream": "~1.0.0",
+    "replacestream": "0.0.1"
+  }
+}
