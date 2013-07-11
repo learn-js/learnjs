@@ -1,4 +1,4 @@
-# Learning callbacks.
+# Introduction to callbacks.
 
 A callback is a function that you pass as an argument to another function.
 Typically, you'll use a callback as a way to work with data after it's been processed by a function.
