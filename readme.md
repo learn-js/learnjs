@@ -2,47 +2,7 @@
 > A guidebook to building projects with javascript.
 
 Like the book? You can purchase it at [learnjs.io](http://learnjs.io).
-hrome.
 
-> If you don't already have Chrome installed, download and install it now at [google.com/chrome](http://google.com/chrome)
-
-Now, use this keyboard shortcut on a Mac: command + option + j
-Or this for Windows/Linux: control + shift + j
-
-You just opened the javascript console.
-
-**Type in this code:**  
-```
-console.log('what is this?');
-```
-
-You just told the javascript console to print some text!
-
-Any time you put `console.log()` in javascript code that is ran in the browser, whatever you put between the parentheses will show up in your browser's javascript console.
-
-As you learn javascript, `console.log()` will be your best friend. You will use it to help prototype new functionality and to debug your code.
-
-## Your first challenge:
-
-Type this into the console:
-
-```
-console.error('this is an error');
-```
-
-That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.
-
-With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later in the book.
-
-## Chrome Developer Tools
-The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a a set of versatile and powerful tools, and focusing on the tools of one browser helps keep the instructions simple.
-
-Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.
-
-## Recap! We learned that:
-- the javascript console and learned that we can type in javascript!
-- we can use code like `console.log()` and `console.error()` to print information to the console.
-- Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
 
 
 # THE BASICS
@@ -136,6 +96,55 @@ Javascript is a very flexible language that can be employed using a number of st
 - Prototypal inheritance.
 - Constructors.
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+# Hello, javascript. It's nice to meet you.
+
+```
+console.log('hello, javascript. it's nice to meet you');
+```
+
+Open up the browser Chrome.
+
+> If you don't already have Chrome installed, download and install it now at [google.com/chrome](http://google.com/chrome)
+
+Now, use this keyboard shortcut on a Mac: command + option + j
+Or this for Windows/Linux: control + shift + j
+
+You just opened the javascript console.
+
+**Type in this code:**  
+```
+console.log('what is this?');
+```
+
+You just told the javascript console to print some text!
+
+Any time you put `console.log()` in javascript code that is ran in the browser, whatever you put between the parentheses will show up in your browser's javascript console.
+
+As you learn javascript, `console.log()` will be your best friend. You will use it to help prototype new functionality and to debug your code.
+
+## Your first challenge:
+
+Type this into the console:
+
+```
+console.error('this is an error');
+```
+
+That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.
+
+With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later in the book.
+
+## Chrome Developer Tools
+The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a a set of versatile and powerful tools, and focusing on the tools of one browser helps keep the instructions simple.
+
+Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.
+
+## Recap! We learned that:
+- the javascript console and learned that we can type in javascript!
+- we can use code like `console.log()` and `console.error()` to print information to the console.
+- Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
 
 
 # HTML & CSS: an introduction
@@ -475,64 +484,6 @@ Visit the [help section for GitHub Pages](https://help.github.com/categories/20/
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
-# Learning callbacks.
-
-A callback is a function that you pass as an argument to another function.
-Typically, you'll use a callback as a way to work with data after it's been processed by a function.
-
-A simple callback looks like this:
-
-```
-function holla(callback){
-  callback();
-}
-```
-
-Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
-
-Usage if the `holla` function:
-
-```
-holla(function(){
-  console.log('this is part of the callback function);
-});
-```
-
-Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
-
-```
-function holla(callback){
-  callback();
-}
-
-function back(){
-  console.log('this is part of the callback function);
-}
-
-holla(back);
-```
-
-But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
-
-```
-// create an eat function
-function eat(food, callback){
-  var food = food + " was eaten";
-  callback(food);
-}
-
-// create a poop function to use as the callback
-function poop(output){
-  console.log(output);
-}
-
-// call the eat function, passing a food and the poop function as arguments
-eat("pizza", poop);
-```
-
-Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
-
-
 # Introduction to browserify.
 
 There's all this wonderful code on `npm`, the node.js package manager.
@@ -624,92 +575,6 @@ The `--live` option enables the live reload functionality of beefy.
 This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
 
 You'll see `pizza is extremely yummy` in the javascript console!
-
-
-# Introduction to functions.
-
-## Eating, digesting, and pooping.
-
-A function is a block of code that takes input, processes that input, and then produces output.
-
-You can think of it like eating, digesting, and pooping.
-
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
-
-## Let's make a function named `eat`.
-
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-
 
 
 # Introduction to grunt.js
@@ -935,129 +800,291 @@ If this seems like a lot, like it's beating up your brain, don't worry. After a 
 
 
 
-# Appendix
+# Introduction to functions.
 
+## Eating, digesting, and pooping.
 
-## Javascript style guide & syntax cheatsheet
+A function is a block of code that takes input, processes that input, and then produces output.
 
+You can think of it like eating, digesting, and pooping.
 
-### Variables
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
 
-#### Creating a variable:
-
-```
-var nameOfVariable;
-```
-
-> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
-
-#### Creating a variable that references a string:
+## Let's make a function named `eat`.
 
 ```
-var thisIsAString = 'this is a string';
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
 ```
 
-Surround strings with single quotes.
+The above example should make sense just from reading it.
 
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
 
-#### Creating a variable that references a number:
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
 
-```
-var thisIsANumber = 3.14;
-```
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
 
-Numbers do not have quotes around them.
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
 
-#### Creating a variable that references an array:
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
 
-```
-var thisIsAnArray = [1, "two", [3, 4]];
-```
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
 
-Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+## Using the `eat` function:
 
-#### Accessing the values in an array:
+We can use the `eat` function like this:
 
 ```
-thisIsAnArray[0];
+eat('pizza');
 ```
 
-The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
 
 ```
-thisIsAnArray[1];
-```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
 
-This returns the string 'two';
+  while (digesting) {
 
-##### How would you return the number `4` from the nested array?
+    randomFoodPart = Math.floor(Math.random() * digesting--);
 
-Like this:
+    digested = food[digesting];
 
-```
-thisIsAnArray[2][1];
-```
+    food[digesting] = food[randomFoodPart];
 
-#### Creating a variable that references an object:
-
-var thisIsAnObject = {
-  someString: 'some string value',
-  someNumber: 1234,
-  someFunction: function(){
-    return 'a function that belongs to an object';
+    food[randomFoodPart] = digested;
   }
-}
 
-Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+  var poop = food.join('');
 
-To get the value of `someString` using dot notation:
-
-```
-thisIsAnObject.someString;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someString'];
-```
-
-To get the value of `someNumber` using dot notation:
-
-```
-thisIsAnObject.someNumber;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someNumber'];
-```
-
-To use the function `someFunction` using dot notation:
-
-```
-thisIsAnObject.someFunction();
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someFunction']();
-```
-
-Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
-That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
-
-For instance, it's more clear to use bracket notation in a situation like this:
-
-```
-for (var key in object){
-  thisIsAnObject[key];
+  return poop;
 }
 ```
 
-This gives you an idea of how to iterate through an object using a for...in loop.
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
+
+
+
+# Learning callbacks.
+
+A callback is a function that you pass as an argument to another function.
+Typically, you'll use a callback as a way to work with data after it's been processed by a function.
+
+A simple callback looks like this:
+
+```
+function holla(callback){
+  callback();
+}
+```
+
+Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
+
+Usage if the `holla` function:
+
+```
+holla(function(){
+  console.log('this is part of the callback function);
+});
+```
+
+Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
+
+```
+function holla(callback){
+  callback();
+}
+
+function back(){
+  console.log('this is part of the callback function);
+}
+
+holla(back);
+```
+
+But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
+
+```
+// create an eat function
+function eat(food, callback){
+  var food = food + " was eaten";
+  callback(food);
+}
+
+// create a poop function to use as the callback
+function poop(output){
+  console.log(output);
+}
+
+// call the eat function, passing a food and the poop function as arguments
+eat("pizza", poop);
+```
+
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+
+
+# Introduction to canvas
+> Creating basic keyboard and mouse interaction with the html5 canvas tag.
+
+Here's the full code (with comments) for our simple canvas / input example:
+
+```
+// Here we select the canvas with an id of game 
+// this is where we will draw our game assets
+var canvas = document.querySelector('#game');
+
+// What kind of drawing will we do?
+// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
+var context = canvas.getContext('2d');
+
+function startGame(){ 
+  // set the width and height of our drawing canvas
+  canvas.height = 400;
+  canvas.width = 800;
+
+  // start the game loop
+  loop();
+}
+
+// any thing inside the loop() function gets run on every loop
+function loop(){
+  // this function runs the loop at a consistent rate, 
+  // and only runs the loop when the browser tab is in focus
+  requestAnimationFrame( loop, canvas );
+
+  // update the game
+  update();
+
+  // draw new stuff after they've been updated
+  draw();
+}
+
+// make a box object
+// give it a starting x, y location, a width, height, speed, and color
+var box = {
+  x: 50,
+  y: 50,
+  width: 10,
+  height: 10,
+  speed: 10,
+  color: '#4f5654'
+};
+
+// this function manages all the user input for the box object
+box.input = function(){
+  
+  // check if any of the arrow keys are in the keysDown object
+  if (40 in keysDown) {
+    box.y += box.speed;
+  }
+  if (38 in keysDown) {
+    box.y -= box.speed;
+  }
+  if (37 in keysDown) {
+    box.x -= box.speed;
+  }
+  if (39 in keysDown) {
+    box.x += box.speed;
+  }
+  
+  // check if box hits left edge
+  if (box.x <= 0) {
+    box.x = 0;
+  }
+
+  // check if box hits right edge
+  if (box.x >= canvas.width - box.width) {
+    box.x = canvas.width - box.width;
+  }
+
+  // check if box hits top edge
+  if (box.y <= 0) {
+    box.y = 0;
+  }
+
+  // check if box hits bottom edge
+  if (box.y >= canvas.height - box.height) {
+    box.y = canvas.height - box.height;
+  }
+
+}
+
+// draw the box
+box.draw = function() {
+  // set the color of the box
+  context.fillStyle = box.color;
+
+  // actually draw the box to the canvas
+  context.fillRect(box.x, box.y, box.width, box.height);
+};
+
+// update the game
+function update(){
+  // check for any input relevant to the box
+  // every time the game is updated
+  box.input();
+}
+
+// draw on the canvas
+function draw(){
+  // this clears the canvas so that when the box is drawn each time
+  // it looks like it moves, rather than drawing a line that follows the path
+  // of the box. comment out the context.clearRect line to see what i mean.
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  box.draw();
+}
+
+// this object contains any keyboard keys that are currently pressed down
+var keysDown = {};
+
+// here we add an event listener that watches for when the user presses any keys
+window.addEventListener("keydown", function(e) {
+  // e stands for event
+
+  // add the key being pressed to the keysDown object
+  keysDown[e.keyCode] = true;
+
+  // if the user is pressing any of the arrow keys, disable the default
+  // behavior so the page doesn't move up and down
+  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
+    e.preventDefault();
+  }
+}, false);
+
+// this event listener watches for when keys are released
+window.addEventListener("keyup", function(e) {
+  // and removes the key from the keysdown object
+  delete keysDown[e.keyCode];
+}, false);
+
+// start the game
+startGame();
+```
+
+That's it, and you made stuff move around the screen!
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
 # CHAPTER 0
@@ -1475,216 +1502,6 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!
 
 
-# Introduction to canvas
-> Creating basic keyboard and mouse interaction with the html5 canvas tag.
-
-Here's the full code (with comments) for our simple canvas / input example:
-
-```
-// Here we select the canvas with an id of game 
-// this is where we will draw our game assets
-var canvas = document.querySelector('#game');
-
-// What kind of drawing will we do?
-// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
-var context = canvas.getContext('2d');
-
-function startGame(){ 
-  // set the width and height of our drawing canvas
-  canvas.height = 400;
-  canvas.width = 800;
-
-  // start the game loop
-  loop();
-}
-
-// any thing inside the loop() function gets run on every loop
-function loop(){
-  // this function runs the loop at a consistent rate, 
-  // and only runs the loop when the browser tab is in focus
-  requestAnimationFrame( loop, canvas );
-
-  // update the game
-  update();
-
-  // draw new stuff after they've been updated
-  draw();
-}
-
-// make a box object
-// give it a starting x, y location, a width, height, speed, and color
-var box = {
-  x: 50,
-  y: 50,
-  width: 10,
-  height: 10,
-  speed: 10,
-  color: '#4f5654'
-};
-
-// this function manages all the user input for the box object
-box.input = function(){
-  
-  // check if any of the arrow keys are in the keysDown object
-  if (40 in keysDown) {
-    box.y += box.speed;
-  }
-  if (38 in keysDown) {
-    box.y -= box.speed;
-  }
-  if (37 in keysDown) {
-    box.x -= box.speed;
-  }
-  if (39 in keysDown) {
-    box.x += box.speed;
-  }
-  
-  // check if box hits left edge
-  if (box.x <= 0) {
-    box.x = 0;
-  }
-
-  // check if box hits right edge
-  if (box.x >= canvas.width - box.width) {
-    box.x = canvas.width - box.width;
-  }
-
-  // check if box hits top edge
-  if (box.y <= 0) {
-    box.y = 0;
-  }
-
-  // check if box hits bottom edge
-  if (box.y >= canvas.height - box.height) {
-    box.y = canvas.height - box.height;
-  }
-
-}
-
-// draw the box
-box.draw = function() {
-  // set the color of the box
-  context.fillStyle = box.color;
-
-  // actually draw the box to the canvas
-  context.fillRect(box.x, box.y, box.width, box.height);
-};
-
-// update the game
-function update(){
-  // check for any input relevant to the box
-  // every time the game is updated
-  box.input();
-}
-
-// draw on the canvas
-function draw(){
-  // this clears the canvas so that when the box is drawn each time
-  // it looks like it moves, rather than drawing a line that follows the path
-  // of the box. comment out the context.clearRect line to see what i mean.
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  box.draw();
-}
-
-// this object contains any keyboard keys that are currently pressed down
-var keysDown = {};
-
-// here we add an event listener that watches for when the user presses any keys
-window.addEventListener("keydown", function(e) {
-  // e stands for event
-
-  // add the key being pressed to the keysDown object
-  keysDown[e.keyCode] = true;
-
-  // if the user is pressing any of the arrow keys, disable the default
-  // behavior so the page doesn't move up and down
-  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
-    e.preventDefault();
-  }
-}, false);
-
-// this event listener watches for when keys are released
-window.addEventListener("keyup", function(e) {
-  // and removes the key from the keysdown object
-  delete keysDown[e.keyCode];
-}, false);
-
-// start the game
-startGame();
-```
-
-That's it, and you made stuff move around the screen!
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Contributors
-These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
-
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
-
-
-## Additional resources
-
-### javascript books:
-- [js for cats](https://github.com/maxogden/javascript-for-cats)
-- [eloquent javascript](http://eloquentjavascript.net/)
-- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
-- [jquery fundamentals](http://jqfundamentals.com/)
-- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
-
-### node.js books:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [stream handbook](https://github.com/substack/stream-handbook)
-- [node beginner book](http://www.nodebeginner.org/)
-
-### html/js/dom books:
-- [dive into html5](http://diveintohtml5.info/)
-- [dom enlightenmnet](http://domenlightenment.com/)
-
-### Style guides:
-- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
-- [idiomatic html](https://github.com/necolas/idiomatic-html)
-- [idiomatic css](https://github.com/necolas/idiomatic-css)
-- [airbnb js style guide](https://github.com/airbnb/javascript)
-- [felixge node style guide](https://github.com/felixge/node-style-guide)
-- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
-
-
-
-# Changelog
-
-## v0.3.2
-- Substantial copy editing
-- Start chapter 1 about making an rpg game
-- Rearrange and edit Basics intro section
-
-## v0.3.1
-- start intro to node section
-- add contributors list
-- add simple keyboard interaction example
-
-## v0.3.0
-- start Basics section
-- add intro to Chrome Developer Tools
-- add intro to functions
-
-## v0.2.0:
-- added introduction to grunt.js
-- added introduction to git & GitHub
-- small typo fixes
-
-## v0.1.0:
-- first release
-- intro to functions - create an add function
-- appendix with initial style guide and additional resources
-
-
 # Chapter 1
 
 ## Make a simple game
@@ -1743,6 +1560,8 @@ Each of the above headers will be an object in our game, and each of the list it
 You'll need these things installed on your computer:
 - node.js
 - browserify and beefy
+
+Make sure you're read the intro to node and intro to browserify chapters before starting this project. (TODO: link to those chapters.)
 
 To get started, create a folder for your game. I'm calling it `node-rogue`:
 
@@ -1856,11 +1675,288 @@ canvas#game {
 }
 ```
 
+To ease development, we'll use a simple game library I recently called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
 
+Install `crtrdg-gameloop` using npm:
 
+```
+npm install crtrdg-gameloop --save
+```
 
+The `--save` option edits the package.json file and adds the module you're installing the the dependencies list. 
 
+## Now, to start writing javascript! 
+Open the game.js file, and get started:
 
+```
+// require crtrdg-gameloop
+var Game = require('crtrdg-gameloop');
+
+// create a new game
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+// this runs each time the game loops
+// it is useful for things like checking for user input
+// moving the position of characters/items
+// checking for game boundaries and collision detection
+// and other similar tasks
+// interval is the time since the last loop
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+// the draw event runs after the update event
+// it's used for actually drawing your characters / items / backgrounds to the canvas
+// context is the actual canvas context, so you'll
+// use it to draw just like in the Introduction to Canvas chapter.
+game.on('draw', function(context){
+  console.log('draw', context);
+  context.fillStyle = '#fff';
+  context.fillRect(10, 10, 10, 10);
+});
+
+// if game.pause() is called somewhere in your code,
+// a `pause` event will be emitted
+// listen for it like this:
+game.on('pause', function(){
+  console.log('paused');
+});
+
+// if game.resume() is called somewhere in your code,
+// a `resume` event will be emitted
+// listen for it like this:
+game.on('resume', function(){
+  console.log('resumed');
+});
+```
+
+To run this code we will use beefy.
+
+Open the package.json file and add a `start` script to the scripts object so it looks like this:
+
+```
+"scripts": {
+  "test": "node test.js",
+  "start": "beefy game.js:bundle.js --live"
+},
+```
+
+If you've installed browserify and beefy like this:
+
+```
+npm install -g browserify beefy
+```
+
+You can now run:
+
+```
+npm start
+```
+
+This will serve your index.html file at http://localhost:9966.
+
+Open Chrome, navigate to that url, and open the javascript console.
+
+You should see the `update` and `draw` messages being logged to the console and a big red canvas with a small white block in the top left corner!
+
+This is the beginning of node-rogue.
 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Appendix
+
+
+## Javascript style guide & syntax cheatsheet
+
+
+### Variables
+
+#### Creating a variable:
+
+```
+var nameOfVariable;
+```
+
+> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
+
+#### Creating a variable that references a string:
+
+```
+var thisIsAString = 'this is a string';
+```
+
+Surround strings with single quotes.
+
+
+#### Creating a variable that references a number:
+
+```
+var thisIsANumber = 3.14;
+```
+
+Numbers do not have quotes around them.
+
+#### Creating a variable that references an array:
+
+```
+var thisIsAnArray = [1, "two", [3, 4]];
+```
+
+Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+
+#### Accessing the values in an array:
+
+```
+thisIsAnArray[0];
+```
+
+The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+
+```
+thisIsAnArray[1];
+```
+
+This returns the string 'two';
+
+##### How would you return the number `4` from the nested array?
+
+Like this:
+
+```
+thisIsAnArray[2][1];
+```
+
+#### Creating a variable that references an object:
+
+var thisIsAnObject = {
+  someString: 'some string value',
+  someNumber: 1234,
+  someFunction: function(){
+    return 'a function that belongs to an object';
+  }
+}
+
+Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+
+To get the value of `someString` using dot notation:
+
+```
+thisIsAnObject.someString;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someString'];
+```
+
+To get the value of `someNumber` using dot notation:
+
+```
+thisIsAnObject.someNumber;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someNumber'];
+```
+
+To use the function `someFunction` using dot notation:
+
+```
+thisIsAnObject.someFunction();
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someFunction']();
+```
+
+Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
+
+For instance, it's more clear to use bracket notation in a situation like this:
+
+```
+for (var key in object){
+  thisIsAnObject[key];
+}
+```
+
+This gives you an idea of how to iterate through an object using a for...in loop.
+
+
+## Additional resources
+
+### javascript books:
+- [js for cats](https://github.com/maxogden/javascript-for-cats)
+- [eloquent javascript](http://eloquentjavascript.net/)
+- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
+- [jquery fundamentals](http://jqfundamentals.com/)
+- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
+
+### node.js books:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [stream handbook](https://github.com/substack/stream-handbook)
+- [node beginner book](http://www.nodebeginner.org/)
+
+### html/js/dom books:
+- [dive into html5](http://diveintohtml5.info/)
+- [dom enlightenmnet](http://domenlightenment.com/)
+
+### Style guides:
+- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
+- [idiomatic html](https://github.com/necolas/idiomatic-html)
+- [idiomatic css](https://github.com/necolas/idiomatic-css)
+- [airbnb js style guide](https://github.com/airbnb/javascript)
+- [felixge node style guide](https://github.com/felixge/node-style-guide)
+- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
+
+
+
+# Changelog
+
+## v0.3.2
+- Substantial copy editing
+- Start chapter 1 about making an rpg game
+- Rearrange and edit Basics intro section
+
+## v0.3.1
+- start intro to node section
+- add contributors list
+- add simple keyboard interaction example
+
+## v0.3.0
+- start Basics section
+- add intro to Chrome Developer Tools
+- add intro to functions
+
+## v0.2.0:
+- added introduction to grunt.js
+- added introduction to git & GitHub
+- small typo fixes
+
+## v0.1.0:
+- first release
+- intro to functions - create an add function
+- appendix with initial style guide and additional resources
+
+
+# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
+
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
