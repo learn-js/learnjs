@@ -2,14 +2,7 @@
 > A guidebook to building projects with javascript.
 
 Like the book? You can purchase it at [learnjs.io](http://learnjs.io).
-
-
-
-# Introduction 
-
-## Thank you. 
-
-You believed in this project enough to get involved early, and your support is making it possible. The first release of _Learn.js_ went out on May 23, 2013. If you've purchased the book you are a serious early adopter, and that's awesome.
+The first release of _Learn.js_ went out on May 23, 2013. If you've purchased the book you are a serious early adopter, and that's awesome.
 
 Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
 
@@ -72,32 +65,6 @@ Javascript is a very flexible language that can be employed using a number of st
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
 
 
-# THE BASICS
-
-## In this section, we'll get started learning:
-
-### Chrome's Developer Tools
-All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
-
-### Basic html and css
-For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
-
-### Javascript syntax, variables, data types, functions, and style guidelines
-Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
-
-### Node.js and npm
-Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
-
-### Bower, browserify, and grunt
-The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
-
-### Git and GitHub
-Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
-
-### Testing javascript
-Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
-
-
 # Hello, javascript. It's nice to meet you.
 
 ```
@@ -147,276 +114,6 @@ Expect to learn more about Chrome's Developer Tools throughout the book. Check o
 - Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
 
 
-# HTML & CSS: an introduction
-
-If you're new to building projects for the web, knowing javascript alone won't be enough.
-
-This book focuses on javascript, but you'll certainly pick up some html and css along the way.
-
-You might find it useful to learn about html and css before reading Learn.js, or to have a resource handy that you can refer to when introduced to new html elements or css properties.
-
-## But here's a quick refresher to get you started:
-
-An example of an html element:
-
-```
-<h1>This is a headline</h1>
-```
-
-That's an `h1` element. It is used for the most prominent headline of a document – often the site title or article title. Note that this element has an opening tag, `<h1>, and a closing tag, `</h1`>, which looks the same except it has a forward slash, `/`.
-
-This is a common pattern for html elements. There are a few html elements that don't require closing tags. Like these:
-
-```
-<br>
-```
-
-The `br` element creates a line break in text.
-
-```
-<hr>
-```
-
-The `hr` element creates a horizontal rule, a straight line, across your web site. Usually used as a break between sections.
-
-```
-<img src="image.jpg" alt="this is the alt text of an image" />
-```
-
-The `img` element is a little unique. Note that it has a `src` attribute that specifies the image we want to have show up, and an `alt` attribute that provides text that will be displayed for screen readers, or that might be used as a caption. The `img` element is also a self-closing tag, meaning it has a forward-slash before the closing angle bracket.
-
-
-## HTML attributes and CSS selectors.
-We just saw the `src` and `alt` attributes on the `img` element. There are many attributes that can be used on any given html element. Some attributes control behavior of the element, some are used as selectors for css rules.
-
-**Here are the two attributes most used as selectors in css rules:**
-
-### `id`
-
-Using the `id` attribute of an html tag looks like this:
-
-```
-<p id="introduction">This is the first paragraph of a story.</p>
-```
-
-Here we're marking a paragraph (a `p` element) as being the introduction. The `id` of `introduction` should only be used on one html element, making this one `p` element special.
-
-We do this so that later, in the css, we can give the `introduction` different styling than the rest of the `p` elements on the page.
-
-Here's some css that makes the `introduction` italic:
-
-```
-p#introduction {
-  font-style: italic;
-}
-```
-
-We don't have to include the `p` in `p#introduction`, but it's useful for clarity. Note the hash mark: `#`. `id` attributes are identified in css by using a `#`.
-
-### `class`
-Now, let's say that we want some of the paragraphs in our story to have a different background color to highlight them. One way of accomplishing this would be to add a `class` to these paragraphs.
-
-The use of `class` attributes looks like this:
-
-```
-<p class="highlight">This paragraph will be bold and slightly bigger.</p>
-```
-
-We've given this `p` element a class of `highlight`, so let's add some css that gives this paragraph a yellow background.
-
-```
-p.highlight {
-  background-color: yellow;
-}
-```
-
-One of the differences between `id` and `class` attributes, is that a `class` can be given to multiple elements on a page, whereas an `id` should be unique to one element. So we can give this class to multiple paragraphs to make them highlighted.
-
-
-### Where does the css go?
-There are two options: include separate css files, or place css directly in your html file. In almost all situations, including a separate css file for your styles will be a faster and more organized option.
-
-Here's what it looks like to embed css in your html file.
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>Your website</title>
-
-  <style>
-
-    p.highlight {
-      background-color: yellow;
-    }
-
-  </style>
-
-</head>
-<body>
-
-</body>
-</html>
-```
-
-You'll add your css between the opening and closing `style` tags, which should in turn go between the opening and closing tags of the `head` element.
-
-But the cleaner option is to create a separate css file that you reference from your html file:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>Your website</title>
-
-  <link rel="stylesheet" href="style.css" />
-
-</head>
-<body>
-
-</body>
-</html>
-```
-
-This tells the browser to load the css from the `styles.css` file. Having a separate file for your styles helps with keeping your site easy to maintain. Having everything in one big html file can be a pain to work on.
-
-### So where will the javascript be in an html file?
-
-Just as with css, there are a couple options for where you place your javascript code.
-
-You can embed it in your html file between opening and closing `script` tags:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>Your website</title>
-
-</head>
-<body>
-
-
-<script>
-console.log('this is javascript');
-</script>
-
-</body>
-</html>
-```
-
-Or you can use a `script` tag to reference an external javascript file:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>Your website</title>
-
-</head>
-<body>
-
-
-<script src="site.js"></script>
-
-</body>
-</html>
-```
-
-Note that the `script` element needs a closing tag even though there's nothing between the opening tag and closing tag.
-
-Just like with css, it's better to keep your javascript in a separate files. By separating the types of code in your project you make it easier for yourself and for others to figure out how to make changes. The more organized your project is, the quicker you can revise its design and functionality.
-
-### Layout with html and css
-There are a few common tags used for laying out an html document. Check out this example:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>Your website</title>
-
-</head>
-<body>
-
-<header>
-    <h1>Your website</h1>
-</header>
-
-<main>
-  <p>This is the content of your website</p>
-</main>
-
-<footer>
-  <p>Contact: your info.</p>
-</footer>
-
-</body>
-</html>
-```
-
-We're using the `header` element for the header of the page, the `main` element for the content of the page, and the `footer` element for supplementary information that goes in the footer. All three of these tags are relatively new as part of html5. Another new tag is 'section'. You might use it to break up your main content into parts:
-
-```
-<main>
-  <section id="part-one">
-    <h1>Section one</h1>
-    <p>This is the content of the first section</p>
-  </section>
-
-  <section id="part-two">
-    <h1>Section two</h1>
-    <p>This is the content of the second section</p>
-  </section>
-</main>
-```
-
-The `section` element is for breaking up your web page into distinct sections. Note that I've got `h1` tags in each of the sections as headers. In html5 anytime you create a new `section` you're allowed to start a new heirarchy of header tags.
-
-Where `section` elements are for specifying blocks of content on your page in a semantic way, 'div' elements are used primarily for the positioning and alignment of your content. For example, you might want to use a `div` to act as a container that restricts the width of your content:
-
-```
-<section id="part-one">
-  <div class="container">
-    <h1>Section one</h1>
-    <p>This is the content of the first section</p>
-  </div>
-</section>
-```
-
-With css like below you can have the `section` tag the full width of the page while the container stays centered at 800 pixels.
-
-```
-.container {
-  width: 800px;
-  margin: 0px auto 0px auto;
-}
-```
-
-The `div` is centered by using `auto` for the left and right margins (the order goes top, right, bottom, left).
-
-### More resources
-This gives you an intro to some of the html and css concepts we'll use most often in the book. 
-
-#### To learn html and css in more depth, check out these resources:
-**[Don't Fear The Internet](http://www.dontfeartheinternet.com/)**  
-This is a wonderful introduction to html and css. Watch, enjoy, and follow along.
-
-**[Web fundamentals track at codecademy.com](http://www.codecademy.com/tracks/web)**  
-After you've had your fears eased by Don't Fear The Internet, check out the codecademy.com web fundamentals course. It'll get you some nitty gritty experience with the basics.
-
-**[Mozilla Documentation](https://developer.mozilla.org/en-US/)**  
-Have a question about some css property or html element? The Mozilla Developer Network has awesome documentation. If you're searching on google.com for anything css/html/js related, add the abbreviation "mdn" to your search query to see results from Mozilla Documentation. This site also has a bunch of introductory tutorials that are really useful.
-
-**[WebPlatform.org](http://www.webplatform.org/)**  
-This is a newer resource, but a good one. It's got a great design and well-organized resources.
-
-
-
 # Introduction to git & GitHub
 
 Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
@@ -453,157 +150,205 @@ Visit the [help section for GitHub Pages](https://help.github.com/categories/20/
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
-# Introduction to node.
+# Introduction to callbacks.
 
-Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+A callback is a function that you pass as an argument to another function.
+Typically, you'll use a callback as a way to work with data after it's been processed by a function.
 
-## In this book, we'll use node in these ways:
-- Install command line tools available through node's package manager, `npm`.
-- Create basic web servers to serve static content to our web browser.
-- Experiment with real-time, multi-user applications.
+A simple callback looks like this:
 
-## To learn node in detail, read these resources in this order:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [streams handbook](https://github.com/substack/stream-handbook)
+```
+function holla(callback){
+  callback();
+}
+```
 
-## Install node:
+Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
 
-There are a few options for this, and I've put them in my order of preference:
+Usage if the `holla` function:
 
-### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+```
+holla(function(){
+  console.log('this is part of the callback function);
+});
+```
 
-### Install using a package manager. 
-This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
 
-### Download an installer from nodejs.org.
-[Here's the node.js download page][nodejs.org/download].
+```
+function holla(callback){
+  callback();
+}
 
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+function back(){
+  console.log('this is part of the callback function);
+}
+
+holla(back);
+```
+
+But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
+
+```
+// create an eat function
+function eat(food, callback){
+  var food = food + " was eaten";
+  callback(food);
+}
+
+// create a poop function to use as the callback
+function poop(output){
+  console.log(output);
+}
+
+// call the eat function, passing a food and the poop function as arguments
+eat("pizza", poop);
+```
+
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+
+
+# Introduction to canvas
+> Creating basic keyboard and mouse interaction with the html5 canvas tag.
+
+Here's the full code (with comments) for our simple canvas / input example:
+
+```
+// Here we select the canvas with an id of game 
+// this is where we will draw our game assets
+var canvas = document.querySelector('#game');
+
+// What kind of drawing will we do?
+// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
+var context = canvas.getContext('2d');
+
+function startGame(){ 
+  // set the width and height of our drawing canvas
+  canvas.height = 400;
+  canvas.width = 800;
+
+  // start the game loop
+  loop();
+}
+
+// any thing inside the loop() function gets run on every loop
+function loop(){
+  // this function runs the loop at a consistent rate, 
+  // and only runs the loop when the browser tab is in focus
+  requestAnimationFrame( loop, canvas );
+
+  // update the game
+  update();
+
+  // draw new stuff after they've been updated
+  draw();
+}
+
+// make a box object
+// give it a starting x, y location, a width, height, speed, and color
+var box = {
+  x: 50,
+  y: 50,
+  width: 10,
+  height: 10,
+  speed: 10,
+  color: '#4f5654'
+};
+
+// this function manages all the user input for the box object
+box.input = function(){
+  
+  // check if any of the arrow keys are in the keysDown object
+  if (40 in keysDown) {
+    box.y += box.speed;
+  }
+  if (38 in keysDown) {
+    box.y -= box.speed;
+  }
+  if (37 in keysDown) {
+    box.x -= box.speed;
+  }
+  if (39 in keysDown) {
+    box.x += box.speed;
+  }
+  
+  // check if box hits left edge
+  if (box.x <= 0) {
+    box.x = 0;
+  }
+
+  // check if box hits right edge
+  if (box.x >= canvas.width - box.width) {
+    box.x = canvas.width - box.width;
+  }
+
+  // check if box hits top edge
+  if (box.y <= 0) {
+    box.y = 0;
+  }
+
+  // check if box hits bottom edge
+  if (box.y >= canvas.height - box.height) {
+    box.y = canvas.height - box.height;
+  }
+
+}
+
+// draw the box
+box.draw = function() {
+  // set the color of the box
+  context.fillStyle = box.color;
+
+  // actually draw the box to the canvas
+  context.fillRect(box.x, box.y, box.width, box.height);
+};
+
+// update the game
+function update(){
+  // check for any input relevant to the box
+  // every time the game is updated
+  box.input();
+}
+
+// draw on the canvas
+function draw(){
+  // this clears the canvas so that when the box is drawn each time
+  // it looks like it moves, rather than drawing a line that follows the path
+  // of the box. comment out the context.clearRect line to see what i mean.
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  box.draw();
+}
+
+// this object contains any keyboard keys that are currently pressed down
+var keysDown = {};
+
+// here we add an event listener that watches for when the user presses any keys
+window.addEventListener("keydown", function(e) {
+  // e stands for event
+
+  // add the key being pressed to the keysDown object
+  keysDown[e.keyCode] = true;
+
+  // if the user is pressing any of the arrow keys, disable the default
+  // behavior so the page doesn't move up and down
+  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
+    e.preventDefault();
+  }
+}, false);
+
+// this event listener watches for when keys are released
+window.addEventListener("keyup", function(e) {
+  // and removes the key from the keysdown object
+  delete keysDown[e.keyCode];
+}, false);
+
+// start the game
+startGame();
+```
+
+That's it, and you made stuff move around the screen!
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Introduction to npm
-
-You use `npm` to install javascript modules. It is most often used for installing node.js modules, but it is not limited to server side code.
-
-You might expect `npm` to stand for Node Package Manager. But that's misleading – it reinforces the idea that `npm` is just for node.js projects.
-
-Instead, we can follow the guidance of javascript developer Max Ogden and let is stand for Node Packaged Modules.
-
-Read more about this idea on his blog post: [maxogden.com/node-packaged-modules.html](http://maxogden.com/node-packaged-modules.html), where he presents three projects based on the tool `browserify`. We'll make heavy use of browserify in the book.
-
-## Getting started with `npm`
-If you've alreadt installed node.js, you've got npm.
-
-Check the version of `npm` like this:
-
-```
-npm -v
-```
-
-This should return something like:
-
-```
-1.2.32
-```
-
-The exact version numbers might differ, and that's ok.
-
-Installing a module will automatically place the module in a folder named `node_modules` in your current working directory.
-
-Make a new folder:
-
-```
-mkdir npm-experiments
-cd npm-experiments
-```
-
-Install browserify:
-
-```
-npm install browserify
-```
-
-Now, if you look in the node_modules directory, you'll see browserify!
-
-You can also install modules globally, typically so that you can run their commands at any time in any directory. This is useful with a module like browserify, so let's try it out:
-
-```
-npm install -g browserify
-```
-
-It's the `-g` option that install the module globally.
-
-You can delete the node_modules directory:
-
-```
-rm -rf node_modules
-```
-
-And run the browserify command:
-
-```
-browserify
-```
-
-Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
-
-To learn more about `npm` run the command without any options:
-
-```
-npm
-```
-
-This gives you a full list of the commands and options available through `npm`. To learn about any particular command you can run:
-
-```
-npm help name-of-command
-```
-
-## Creating a module
-Any time you're using javascript modules from `npm` in a project you should create a package.json file. In this file you can save the dependencies for your project, along with license, author, repo inforamtion, and other details.
-
-You can use the `npm init` command to generate a package.json file:
-
-```
-npm init
-```
-
-Answer the questions.
-
-When you're done, you'll have a package.json file. You can install modules and save them as dependencies of your project like this:
-
-```
-npm install request --save
-```
-
-And if you are installing a module (like a test framework) as a development dependency, you can do so like this:
-
-```
-npm install tap --save-dev
-```
-
-## Publishing modules
-Once you've written a module, you can publish it to `npm` super easy:
-
-```
-npm publish .
-```
-
-Before running the `npm publish` command you'll want to edit your package.json file to make sure that properties like version, author, homepage, and repository are all filled in. You should also first create a useful readme.md file, as that is displayed on a modules project page on [npmjs.org](http://npmjs.org).
-
-## Finding modules
-You can check out [npmjs.org](http://npmjs.org) as well as [npmsearch.com](http://npmsearch.com) to find modules that you can use in your projects.
-
-You can also run the `search` command in the terminal:
-
-```
-npm search template
-```
-
-This will return a bunch of modules related to templates!
 
 
 # Introduction to browserify.
@@ -922,291 +667,30 @@ If this seems like a lot, like it's beating up your brain, don't worry. After a 
 
 
 
-# Introduction to functions.
+# THE BASICS
 
-## Eating, digesting, and pooping.
+## In this section, we'll get started learning:
 
-A function is a block of code that takes input, processes that input, and then produces output.
+### Chrome's Developer Tools
+All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
 
-You can think of it like eating, digesting, and pooping.
+### Basic html and css
+For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
 
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+### Javascript syntax, variables, data types, functions, and style guidelines
+Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
 
-## Let's make a function named `eat`.
+### Node.js and npm
+Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
 
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
 
-  // send output / poop
-  return poop;
-}
-```
+### Git and GitHub
+Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
 
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-
-
-
-# Introduction to callbacks.
-
-A callback is a function that you pass as an argument to another function.
-Typically, you'll use a callback as a way to work with data after it's been processed by a function.
-
-A simple callback looks like this:
-
-```
-function holla(callback){
-  callback();
-}
-```
-
-Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
-
-Usage if the `holla` function:
-
-```
-holla(function(){
-  console.log('this is part of the callback function);
-});
-```
-
-Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
-
-```
-function holla(callback){
-  callback();
-}
-
-function back(){
-  console.log('this is part of the callback function);
-}
-
-holla(back);
-```
-
-But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
-
-```
-// create an eat function
-function eat(food, callback){
-  var food = food + " was eaten";
-  callback(food);
-}
-
-// create a poop function to use as the callback
-function poop(output){
-  console.log(output);
-}
-
-// call the eat function, passing a food and the poop function as arguments
-eat("pizza", poop);
-```
-
-Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
-
-
-# Introduction to canvas
-> Creating basic keyboard and mouse interaction with the html5 canvas tag.
-
-Here's the full code (with comments) for our simple canvas / input example:
-
-```
-// Here we select the canvas with an id of game 
-// this is where we will draw our game assets
-var canvas = document.querySelector('#game');
-
-// What kind of drawing will we do?
-// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
-var context = canvas.getContext('2d');
-
-function startGame(){ 
-  // set the width and height of our drawing canvas
-  canvas.height = 400;
-  canvas.width = 800;
-
-  // start the game loop
-  loop();
-}
-
-// any thing inside the loop() function gets run on every loop
-function loop(){
-  // this function runs the loop at a consistent rate, 
-  // and only runs the loop when the browser tab is in focus
-  requestAnimationFrame( loop, canvas );
-
-  // update the game
-  update();
-
-  // draw new stuff after they've been updated
-  draw();
-}
-
-// make a box object
-// give it a starting x, y location, a width, height, speed, and color
-var box = {
-  x: 50,
-  y: 50,
-  width: 10,
-  height: 10,
-  speed: 10,
-  color: '#4f5654'
-};
-
-// this function manages all the user input for the box object
-box.input = function(){
-  
-  // check if any of the arrow keys are in the keysDown object
-  if (40 in keysDown) {
-    box.y += box.speed;
-  }
-  if (38 in keysDown) {
-    box.y -= box.speed;
-  }
-  if (37 in keysDown) {
-    box.x -= box.speed;
-  }
-  if (39 in keysDown) {
-    box.x += box.speed;
-  }
-  
-  // check if box hits left edge
-  if (box.x <= 0) {
-    box.x = 0;
-  }
-
-  // check if box hits right edge
-  if (box.x >= canvas.width - box.width) {
-    box.x = canvas.width - box.width;
-  }
-
-  // check if box hits top edge
-  if (box.y <= 0) {
-    box.y = 0;
-  }
-
-  // check if box hits bottom edge
-  if (box.y >= canvas.height - box.height) {
-    box.y = canvas.height - box.height;
-  }
-
-}
-
-// draw the box
-box.draw = function() {
-  // set the color of the box
-  context.fillStyle = box.color;
-
-  // actually draw the box to the canvas
-  context.fillRect(box.x, box.y, box.width, box.height);
-};
-
-// update the game
-function update(){
-  // check for any input relevant to the box
-  // every time the game is updated
-  box.input();
-}
-
-// draw on the canvas
-function draw(){
-  // this clears the canvas so that when the box is drawn each time
-  // it looks like it moves, rather than drawing a line that follows the path
-  // of the box. comment out the context.clearRect line to see what i mean.
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  box.draw();
-}
-
-// this object contains any keyboard keys that are currently pressed down
-var keysDown = {};
-
-// here we add an event listener that watches for when the user presses any keys
-window.addEventListener("keydown", function(e) {
-  // e stands for event
-
-  // add the key being pressed to the keysDown object
-  keysDown[e.keyCode] = true;
-
-  // if the user is pressing any of the arrow keys, disable the default
-  // behavior so the page doesn't move up and down
-  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
-    e.preventDefault();
-  }
-}, false);
-
-// this event listener watches for when keys are released
-window.addEventListener("keyup", function(e) {
-  // and removes the key from the keysdown object
-  delete keysDown[e.keyCode];
-}, false);
-
-// start the game
-startGame();
-```
-
-That's it, and you made stuff move around the screen!
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+### Testing javascript
+Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
 # CHAPTER 0
@@ -1624,6 +1108,442 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!
 
 
+# HTML & CSS: an introduction
+
+If you're new to building projects for the web, knowing javascript alone won't be enough.
+
+This book focuses on javascript, but you'll certainly pick up some html and css along the way.
+
+You might find it useful to learn about html and css before reading Learn.js, or to have a resource handy that you can refer to when introduced to new html elements or css properties.
+
+## But here's a quick refresher to get you started:
+
+An example of an html element:
+
+```
+<h1>This is a headline</h1>
+```
+
+That's an `h1` element. It is used for the most prominent headline of a document – often the site title or article title. Note that this element has an opening tag, `<h1>, and a closing tag, `</h1`>, which looks the same except it has a forward slash, `/`.
+
+This is a common pattern for html elements. There are a few html elements that don't require closing tags. Like these:
+
+```
+<br>
+```
+
+The `br` element creates a line break in text.
+
+```
+<hr>
+```
+
+The `hr` element creates a horizontal rule, a straight line, across your web site. Usually used as a break between sections.
+
+```
+<img src="image.jpg" alt="this is the alt text of an image" />
+```
+
+The `img` element is a little unique. Note that it has a `src` attribute that specifies the image we want to have show up, and an `alt` attribute that provides text that will be displayed for screen readers, or that might be used as a caption. The `img` element is also a self-closing tag, meaning it has a forward-slash before the closing angle bracket.
+
+
+## HTML attributes and CSS selectors.
+We just saw the `src` and `alt` attributes on the `img` element. There are many attributes that can be used on any given html element. Some attributes control behavior of the element, some are used as selectors for css rules.
+
+**Here are the two attributes most used as selectors in css rules:**
+
+### `id`
+
+Using the `id` attribute of an html tag looks like this:
+
+```
+<p id="introduction">This is the first paragraph of a story.</p>
+```
+
+Here we're marking a paragraph (a `p` element) as being the introduction. The `id` of `introduction` should only be used on one html element, making this one `p` element special.
+
+We do this so that later, in the css, we can give the `introduction` different styling than the rest of the `p` elements on the page.
+
+Here's some css that makes the `introduction` italic:
+
+```
+p#introduction {
+  font-style: italic;
+}
+```
+
+We don't have to include the `p` in `p#introduction`, but it's useful for clarity. Note the hash mark: `#`. `id` attributes are identified in css by using a `#`.
+
+### `class`
+Now, let's say that we want some of the paragraphs in our story to have a different background color to highlight them. One way of accomplishing this would be to add a `class` to these paragraphs.
+
+The use of `class` attributes looks like this:
+
+```
+<p class="highlight">This paragraph will be bold and slightly bigger.</p>
+```
+
+We've given this `p` element a class of `highlight`, so let's add some css that gives this paragraph a yellow background.
+
+```
+p.highlight {
+  background-color: yellow;
+}
+```
+
+One of the differences between `id` and `class` attributes, is that a `class` can be given to multiple elements on a page, whereas an `id` should be unique to one element. So we can give this class to multiple paragraphs to make them highlighted.
+
+
+### Where does the css go?
+There are two options: include separate css files, or place css directly in your html file. In almost all situations, including a separate css file for your styles will be a faster and more organized option.
+
+Here's what it looks like to embed css in your html file.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Your website</title>
+
+  <style>
+
+    p.highlight {
+      background-color: yellow;
+    }
+
+  </style>
+
+</head>
+<body>
+
+</body>
+</html>
+```
+
+You'll add your css between the opening and closing `style` tags, which should in turn go between the opening and closing tags of the `head` element.
+
+But the cleaner option is to create a separate css file that you reference from your html file:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Your website</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+</body>
+</html>
+```
+
+This tells the browser to load the css from the `styles.css` file. Having a separate file for your styles helps with keeping your site easy to maintain. Having everything in one big html file can be a pain to work on.
+
+### So where will the javascript be in an html file?
+
+Just as with css, there are a couple options for where you place your javascript code.
+
+You can embed it in your html file between opening and closing `script` tags:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Your website</title>
+
+</head>
+<body>
+
+
+<script>
+console.log('this is javascript');
+</script>
+
+</body>
+</html>
+```
+
+Or you can use a `script` tag to reference an external javascript file:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Your website</title>
+
+</head>
+<body>
+
+
+<script src="site.js"></script>
+
+</body>
+</html>
+```
+
+Note that the `script` element needs a closing tag even though there's nothing between the opening tag and closing tag.
+
+Just like with css, it's better to keep your javascript in a separate files. By separating the types of code in your project you make it easier for yourself and for others to figure out how to make changes. The more organized your project is, the quicker you can revise its design and functionality.
+
+### Layout with html and css
+There are a few common tags used for laying out an html document. Check out this example:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Your website</title>
+
+</head>
+<body>
+
+<header>
+    <h1>Your website</h1>
+</header>
+
+<main>
+  <p>This is the content of your website</p>
+</main>
+
+<footer>
+  <p>Contact: your info.</p>
+</footer>
+
+</body>
+</html>
+```
+
+We're using the `header` element for the header of the page, the `main` element for the content of the page, and the `footer` element for supplementary information that goes in the footer. All three of these tags are relatively new as part of html5. Another new tag is 'section'. You might use it to break up your main content into parts:
+
+```
+<main>
+  <section id="part-one">
+    <h1>Section one</h1>
+    <p>This is the content of the first section</p>
+  </section>
+
+  <section id="part-two">
+    <h1>Section two</h1>
+    <p>This is the content of the second section</p>
+  </section>
+</main>
+```
+
+The `section` element is for breaking up your web page into distinct sections. Note that I've got `h1` tags in each of the sections as headers. In html5 anytime you create a new `section` you're allowed to start a new heirarchy of header tags.
+
+Where `section` elements are for specifying blocks of content on your page in a semantic way, 'div' elements are used primarily for the positioning and alignment of your content. For example, you might want to use a `div` to act as a container that restricts the width of your content:
+
+```
+<section id="part-one">
+  <div class="container">
+    <h1>Section one</h1>
+    <p>This is the content of the first section</p>
+  </div>
+</section>
+```
+
+With css like below you can have the `section` tag the full width of the page while the container stays centered at 800 pixels.
+
+```
+.container {
+  width: 800px;
+  margin: 0px auto 0px auto;
+}
+```
+
+The `div` is centered by using `auto` for the left and right margins (the order goes top, right, bottom, left).
+
+### More resources
+This gives you an intro to some of the html and css concepts we'll use most often in the book. 
+
+#### To learn html and css in more depth, check out these resources:
+**[Don't Fear The Internet](http://www.dontfeartheinternet.com/)**  
+This is a wonderful introduction to html and css. Watch, enjoy, and follow along.
+
+**[Web fundamentals track at codecademy.com](http://www.codecademy.com/tracks/web)**  
+After you've had your fears eased by Don't Fear The Internet, check out the codecademy.com web fundamentals course. It'll get you some nitty gritty experience with the basics.
+
+**[Mozilla Documentation](https://developer.mozilla.org/en-US/)**  
+Have a question about some css property or html element? The Mozilla Developer Network has awesome documentation. If you're searching on google.com for anything css/html/js related, add the abbreviation "mdn" to your search query to see results from Mozilla Documentation. This site also has a bunch of introductory tutorials that are really useful.
+
+**[WebPlatform.org](http://www.webplatform.org/)**  
+This is a newer resource, but a good one. It's got a great design and well-organized resources.
+
+
+
+# Introduction to node.
+
+Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+
+## In this book, we'll use node in these ways:
+- Install command line tools available through node's package manager, `npm`.
+- Create basic web servers to serve static content to our web browser.
+- Experiment with real-time, multi-user applications.
+
+## To learn node in detail, read these resources in this order:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [streams handbook](https://github.com/substack/stream-handbook)
+
+## Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+### Use nvm to manage node versions.
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+### Install using a package manager. 
+This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+### Download an installer from nodejs.org.
+[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Appendix
+
+
+## Javascript style guide & syntax cheatsheet
+
+
+### Variables
+
+#### Creating a variable:
+
+```
+var nameOfVariable;
+```
+
+> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
+
+#### Creating a variable that references a string:
+
+```
+var thisIsAString = 'this is a string';
+```
+
+Surround strings with single quotes.
+
+
+#### Creating a variable that references a number:
+
+```
+var thisIsANumber = 3.14;
+```
+
+Numbers do not have quotes around them.
+
+#### Creating a variable that references an array:
+
+```
+var thisIsAnArray = [1, "two", [3, 4]];
+```
+
+Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+
+#### Accessing the values in an array:
+
+```
+thisIsAnArray[0];
+```
+
+The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+
+```
+thisIsAnArray[1];
+```
+
+This returns the string 'two';
+
+##### How would you return the number `4` from the nested array?
+
+Like this:
+
+```
+thisIsAnArray[2][1];
+```
+
+#### Creating a variable that references an object:
+
+var thisIsAnObject = {
+  someString: 'some string value',
+  someNumber: 1234,
+  someFunction: function(){
+    return 'a function that belongs to an object';
+  }
+}
+
+Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+
+To get the value of `someString` using dot notation:
+
+```
+thisIsAnObject.someString;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someString'];
+```
+
+To get the value of `someNumber` using dot notation:
+
+```
+thisIsAnObject.someNumber;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someNumber'];
+```
+
+To use the function `someFunction` using dot notation:
+
+```
+thisIsAnObject.someFunction();
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someFunction']();
+```
+
+Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
+
+For instance, it's more clear to use bracket notation in a situation like this:
+
+```
+for (var key in object){
+  thisIsAnObject[key];
+}
+```
+
+This gives you an idea of how to iterate through an object using a for...in loop.
+
+
+# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
+
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+
+
 # Chapter 1
 
 ## Make a simple game
@@ -1893,131 +1813,6 @@ This is the beginning of node-rogue.
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
-# Appendix
-
-
-## Javascript style guide & syntax cheatsheet
-
-
-### Variables
-
-#### Creating a variable:
-
-```
-var nameOfVariable;
-```
-
-> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
-
-#### Creating a variable that references a string:
-
-```
-var thisIsAString = 'this is a string';
-```
-
-Surround strings with single quotes.
-
-
-#### Creating a variable that references a number:
-
-```
-var thisIsANumber = 3.14;
-```
-
-Numbers do not have quotes around them.
-
-#### Creating a variable that references an array:
-
-```
-var thisIsAnArray = [1, "two", [3, 4]];
-```
-
-Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
-
-#### Accessing the values in an array:
-
-```
-thisIsAnArray[0];
-```
-
-The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
-
-```
-thisIsAnArray[1];
-```
-
-This returns the string 'two';
-
-##### How would you return the number `4` from the nested array?
-
-Like this:
-
-```
-thisIsAnArray[2][1];
-```
-
-#### Creating a variable that references an object:
-
-var thisIsAnObject = {
-  someString: 'some string value',
-  someNumber: 1234,
-  someFunction: function(){
-    return 'a function that belongs to an object';
-  }
-}
-
-Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
-
-To get the value of `someString` using dot notation:
-
-```
-thisIsAnObject.someString;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someString'];
-```
-
-To get the value of `someNumber` using dot notation:
-
-```
-thisIsAnObject.someNumber;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someNumber'];
-```
-
-To use the function `someFunction` using dot notation:
-
-```
-thisIsAnObject.someFunction();
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someFunction']();
-```
-
-Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
-That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
-
-For instance, it's more clear to use bracket notation in a situation like this:
-
-```
-for (var key in object){
-  thisIsAnObject[key];
-}
-```
-
-This gives you an idea of how to iterate through an object using a for...in loop.
-
-
 ## Additional resources
 
 ### javascript books:
@@ -2075,11 +1870,208 @@ This gives you an idea of how to iterate through an object using a for...in loop
 - appendix with initial style guide and additional resources
 
 
-# Contributors
-These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
+# Introduction to npm
 
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+You use `npm` to install javascript modules. It is most often used for installing node.js modules, but it is not limited to server side code.
+
+You might expect `npm` to stand for Node Package Manager. But that's misleading – it reinforces the idea that `npm` is just for node.js projects.
+
+Instead, we can follow the guidance of javascript developer Max Ogden and let is stand for Node Packaged Modules.
+
+Read more about this idea on his blog post: [maxogden.com/node-packaged-modules.html](http://maxogden.com/node-packaged-modules.html), where he presents three projects based on the tool `browserify`. We'll make heavy use of browserify in the book.
+
+## Getting started with `npm`
+If you've alreadt installed node.js, you've got npm.
+
+Check the version of `npm` like this:
+
+```
+npm -v
+```
+
+This should return something like:
+
+```
+1.2.32
+```
+
+The exact version numbers might differ, and that's ok.
+
+Installing a module will automatically place the module in a folder named `node_modules` in your current working directory.
+
+Make a new folder:
+
+```
+mkdir npm-experiments
+cd npm-experiments
+```
+
+Install browserify:
+
+```
+npm install browserify
+```
+
+Now, if you look in the node_modules directory, you'll see browserify!
+
+You can also install modules globally, typically so that you can run their commands at any time in any directory. This is useful with a module like browserify, so let's try it out:
+
+```
+npm install -g browserify
+```
+
+It's the `-g` option that install the module globally.
+
+You can delete the node_modules directory:
+
+```
+rm -rf node_modules
+```
+
+And run the browserify command:
+
+```
+browserify
+```
+
+Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
+
+To learn more about `npm` run the command without any options:
+
+```
+npm
+```
+
+This gives you a full list of the commands and options available through `npm`. To learn about any particular command you can run:
+
+```
+npm help name-of-command
+```
+
+## Creating a module
+Any time you're using javascript modules from `npm` in a project you should create a package.json file. In this file you can save the dependencies for your project, along with license, author, repo inforamtion, and other details.
+
+You can use the `npm init` command to generate a package.json file:
+
+```
+npm init
+```
+
+Answer the questions.
+
+When you're done, you'll have a package.json file. You can install modules and save them as dependencies of your project like this:
+
+```
+npm install request --save
+```
+
+And if you are installing a module (like a test framework) as a development dependency, you can do so like this:
+
+```
+npm install tap --save-dev
+```
+
+## Publishing modules
+Once you've written a module, you can publish it to `npm` super easy:
+
+```
+npm publish .
+```
+
+Before running the `npm publish` command you'll want to edit your package.json file to make sure that properties like version, author, homepage, and repository are all filled in. You should also first create a useful readme.md file, as that is displayed on a modules project page on [npmjs.org](http://npmjs.org).
+
+## Finding modules
+You can check out [npmjs.org](http://npmjs.org) as well as [npmsearch.com](http://npmsearch.com) to find modules that you can use in your projects.
+
+You can also run the `search` command in the terminal:
+
+```
+npm search template
+```
+
+This will return a bunch of modules related to templates!
+
+
+# Introduction to functions.
+
+## Eating, digesting, and pooping.
+
+A function is a block of code that takes input, processes that input, and then produces output.
+
+You can think of it like eating, digesting, and pooping.
+
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+
+## Let's make a function named `eat`.
+
+```
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
+```
+
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
+
+```
+eat('pizza');
+```
+
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
+
+```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
+
+  while (digesting) {
+
+    randomFoodPart = Math.floor(Math.random() * digesting--);
+
+    digested = food[digesting];
+
+    food[digesting] = food[randomFoodPart];
+
+    food[randomFoodPart] = digested;
+  }
+
+  var poop = food.join('');
+
+  return poop;
+}
+```
+
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
