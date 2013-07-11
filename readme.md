@@ -408,6 +408,131 @@ This is a newer resource, but a good one. It's got a great design and well-organ
 
 
 
+# getting started with node.
+
+Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+
+## In this book, we'll use node in these ways:
+- Install command line tools available through node's package manager, `npm`.
+- Create basic web servers to serve static content to our web browser.
+- Experiment with real-time, multi-user applications.
+
+## To learn node in detail, read these resources in this order:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [streams handbook](https://github.com/substack/stream-handbook)
+
+## Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+### Use nvm to manage node versions.
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+### Install using a package manager. 
+This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+### Download an installer from nodejs.org.
+[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Introduction to git & GitHub
+
+Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
+
+**Use git.**
+
+Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
+
+There are many other bonuses to using git, which are mostly out of this book's scope.
+
+The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
+
+## Get on GitHub
+If you haven't already, create an account at [github.com](http://github.com).
+
+GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
+
+In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
+
+GitHub has become the de facto code hosting service for most open source communities.
+
+## Create a site for yourself using GitHub
+
+GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
+
+### With GitHub Pages you can:
+- design a website any way you want by having complete control over the html, css, and javascript.
+- use simple templates for getting started using GitHub Pages.
+- create sites for yourself and all of your projects hosted on GitHub.
+- use a custom domain name if you want!
+
+Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Learning callbacks.
+
+A callback is a function that you pass as an argument to another function.
+Typically, you'll use a callback as a way to work with data after it's been processed by a function.
+
+A simple callback looks like this:
+
+```
+function holla(callback){
+  callback();
+}
+```
+
+Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
+
+Usage if the `holla` function:
+
+```
+holla(function(){
+  console.log('this is part of the callback function);
+});
+```
+
+Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
+
+```
+function holla(callback){
+  callback();
+}
+
+function back(){
+  console.log('this is part of the callback function);
+}
+
+holla(back);
+```
+
+But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
+
+```
+// create an eat function
+function eat(food, callback){
+  var food = food + " was eaten";
+  callback(food);
+}
+
+// create a poop function to use as the callback
+function poop(output){
+  console.log(output);
+}
+
+// call the eat function, passing a food and the poop function as arguments
+eat("pizza", poop);
+```
+
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+
+
 # Introduction to browserify.
 
 There's all this wonderful code on `npm`, the node.js package manager.
@@ -501,451 +626,90 @@ This will by default serve your index.html file at http://localhost:9966. Open C
 You'll see `pizza is extremely yummy` in the javascript console!
 
 
-# getting started with node.
+# Introduction to functions.
 
-Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+## Eating, digesting, and pooping.
 
-## In this book, we'll use node in these ways:
-- Install command line tools available through node's package manager, `npm`.
-- Create basic web servers to serve static content to our web browser.
-- Experiment with real-time, multi-user applications.
+A function is a block of code that takes input, processes that input, and then produces output.
 
-## To learn node in detail, read these resources in this order:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [streams handbook](https://github.com/substack/stream-handbook)
+You can think of it like eating, digesting, and pooping.
 
-## Install node:
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
 
-There are a few options for this, and I've put them in my order of preference:
-
-### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
-
-### Install using a package manager. 
-This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
-
-### Download an installer from nodejs.org.
-[Here's the node.js download page][nodejs.org/download].
-
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Learning callbacks.
-
-A callback is a function that you pass as an argument to another function.
-Typically, you'll use a callback as a way to work with data after it's been processed by a function.
-
-A simple callback looks like this:
+## Let's make a function named `eat`.
 
 ```
-function holla(callback){
-  callback();
-}
-```
-
-Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
-
-Usage if the `holla` function:
-
-```
-holla(function(){
-  console.log('this is part of the callback function);
-});
-```
-
-Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
-
-```
-function holla(callback){
-  callback();
-}
-
-function back(){
-  console.log('this is part of the callback function);
-}
-
-holla(back);
-```
-
-But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
-
-```
-// create an eat function
-function eat(food, callback){
-  var food = food + " was eaten";
-  callback(food);
-}
-
-// create a poop function to use as the callback
-function poop(output){
-  console.log(output);
-}
-
-// call the eat function, passing a food and the poop function as arguments
-eat("pizza", poop);
-```
-
-
-# Introduction to canvas
-> Creating basic keyboard and mouse interaction with the html5 canvas tag.
-
-Here's the full code (with comments) for our simple canvas / input example:
-
-```
-// Here we select the canvas with an id of game 
-// this is where we will draw our game assets
-var canvas = document.querySelector('#game');
-
-// What kind of drawing will we do?
-// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
-var context = canvas.getContext('2d');
-
-function startGame(){ 
-  // set the width and height of our drawing canvas
-  canvas.height = 400;
-  canvas.width = 800;
-
-  // start the game loop
-  loop();
-}
-
-// any thing inside the loop() function gets run on every loop
-function loop(){
-  // this function runs the loop at a consistent rate, 
-  // and only runs the loop when the browser tab is in focus
-  requestAnimationFrame( loop, canvas );
-
-  // update the game
-  update();
-
-  // draw new stuff after they've been updated
-  draw();
-}
-
-// make a box object
-// give it a starting x, y location, a width, height, speed, and color
-var box = {
-  x: 50,
-  y: 50,
-  width: 10,
-  height: 10,
-  speed: 10,
-  color: '#4f5654'
-};
-
-// this function manages all the user input for the box object
-box.input = function(){
+// take input / eat food
+function eat(food){
   
-  // check if any of the arrow keys are in the keysDown object
-  if (40 in keysDown) {
-    box.y += box.speed;
-  }
-  if (38 in keysDown) {
-    box.y -= box.speed;
-  }
-  if (37 in keysDown) {
-    box.x -= box.speed;
-  }
-  if (39 in keysDown) {
-    box.x += box.speed;
-  }
-  
-  // check if box hits left edge
-  if (box.x <= 0) {
-    box.x = 0;
-  }
+  // process the input / digest the food
+  var poop = digest(food);
 
-  // check if box hits right edge
-  if (box.x >= canvas.width - box.width) {
-    box.x = canvas.width - box.width;
-  }
-
-  // check if box hits top edge
-  if (box.y <= 0) {
-    box.y = 0;
-  }
-
-  // check if box hits bottom edge
-  if (box.y >= canvas.height - box.height) {
-    box.y = canvas.height - box.height;
-  }
-
-}
-
-// draw the box
-box.draw = function() {
-  // set the color of the box
-  context.fillStyle = box.color;
-
-  // actually draw the box to the canvas
-  context.fillRect(box.x, box.y, box.width, box.height);
-};
-
-// update the game
-function update(){
-  // check for any input relevant to the box
-  // every time the game is updated
-  box.input();
-}
-
-// draw on the canvas
-function draw(){
-  // this clears the canvas so that when the box is drawn each time
-  // it looks like it moves, rather than drawing a line that follows the path
-  // of the box. comment out the context.clearRect line to see what i mean.
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  box.draw();
-}
-
-// this object contains any keyboard keys that are currently pressed down
-var keysDown = {};
-
-// here we add an event listener that watches for when the user presses any keys
-window.addEventListener("keydown", function(e) {
-  // e stands for event
-
-  // add the key being pressed to the keysDown object
-  keysDown[e.keyCode] = true;
-
-  // if the user is pressing any of the arrow keys, disable the default
-  // behavior so the page doesn't move up and down
-  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
-    e.preventDefault();
-  }
-}, false);
-
-// this event listener watches for when keys are released
-window.addEventListener("keyup", function(e) {
-  // and removes the key from the keysdown object
-  delete keysDown[e.keyCode];
-}, false);
-
-// start the game
-startGame();
-```
-
-That's it, and you made stuff move around the screen!
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Introduction to git & GitHub
-
-Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
-
-**Use git.**
-
-Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
-
-There are many other bonuses to using git, which are mostly out of this book's scope.
-
-The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
-
-## Get on GitHub
-If you haven't already, create an account at [github.com](http://github.com).
-
-GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
-
-In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
-
-GitHub has become the de facto code hosting service for most open source communities.
-
-## Create a site for yourself using GitHub
-
-GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
-
-### With GitHub Pages you can:
-- design a website any way you want by having complete control over the html, css, and javascript.
-- use simple templates for getting started using GitHub Pages.
-- create sites for yourself and all of your projects hosted on GitHub.
-- use a custom domain name if you want!
-
-Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Chapter 1
-
-## Make a simple game
-
-Let's build a game, everybody. Let's have some fun.
-
-Our game will be built from scratch.
-
-We'll create a bunch of objects and functions. We'll put them together to make our game run, and experiment with changing the functions and the object attributes to alter the behavior of the game.
-
-It'll be a single player game. A [roguelike](http://en.wikipedia.org/wiki/Roguelike) [rpg](http://en.wikipedia.org/wiki/Role-playing_video_game) with extremely simple graphics.
-
-Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example.
-
-Our game will feature monsters, weapons, coins, potions, and a hero.
-
-That small list above gives us a good sense of what objects and functions we'll need in our code.
-
-We'll need to represent each of those things in our game code, so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
-
-### Game
-- Loop
-- Draw
-
-### Level
-- Load level data
-- Draw
-
-### Hero
-- Update
-- Draw
-- Drink Potion
-- Pick up Coin
-- Fight Monster
-
-### Monster
-- Update
-- Draw
-- Fight Hero
-
-### Weapon
-- Update
-- Draw
-
-### Coin
-- Update
-- Draw
-
-### Potions
-- Update
-- Draw
-
-Each of the above headers will be an object in our game, and each of the list items will be methods or attributes of their respective headers.
-
-## Requirements:
-You'll need these things installed on your computer:
-- node.js
-- browserify and beefy
-
-To get started, create a folder for your game. I'm calling it `node-rogue`:
-
-```
-mkdir node-rogue
-cd node-rogue
-```
-
-Run the npm init command to create a package.json file for your project:
-
-```
-npm init
-```
-
-Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
-
-```
-name: (node-rogue) 
-version: (0.0.0) 
-description: a roguelike game made with javascript
-entry point: (index.js) game.js
-test command: node test.js
-git repository: git://github.com/learn-js/node-rogue
-keywords: gamezzz
-author: seth vincent
-license: (BSD) MIT
-
-You should end up with a package.json file that looks like this:
-
-```
-{
-  "name": "node-rogue",
-  "version": "0.0.0",
-  "description": "a roguelike game made with javascript",
-  "main": "game.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/learnjs/node-rogue"
-  },
-  "keywords": [
-    "gamezzz"
-  ],
-  "author": "sethvincent",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/learnjs/node-rogue/issues"
-  }
+  // send output / poop
+  return poop;
 }
 ```
 
-Now, create the game.js and test.js files:
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
 
 ```
-touch game.js test.js
+eat('pizza');
 ```
 
-We'll also need an index.html file:
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
 
 ```
-touch index.html
-```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
 
-Open up that file and make it look like this:
+  while (digesting) {
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>node-rogue</title>
-</head>
-<body>
+    randomFoodPart = Math.floor(Math.random() * digesting--);
 
-<h1 id="title">node-rogue</h1>
+    digested = food[digesting];
 
-<canvas id="game"></canvas>
+    food[digesting] = food[randomFoodPart];
 
-<script src="./bundle.js"></script>
-</body>
-</html>
-```
+    food[randomFoodPart] = digested;
+  }
 
-Let's add a css file:
+  var poop = food.join('');
 
-```
-touch style.css
-```
-
-And give it some very basic styles:
-
-```
-html,
-body {
-  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-weight: 300;
-}
-
-h1#title {
-  margin-bottom: 50px;
-}
-
-canvas#game {
-  display: block;
-  margin: 0px auto;
+  return poop;
 }
 ```
 
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
 
 
-
-
-
-
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
 # Introduction to grunt.js
@@ -1174,92 +938,6 @@ If this seems like a lot, like it's beating up your brain, don't worry. After a 
 # Appendix
 
 
-# Introduction to functions.
-
-## Eating, digesting, and pooping.
-
-A function is a block of code that takes input, processes that input, and then produces output.
-
-You can think of it like eating, digesting, and pooping.
-
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
-
-## Let's make a function named `eat`.
-
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-
-
-
 ## Javascript style guide & syntax cheatsheet
 
 
@@ -1380,16 +1058,6 @@ for (var key in object){
 ```
 
 This gives you an idea of how to iterate through an object using a for...in loop.
-
-
-# Contributors
-These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
-
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
 
 
 # CHAPTER 0
@@ -1807,6 +1475,159 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!
 
 
+# Introduction to canvas
+> Creating basic keyboard and mouse interaction with the html5 canvas tag.
+
+Here's the full code (with comments) for our simple canvas / input example:
+
+```
+// Here we select the canvas with an id of game 
+// this is where we will draw our game assets
+var canvas = document.querySelector('#game');
+
+// What kind of drawing will we do?
+// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
+var context = canvas.getContext('2d');
+
+function startGame(){ 
+  // set the width and height of our drawing canvas
+  canvas.height = 400;
+  canvas.width = 800;
+
+  // start the game loop
+  loop();
+}
+
+// any thing inside the loop() function gets run on every loop
+function loop(){
+  // this function runs the loop at a consistent rate, 
+  // and only runs the loop when the browser tab is in focus
+  requestAnimationFrame( loop, canvas );
+
+  // update the game
+  update();
+
+  // draw new stuff after they've been updated
+  draw();
+}
+
+// make a box object
+// give it a starting x, y location, a width, height, speed, and color
+var box = {
+  x: 50,
+  y: 50,
+  width: 10,
+  height: 10,
+  speed: 10,
+  color: '#4f5654'
+};
+
+// this function manages all the user input for the box object
+box.input = function(){
+  
+  // check if any of the arrow keys are in the keysDown object
+  if (40 in keysDown) {
+    box.y += box.speed;
+  }
+  if (38 in keysDown) {
+    box.y -= box.speed;
+  }
+  if (37 in keysDown) {
+    box.x -= box.speed;
+  }
+  if (39 in keysDown) {
+    box.x += box.speed;
+  }
+  
+  // check if box hits left edge
+  if (box.x <= 0) {
+    box.x = 0;
+  }
+
+  // check if box hits right edge
+  if (box.x >= canvas.width - box.width) {
+    box.x = canvas.width - box.width;
+  }
+
+  // check if box hits top edge
+  if (box.y <= 0) {
+    box.y = 0;
+  }
+
+  // check if box hits bottom edge
+  if (box.y >= canvas.height - box.height) {
+    box.y = canvas.height - box.height;
+  }
+
+}
+
+// draw the box
+box.draw = function() {
+  // set the color of the box
+  context.fillStyle = box.color;
+
+  // actually draw the box to the canvas
+  context.fillRect(box.x, box.y, box.width, box.height);
+};
+
+// update the game
+function update(){
+  // check for any input relevant to the box
+  // every time the game is updated
+  box.input();
+}
+
+// draw on the canvas
+function draw(){
+  // this clears the canvas so that when the box is drawn each time
+  // it looks like it moves, rather than drawing a line that follows the path
+  // of the box. comment out the context.clearRect line to see what i mean.
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  box.draw();
+}
+
+// this object contains any keyboard keys that are currently pressed down
+var keysDown = {};
+
+// here we add an event listener that watches for when the user presses any keys
+window.addEventListener("keydown", function(e) {
+  // e stands for event
+
+  // add the key being pressed to the keysDown object
+  keysDown[e.keyCode] = true;
+
+  // if the user is pressing any of the arrow keys, disable the default
+  // behavior so the page doesn't move up and down
+  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
+    e.preventDefault();
+  }
+}, false);
+
+// this event listener watches for when keys are released
+window.addEventListener("keyup", function(e) {
+  // and removes the key from the keysdown object
+  delete keysDown[e.keyCode];
+}, false);
+
+// start the game
+startGame();
+```
+
+That's it, and you made stuff move around the screen!
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Contributors
+These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
+
+Carrie Ramsdell - copy editing
+Sam Sermeno - copy editing
+[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+
+
 ## Additional resources
 
 ### javascript books:
@@ -1862,3 +1683,184 @@ OK, you're ready for the first project. Continue on to the first chapter, where 
 - first release
 - intro to functions - create an add function
 - appendix with initial style guide and additional resources
+
+
+# Chapter 1
+
+## Make a simple game
+
+Let's build a game, everybody. Let's have some fun.
+
+Our game will be built from scratch.
+
+We'll create a bunch of objects and functions. We'll put them together to make our game run, and experiment with changing the functions and the object attributes to alter the behavior of the game.
+
+It'll be a single player game. A [roguelike](http://en.wikipedia.org/wiki/Roguelike) [rpg](http://en.wikipedia.org/wiki/Role-playing_video_game) with extremely simple graphics.
+
+Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example.
+
+Our game will feature monsters, weapons, coins, potions, and a hero.
+
+That small list above gives us a good sense of what objects and functions we'll need in our code.
+
+We'll need to represent each of those things in our game code, so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
+
+### Game
+- Loop
+- Draw
+
+### Level
+- Load level data
+- Draw
+
+### Hero
+- Update
+- Draw
+- Drink Potion
+- Pick up Coin
+- Fight Monster
+
+### Monster
+- Update
+- Draw
+- Fight Hero
+
+### Weapon
+- Update
+- Draw
+
+### Coin
+- Update
+- Draw
+
+### Potions
+- Update
+- Draw
+
+Each of the above headers will be an object in our game, and each of the list items will be methods or attributes of their respective headers.
+
+## Requirements:
+You'll need these things installed on your computer:
+- node.js
+- browserify and beefy
+
+To get started, create a folder for your game. I'm calling it `node-rogue`:
+
+```
+mkdir node-rogue
+cd node-rogue
+```
+
+Run the npm init command to create a package.json file for your project:
+
+```
+npm init
+```
+
+Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
+
+```
+name: (node-rogue) 
+version: (0.0.0) 
+description: a roguelike game made with javascript
+entry point: (index.js) game.js
+test command: node test.js
+git repository: git://github.com/learn-js/node-rogue
+keywords: gamezzz
+author: seth vincent
+license: (BSD) MIT
+
+You should end up with a package.json file that looks like this:
+
+```
+{
+  "name": "node-rogue",
+  "version": "0.0.0",
+  "description": "a roguelike game made with javascript",
+  "main": "game.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/learnjs/node-rogue"
+  },
+  "keywords": [
+    "gamezzz"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learnjs/node-rogue/issues"
+  }
+}
+```
+
+Now, create the game.js and test.js files:
+
+```
+touch game.js test.js
+```
+
+We'll also need an index.html file:
+
+```
+touch index.html
+```
+
+Open up that file and make it look like this:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>node-rogue</title>
+</head>
+<body>
+
+<h1 id="title">node-rogue</h1>
+
+<canvas id="game"></canvas>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+```
+
+Let's add a css file:
+
+```
+touch style.css
+```
+
+And give it some very basic styles:
+
+```
+html,
+body {
+  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+h1#title {
+  margin-bottom: 50px;
+}
+
+canvas#game {
+  display: block;
+  margin: 0px auto;
+}
+```
+
+
+
+
+
+
+
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
