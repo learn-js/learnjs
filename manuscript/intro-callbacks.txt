@@ -52,3 +52,5 @@ function poop(output){
 // call the eat function, passing a food and the poop function as arguments
 eat("pizza", poop);
 ~~~~~~~~
+
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
