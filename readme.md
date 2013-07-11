@@ -147,6 +147,42 @@ Expect to learn more about Chrome's Developer Tools throughout the book. Check o
 - Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
 
 
+# Introduction to git & GitHub
+
+Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
+
+**Use git.**
+
+Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
+
+There are many other bonuses to using git, which are mostly out of this book's scope.
+
+The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
+
+## Get on GitHub
+If you haven't already, create an account at [github.com](http://github.com).
+
+GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
+
+In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
+
+GitHub has become the de facto code hosting service for most open source communities.
+
+## Create a site for yourself using GitHub
+
+GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
+
+### With GitHub Pages you can:
+- design a website any way you want by having complete control over the html, css, and javascript.
+- use simple templates for getting started using GitHub Pages.
+- create sites for yourself and all of your projects hosted on GitHub.
+- use a custom domain name if you want!
+
+Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
 # HTML & CSS: an introduction
 
 If you're new to building projects for the web, knowing javascript alone won't be enough.
@@ -415,42 +451,6 @@ Have a question about some css property or html element? The Mozilla Developer N
 **[WebPlatform.org](http://www.webplatform.org/)**  
 This is a newer resource, but a good one. It's got a great design and well-organized resources.
 
-
-
-# Introduction to git & GitHub
-
-Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
-
-**Use git.**
-
-Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
-
-There are many other bonuses to using git, which are mostly out of this book's scope.
-
-The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
-
-## Get on GitHub
-If you haven't already, create an account at [github.com](http://github.com).
-
-GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
-
-In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
-
-GitHub has become the de facto code hosting service for most open source communities.
-
-## Create a site for yourself using GitHub
-
-GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
-
-### With GitHub Pages you can:
-- design a website any way you want by having complete control over the html, css, and javascript.
-- use simple templates for getting started using GitHub Pages.
-- create sites for yourself and all of your projects hosted on GitHub.
-- use a custom domain name if you want!
-
-Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
 # Introduction to node.
