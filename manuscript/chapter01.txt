@@ -57,6 +57,8 @@ You'll need these things installed on your computer:
 - node.js
 - browserify and beefy
 
+Make sure you're read the intro to node and intro to browserify chapters before starting this project. (TODO: link to those chapters.)
+
 To get started, create a folder for your game. I'm calling it `node-rogue`:
 
 ~~~~~~~~
@@ -169,11 +171,96 @@ canvas#game {
 }
 ~~~~~~~~
 
+To ease development, we'll use a simple game library I recently called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
 
+Install `crtrdg-gameloop` using npm:
 
+~~~~~~~~
+npm install crtrdg-gameloop --save
+~~~~~~~~
 
+The `--save` option edits the package.json file and adds the module you're installing the the dependencies list. 
 
+## Now, to start writing javascript! 
+Open the game.js file, and get started:
 
+~~~~~~~~
+// require crtrdg-gameloop
+var Game = require('crtrdg-gameloop');
+
+// create a new game
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+// this runs each time the game loops
+// it is useful for things like checking for user input
+// moving the position of characters/items
+// checking for game boundaries and collision detection
+// and other similar tasks
+// interval is the time since the last loop
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+// the draw event runs after the update event
+// it's used for actually drawing your characters / items / backgrounds to the canvas
+// context is the actual canvas context, so you'll
+// use it to draw just like in the Introduction to Canvas chapter.
+game.on('draw', function(context){
+  console.log('draw', context);
+  context.fillStyle = '#fff';
+  context.fillRect(10, 10, 10, 10);
+});
+
+// if game.pause() is called somewhere in your code,
+// a `pause` event will be emitted
+// listen for it like this:
+game.on('pause', function(){
+  console.log('paused');
+});
+
+// if game.resume() is called somewhere in your code,
+// a `resume` event will be emitted
+// listen for it like this:
+game.on('resume', function(){
+  console.log('resumed');
+});
+~~~~~~~~
+
+To run this code we will use beefy.
+
+Open the package.json file and add a `start` script to the scripts object so it looks like this:
+
+~~~~~~~~
+"scripts": {
+  "test": "node test.js",
+  "start": "beefy game.js:bundle.js --live"
+},
+~~~~~~~~
+
+If you've installed browserify and beefy like this:
+
+~~~~~~~~
+npm install -g browserify beefy
+~~~~~~~~
+
+You can now run:
+
+~~~~~~~~
+npm start
+~~~~~~~~
+
+This will serve your index.html file at http://localhost:9966.
+
+Open Chrome, navigate to that url, and open the javascript console.
+
+You should see the `update` and `draw` messages being logged to the console and a big red canvas with a small white block in the top left corner!
+
+This is the beginning of node-rogue.
 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
