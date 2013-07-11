@@ -84,6 +84,7 @@ git repository: git://github.com/learn-js/node-rogue
 keywords: gamezzz
 author: seth vincent
 license: (BSD) MIT
+~~~~~~~~
 
 You should end up with a package.json file that looks like this:
 
