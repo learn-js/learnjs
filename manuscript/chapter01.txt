@@ -52,139 +52,128 @@ We'll need to represent each of those things in our game code, so let's briefly 
 
 Each of the above headers will be an object in our game, and each of the list items will be methods or attributes of their respective headers.
 
-Let's get started by creating a game object.
+## Requirements:
+You'll need these things installed on your computer:
+- node.js
+- browserify and beefy
+
+To get started, create a folder for your game. I'm calling it `node-rogue`:
 
 ~~~~~~~~
-// Here we select the canvas with an id of game 
-// this is where we will draw our game assets
-var canvas = document.querySelector('#game');
-
-// What kind of drawing will we do?
-// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
-var context = canvas.getContext('2d');
-
-function startGame(){ 
-  // set the width and height of our drawing canvas
-  canvas.height = 400;
-  canvas.width = 800;
-
-  // start the game loop
-  loop();
-}
-
-// any thing inside the loop() function gets run on every loop
-function loop(){
-  // this function runs the loop at a consistent rate, 
-  // and only runs the loop when the browser tab is in focus
-  requestAnimationFrame( loop, canvas );
-
-  // update the game
-  update();
-
-  // draw new stuff after they've been updated
-  draw();
-}
-
-// make a box object
-// give it a starting x, y location, a width, height, speed, and color
-var box = {
-  x: 50,
-  y: 50,
-  width: 10,
-  height: 10,
-  speed: 10,
-  color: '#4f5654'
-};
-
-// this function manages all the user input for the box object
-box.input = function(){
-  
-  // check if any of the arrow keys are in the keysDown object
-  if (40 in keysDown) {
-    box.y += box.speed;
-  }
-  if (38 in keysDown) {
-    box.y -= box.speed;
-  }
-  if (37 in keysDown) {
-    box.x -= box.speed;
-  }
-  if (39 in keysDown) {
-    box.x += box.speed;
-  }
-  
-  // check if box hits left edge
-  if (box.x <= 0) {
-    box.x = 0;
-  }
-
-  // check if box hits right edge
-  if (box.x >= canvas.width - box.width) {
-    box.x = canvas.width - box.width;
-  }
-
-  // check if box hits top edge
-  if (box.y <= 0) {
-    box.y = 0;
-  }
-
-  // check if box hits bottom edge
-  if (box.y >= canvas.height - box.height) {
-    box.y = canvas.height - box.height;
-  }
-
-}
-
-// draw the box
-box.draw = function() {
-  // set the color of the box
-  context.fillStyle = box.color;
-
-  // actually draw the box to the canvas
-  context.fillRect(box.x, box.y, box.width, box.height);
-};
-
-// update the game
-function update(){
-  // check for any input relevant to the box
-  // every time the game is updated
-  box.input();
-}
-
-// draw on the canvas
-function draw(){
-  // this clears the canvas so that when the box is drawn each time
-  // it looks like it moves, rather than drawing a line that follows the path
-  // of the box. comment out the context.clearRect line to see what i mean.
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  box.draw();
-}
-
-// this object contains any keyboard keys that are currently pressed down
-var keysDown = {};
-
-// here we add an event listener that watches for when the user presses any keys
-window.addEventListener("keydown", function(e) {
-  // e stands for event
-
-  // add the key being pressed to the keysDown object
-  keysDown[e.keyCode] = true;
-
-  // if the user is pressing any of the arrow keys, disable the default
-  // behavior so the page doesn't move up and down
-  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
-    e.preventDefault();
-  }
-}, false);
-
-// this event listener watches for when keys are released
-window.addEventListener("keyup", function(e) {
-  // and removes the key from the keysdown object
-  delete keysDown[e.keyCode];
-}, false);
-
-// start the game
-startGame();
+mkdir node-rogue
+cd node-rogue
 ~~~~~~~~
+
+Run the npm init command to create a package.json file for your project:
+
+~~~~~~~~
+npm init
+~~~~~~~~
+
+Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
+
+~~~~~~~~
+name: (node-rogue) 
+version: (0.0.0) 
+description: a roguelike game made with javascript
+entry point: (index.js) game.js
+test command: node test.js
+git repository: git://github.com/learn-js/node-rogue
+keywords: gamezzz
+author: seth vincent
+license: (BSD) MIT
+
+You should end up with a package.json file that looks like this:
+
+~~~~~~~~
+{
+  "name": "node-rogue",
+  "version": "0.0.0",
+  "description": "a roguelike game made with javascript",
+  "main": "game.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/learnjs/node-rogue"
+  },
+  "keywords": [
+    "gamezzz"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learnjs/node-rogue/issues"
+  }
+}
+~~~~~~~~
+
+Now, create the game.js and test.js files:
+
+~~~~~~~~
+touch game.js test.js
+~~~~~~~~
+
+We'll also need an index.html file:
+
+~~~~~~~~
+touch index.html
+~~~~~~~~
+
+Open up that file and make it look like this:
+
+~~~~~~~~
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>node-rogue</title>
+</head>
+<body>
+
+<h1 id="title">node-rogue</h1>
+
+<canvas id="game"></canvas>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+~~~~~~~~
+
+Let's add a css file:
+
+~~~~~~~~
+touch style.css
+~~~~~~~~
+
+And give it some very basic styles:
+
+~~~~~~~~
+html,
+body {
+  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+h1#title {
+  margin-bottom: 50px;
+}
+
+canvas#game {
+  display: block;
+  margin: 0px auto;
+}
+~~~~~~~~
+
+
+
+
+
+
+
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).

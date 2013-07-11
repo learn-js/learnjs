@@ -1,0 +1,141 @@
+# Introduction to canvas
+> Creating basic keyboard and mouse interaction with the html5 canvas tag.
+
+Here's the full code (with comments) for our simple canvas / input example:
+
+~~~~~~~~
+// Here we select the canvas with an id of game 
+// this is where we will draw our game assets
+var canvas = document.querySelector('#game');
+
+// What kind of drawing will we do?
+// our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
+var context = canvas.getContext('2d');
+
+function startGame(){ 
+  // set the width and height of our drawing canvas
+  canvas.height = 400;
+  canvas.width = 800;
+
+  // start the game loop
+  loop();
+}
+
+// any thing inside the loop() function gets run on every loop
+function loop(){
+  // this function runs the loop at a consistent rate, 
+  // and only runs the loop when the browser tab is in focus
+  requestAnimationFrame( loop, canvas );
+
+  // update the game
+  update();
+
+  // draw new stuff after they've been updated
+  draw();
+}
+
+// make a box object
+// give it a starting x, y location, a width, height, speed, and color
+var box = {
+  x: 50,
+  y: 50,
+  width: 10,
+  height: 10,
+  speed: 10,
+  color: '#4f5654'
+};
+
+// this function manages all the user input for the box object
+box.input = function(){
+  
+  // check if any of the arrow keys are in the keysDown object
+  if (40 in keysDown) {
+    box.y += box.speed;
+  }
+  if (38 in keysDown) {
+    box.y -= box.speed;
+  }
+  if (37 in keysDown) {
+    box.x -= box.speed;
+  }
+  if (39 in keysDown) {
+    box.x += box.speed;
+  }
+  
+  // check if box hits left edge
+  if (box.x <= 0) {
+    box.x = 0;
+  }
+
+  // check if box hits right edge
+  if (box.x >= canvas.width - box.width) {
+    box.x = canvas.width - box.width;
+  }
+
+  // check if box hits top edge
+  if (box.y <= 0) {
+    box.y = 0;
+  }
+
+  // check if box hits bottom edge
+  if (box.y >= canvas.height - box.height) {
+    box.y = canvas.height - box.height;
+  }
+
+}
+
+// draw the box
+box.draw = function() {
+  // set the color of the box
+  context.fillStyle = box.color;
+
+  // actually draw the box to the canvas
+  context.fillRect(box.x, box.y, box.width, box.height);
+};
+
+// update the game
+function update(){
+  // check for any input relevant to the box
+  // every time the game is updated
+  box.input();
+}
+
+// draw on the canvas
+function draw(){
+  // this clears the canvas so that when the box is drawn each time
+  // it looks like it moves, rather than drawing a line that follows the path
+  // of the box. comment out the context.clearRect line to see what i mean.
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  box.draw();
+}
+
+// this object contains any keyboard keys that are currently pressed down
+var keysDown = {};
+
+// here we add an event listener that watches for when the user presses any keys
+window.addEventListener("keydown", function(e) {
+  // e stands for event
+
+  // add the key being pressed to the keysDown object
+  keysDown[e.keyCode] = true;
+
+  // if the user is pressing any of the arrow keys, disable the default
+  // behavior so the page doesn't move up and down
+  if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39) {
+    e.preventDefault();
+  }
+}, false);
+
+// this event listener watches for when keys are released
+window.addEventListener("keyup", function(e) {
+  // and removes the key from the keysdown object
+  delete keysDown[e.keyCode];
+}, false);
+
+// start the game
+startGame();
+~~~~~~~~
+
+That's it, and you made stuff move around the screen!
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
