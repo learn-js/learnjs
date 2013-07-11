@@ -5,32 +5,6 @@ Like the book? You can purchase it at [learnjs.io](http://learnjs.io).
 
 
 
-# THE BASICS
-
-## In this section, we'll get started learning:
-
-### Chrome's Developer Tools
-All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
-
-### Basic html and css
-For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
-
-### Javascript syntax, variables, data types, functions, and style guidelines
-Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
-
-### Node.js and npm
-Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
-
-### Bower, browserify, and grunt
-The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
-
-### Git and GitHub
-Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
-
-### Testing javascript
-Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
-
-
 # Introduction 
 
 ## Thank you. 
@@ -96,6 +70,32 @@ Javascript is a very flexible language that can be employed using a number of st
 - Prototypal inheritance.
 - Constructors.
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+# THE BASICS
+
+## In this section, we'll get started learning:
+
+### Chrome's Developer Tools
+All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
+
+### Basic html and css
+For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
+
+### Javascript syntax, variables, data types, functions, and style guidelines
+Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
+
+### Node.js and npm
+Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
+
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
+
+### Git and GitHub
+Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
+
+### Testing javascript
+Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
 # Hello, javascript. It's nice to meet you.
@@ -577,6 +577,92 @@ This will by default serve your index.html file at http://localhost:9966. Open C
 You'll see `pizza is extremely yummy` in the javascript console!
 
 
+# Introduction to functions.
+
+## Eating, digesting, and pooping.
+
+A function is a block of code that takes input, processes that input, and then produces output.
+
+You can think of it like eating, digesting, and pooping.
+
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+
+## Let's make a function named `eat`.
+
+```
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
+```
+
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
+
+```
+eat('pizza');
+```
+
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
+
+```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
+
+  while (digesting) {
+
+    randomFoodPart = Math.floor(Math.random() * digesting--);
+
+    digested = food[digesting];
+
+    food[digesting] = food[randomFoodPart];
+
+    food[randomFoodPart] = digested;
+  }
+
+  var poop = food.join('');
+
+  return poop;
+}
+```
+
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
+
+
+
 # Introduction to grunt.js
 
 Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
@@ -797,92 +883,6 @@ Done, without errors.
 If you didn't get output like that, check your Gruntfile for typos. If you did get output like that: Awesome! So we've made it pretty far. We've set up a project with a bunch of files and folders, created a package.json file with a list of devDependencies, installed the dependencies, and tried out a simple Gruntfile for running arbitrary tasks.
 
 If this seems like a lot, like it's beating up your brain, don't worry. After a few times of starting a project like this, these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don't have to write the boilerplate every time. Or you could use a project like yeoman for its code generators. That's up to you, but when first learning this it's a reasonable idea to start from scratch and see how everything works.
-
-
-
-# Introduction to functions.
-
-## Eating, digesting, and pooping.
-
-A function is a block of code that takes input, processes that input, and then produces output.
-
-You can think of it like eating, digesting, and pooping.
-
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
-
-## Let's make a function named `eat`.
-
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
-
-```
-eat('pizza');
-```
-
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
-
-```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
-```
-
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
-
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
-
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
 
 
 
@@ -1588,6 +1588,7 @@ git repository: git://github.com/learn-js/node-rogue
 keywords: gamezzz
 author: seth vincent
 license: (BSD) MIT
+```
 
 You should end up with a package.json file that looks like this:
 
