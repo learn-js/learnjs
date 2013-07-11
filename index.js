@@ -32,9 +32,7 @@ function includeChapter(line){
     fs.readFile(book + line, function(err, data){
       data = '\n\n\n' + data.toString().replace(/~~~~~~~~/gi, '```');
 
-      fs.appendFile(readme, data, function(err){
-        if (err){ throw err; }
-      })
-    })
+      fs.appendFileSync(readme, data);
+    });
   }
 }
