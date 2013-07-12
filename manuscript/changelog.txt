@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.0
+- Add Introduction to npm
+- Add Introduction to callbacks
+- Add Introduction to canvas (still working on this)
+- Add Introduction to browserify
+- Substantial revisions to Chapter 01 - making a game
+- Many small typo / formatting fixes
+
 ## v0.3.2
 - Substantial copy editing
 - Start chapter 1 about making an rpg game

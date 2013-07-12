@@ -1,8 +1,8 @@
 # Contributors
 These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
 
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+- Carrie Ramsdell - copy editing
+- Sam Sermeno - copy editing
+- [Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+- [Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+- [Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
