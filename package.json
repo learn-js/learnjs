@@ -16,6 +16,7 @@
     "url": "https://github.com/learn-js/learnjs/issues"
   },
   "dependencies": {
-    "lazy": "~1.0.11"
+    "lazy": "~1.0.11",
+    "manuscript-builder": "0.0.2"
   }
 }

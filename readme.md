@@ -1,7 +1,7 @@
 # Learn.js
 > A guidebook to building projects with javascript.
 
-Like the book? You can purchase it at [learnjs.io](http://learnjs.io).
+Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can help guide the development of the book by submitting errata and topic requests to [the book's issues queue](https://github.com/learn-js/learnjs/issues).
 
 
 
@@ -98,7 +98,7 @@ Git is a tool for tracking, sharing, and collaborating on versions of your code,
 Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
-# Hello, javascript. It's nice to meet you.
+# Introduction to Chrome Developer Tools
 
 ```
 console.log('hello, javascript. it's nice to meet you');
@@ -2049,6 +2049,14 @@ This gives you an idea of how to iterate through an object using a for...in loop
 
 # Changelog
 
+## v0.4.0
+- Add Introduction to npm
+- Add Introduction to callbacks
+- Add Introduction to canvas (still working on this)
+- Add Introduction to browserify
+- Substantial revisions to Chapter 01 - making a game
+- Many small typo / formatting fixes
+
 ## v0.3.2
 - Substantial copy editing
 - Start chapter 1 about making an rpg game
@@ -2078,8 +2086,10 @@ This gives you an idea of how to iterate through an object using a for...in loop
 # Contributors
 These wonderful people have helped the book along by copy editing, reporting errors, providing advice, and more. Thank you!
 
-Carrie Ramsdell - copy editing
-Sam Sermeno - copy editing
-[Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
-[Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
-[Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+- Carrie Ramsdell - copy editing
+- Sam Sermeno - copy editing
+- [Matt Renquist](https://github.com/mattrenquist) - bug fixes, code updates
+- [Benjamin Zanatta](https://github.com/benjaminzanatta) - design recommendations
+- [Adam Duvander](https://twitter.com/adamd) - typo fixes, feedback on progress
+
+
