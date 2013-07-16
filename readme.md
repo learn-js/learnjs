@@ -5,148 +5,6 @@ Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can h
 
 
 
-# Introduction 
-
-## Thank you. 
-
-You believed in this project enough to get involved early, and your support is making it possible. The first release of _Learn.js_ went out on May 23, 2013. If you've purchased the book you are a serious early adopter, and that's awesome.
-
-Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
-
-This book is highly inspired by the lean publishing model ([read more about it](https://leanpub.com/manifesto)) proposed by Peter Armstrong, founder of leanpub.com. I'm releasing the book early to get feedback from you, dear readers, so that together we can make the best book about javascript tools and libraries possible.
-
-I'll be releasing updates semi-weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by letting me know what development tools, libraries, and programming patterns you'd be most interested in seeing covered.
-
-The goal: produce a book of roughly 200 pages by the end of July. You're a big part of making that goal real. Thank you.
-
-
-## Target audience
-This book is meant for javascript beginners, but will be useful for anyone that wants to broaden their understanding of javascript. Maybe you've written with jQuery for years and want to get an introduction to server-side code, mapping, or data visualization. Or maybe you've created client-side applications without the use of any development tools like bower, browserify, or grunt, and you want to streamline your development process.
-
-_Learn.js_ will introduce you to a wide range of tools and libraries, and whether you're a beginner or intermediate programmer, you're likely to find helpful material.
-
-## Development tools
-The development tools for javascript have changed rapidly in recent years, and the popularity of server-side javascript has matured tools available for client-side developers.
-
-Learning development tools is one of the most difficult parts of starting to work with a programming language. 
-
-Which tools should I use? Are there best practices for workflows? How should I test code?
-
-There are many possible answers to the above questions, and this book won't give all of them, but because it will be a living document that is revised based on changing patterns and practices in the javascript world, we'll be able to create a guide that remains relevant.
-
-### Development tools the book will cover:
-- npm, the package manager for node.js, which is also often used for client-side javascript modules.
-- bower and component, two package management tools for client-side javascript.
-- browserify, a tool for bundling client side code as node-style modules.
-- grunt, a build tool that can automate repetitive development tasks.
-- Chrome developer tools.
-- Git and GitHub. This book won't be a full guide to git, but it will help you improve as a git user.
-- Vagrant and Virtualbox. Using these tools you can set up an instance of a linux operating system on your Mac or Windows machine and interact with it from the command line.
-- Phonegap/Cordova. This project allows developers to create mobile apps for multiple platforms based on one js/html/css codebase.
-- Hosting using Heroku and GitHub pages.
-- And other tools. [Let us know what you'd like to see covered](http://hi@learnjs.io).
-
-
-## Libraries
-There are many different libraries available to javascript developers. It takes time just to learn how to find and use javascript libraries, how to tell which libraries will be effective and reliable, and when not to use a library.
-
-We'll show you the best places to look for javascript libraries, the best resources for keeping track of new releases of libraries, and where to go when you need help learning a new library.
-
-_Learn.js_ will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.
-
-### Some of the javascript libraries the book will cover:
-- jQuery.
-- leaflet.js, mapbox.js, gmaps.js, etc.
-- d3.js, chart.js, raphael.js, and vega.js.
-- pixi.js, voxel.js, and processing.js.
-- And other libraries. [Let us know what you'd like to see covered](http://hi@learnjs.io).
-
-## Programming patterns
-Javascript is a very flexible language that can be employed using a number of styles and patterns. In this book we'll take a look at some of the most popular patterns, and develop a simple, clean coding style based on popular open-source style guides already available in the community.
-
-### Some coding styles and programming patterns the book will cover:
-- CommonJS and ECMAScript 6 modules.
-- Functional programming.
-- Prototypal inheritance.
-- Constructors.
-- And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
-
-
-# THE BASICS
-
-## In this section, we'll get started learning:
-
-### Chrome's Developer Tools
-All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
-
-### Basic html and css
-For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
-
-### Javascript syntax, variables, data types, functions, and style guidelines
-Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
-
-### Node.js and npm
-Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
-
-### Bower, browserify, and grunt
-The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
-
-### Git and GitHub
-Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
-
-### Testing javascript
-Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
-
-
-# Introduction to Chrome Developer Tools
-
-```
-console.log('hello, javascript. it's nice to meet you');
-```
-
-Open up the browser Chrome.
-
-> If you don't already have Chrome installed, download and install it now at [google.com/chrome](http://google.com/chrome)
-
-Now, use this keyboard shortcut on a Mac: command + option + j
-Or this for Windows/Linux: control + shift + j
-
-You just opened the javascript console.
-
-**Type in this code:**  
-```
-console.log('what is this?');
-```
-
-You just told the javascript console to print some text!
-
-Any time you put `console.log()` in javascript code that is ran in the browser, whatever you put between the parentheses will show up in your browser's javascript console.
-
-As you learn javascript, `console.log()` will be your best friend. You will use it to help prototype new functionality and to debug your code.
-
-## Your first challenge:
-
-Type this into the console:
-
-```
-console.error('this is an error');
-```
-
-That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.
-
-With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later in the book.
-
-## Chrome Developer Tools
-The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a a set of versatile and powerful tools, and focusing on the tools of one browser helps keep the instructions simple.
-
-Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.
-
-## Recap! We learned that:
-- the javascript console and learned that we can type in javascript!
-- we can use code like `console.log()` and `console.error()` to print information to the console.
-- Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
-
-
 # HTML & CSS: an introduction
 
 If you're new to building projects for the web, knowing javascript alone won't be enough.
@@ -417,193 +275,79 @@ This is a newer resource, but a good one. It's got a great design and well-organ
 
 
 
-# Introduction to git & GitHub
+# THE BASICS
 
-Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
+## In this section, we'll get started learning:
 
-**Use git.**
+### Chrome's Developer Tools
+All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
 
-Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
+### Basic html and css
+For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
 
-There are many other bonuses to using git, which are mostly out of this book's scope.
+### Javascript syntax, variables, data types, functions, and style guidelines
+Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
 
-The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
+### Node.js and npm
+Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
 
-## Get on GitHub
-If you haven't already, create an account at [github.com](http://github.com).
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
 
-GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
+### Git and GitHub
+Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
 
-In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
-
-GitHub has become the de facto code hosting service for most open source communities.
-
-## Create a site for yourself using GitHub
-
-GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
-
-### With GitHub Pages you can:
-- design a website any way you want by having complete control over the html, css, and javascript.
-- use simple templates for getting started using GitHub Pages.
-- create sites for yourself and all of your projects hosted on GitHub.
-- use a custom domain name if you want!
-
-Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+### Testing javascript
+Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
-# Introduction to node.
-
-Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
-
-## In this book, we'll use node in these ways:
-- Install command line tools available through node's package manager, `npm`.
-- Create basic web servers to serve static content to our web browser.
-- Experiment with real-time, multi-user applications.
-
-## To learn node in detail, read these resources in this order:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [streams handbook](https://github.com/substack/stream-handbook)
-
-## Install node:
-
-There are a few options for this, and I've put them in my order of preference:
-
-### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
-
-### Install using a package manager. 
-This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
-
-### Download an installer from nodejs.org.
-[Here's the node.js download page][nodejs.org/download].
-
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Introduction to npm
-
-You use `npm` to install javascript modules. It is most often used for installing node.js modules, but it is not limited to server side code.
-
-You might expect `npm` to stand for Node Package Manager. But that's misleading – it reinforces the idea that `npm` is just for node.js projects.
-
-Instead, we can follow the guidance of javascript developer Max Ogden and let is stand for Node Packaged Modules.
-
-Read more about this idea on his blog post: [maxogden.com/node-packaged-modules.html](http://maxogden.com/node-packaged-modules.html), where he presents three projects based on the tool `browserify`. We'll make heavy use of browserify in the book.
-
-## Getting started with `npm`
-If you've alreadt installed node.js, you've got npm.
-
-Check the version of `npm` like this:
+# Hello, javascript. It's nice to meet you.
 
 ```
-npm -v
+console.log('hello, javascript. it's nice to meet you');
 ```
 
-This should return something like:
+Open up the browser Chrome.
 
+> If you don't already have Chrome installed, download and install it now at [google.com/chrome](http://google.com/chrome)
+
+Now, use this keyboard shortcut on a Mac: command + option + j
+Or this for Windows/Linux: control + shift + j
+
+You just opened the javascript console.
+
+**Type in this code:**  
 ```
-1.2.32
-```
-
-The exact version numbers might differ, and that's ok.
-
-Installing a module will automatically place the module in a folder named `node_modules` in your current working directory.
-
-Make a new folder:
-
-```
-mkdir npm-experiments
-cd npm-experiments
+console.log('what is this?');
 ```
 
-Install browserify:
+You just told the javascript console to print some text!
+
+Any time you put `console.log()` in javascript code that is ran in the browser, whatever you put between the parentheses will show up in your browser's javascript console.
+
+As you learn javascript, `console.log()` will be your best friend. You will use it to help prototype new functionality and to debug your code.
+
+## Your first challenge:
+
+Type this into the console:
 
 ```
-npm install browserify
+console.error('this is an error');
 ```
 
-Now, if you look in the node_modules directory, you'll see browserify!
+That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.
 
-You can also install modules globally, typically so that you can run their commands at any time in any directory. This is useful with a module like browserify, so let's try it out:
+With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later in the book.
 
-```
-npm install -g browserify
-```
+## Chrome Developer Tools
+The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a a set of versatile and powerful tools, and focusing on the tools of one browser helps keep the instructions simple.
 
-It's the `-g` option that install the module globally.
+Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.
 
-You can delete the node_modules directory:
-
-```
-rm -rf node_modules
-```
-
-And run the browserify command:
-
-```
-browserify
-```
-
-Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
-
-To learn more about `npm` run the command without any options:
-
-```
-npm
-```
-
-This gives you a full list of the commands and options available through `npm`. To learn about any particular command you can run:
-
-```
-npm help name-of-command
-```
-
-## Creating a module
-Any time you're using javascript modules from `npm` in a project you should create a package.json file. In this file you can save the dependencies for your project, along with license, author, repo inforamtion, and other details.
-
-You can use the `npm init` command to generate a package.json file:
-
-```
-npm init
-```
-
-Answer the questions.
-
-When you're done, you'll have a package.json file. You can install modules and save them as dependencies of your project like this:
-
-```
-npm install request --save
-```
-
-And if you are installing a module (like a test framework) as a development dependency, you can do so like this:
-
-```
-npm install tap --save-dev
-```
-
-## Publishing modules
-Once you've written a module, you can publish it to `npm` super easy:
-
-```
-npm publish .
-```
-
-Before running the `npm publish` command you'll want to edit your package.json file to make sure that properties like version, author, homepage, and repository are all filled in. You should also first create a useful readme.md file, as that is displayed on a modules project page on [npmjs.org](http://npmjs.org).
-
-## Finding modules
-You can check out [npmjs.org](http://npmjs.org) as well as [npmsearch.com](http://npmsearch.com) to find modules that you can use in your projects.
-
-You can also run the `search` command in the terminal:
-
-```
-npm search template
-```
-
-This will return a bunch of modules related to templates!
+## Recap! We learned that:
+- the javascript console and learned that we can type in javascript!
+- we can use code like `console.log()` and `console.error()` to print information to the console.
+- Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.
 
 
 # Introduction to browserify.
@@ -697,6 +441,226 @@ The `--live` option enables the live reload functionality of beefy.
 This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
 
 You'll see `pizza is extremely yummy` in the javascript console!
+
+
+# Introduction to git & GitHub
+
+Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
+
+**Use git.**
+
+Git is a version control system, which means it can track every change you make to your code. This allows you to review and edit past versions if you mess something up. And it allows you to figure out when errors were introduced to the code.
+
+There are many other bonuses to using git, which are mostly out of this book's scope.
+
+The best way to start learning git (and GitHub) is to visit [try.github.com](http://try.github.com).
+
+## Get on GitHub
+If you haven't already, create an account at [github.com](http://github.com).
+
+GitHub is a great place to host your code. Many employers hiring for developer and designer positions will ask for a GitHub profile, and they'll use your GitHub activity as part of the criteria in their decision-making process.
+
+In fact, if you're looking to get a job with a particular company, try to find _their_ GitHub profile and start contributing to their open source projects. This will help you stand out, and they'll already know your technical abilities based on your open source contributions. That's a big win.
+
+GitHub has become the de facto code hosting service for most open source communities.
+
+## Create a site for yourself using GitHub
+
+GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
+
+### With GitHub Pages you can:
+- design a website any way you want by having complete control over the html, css, and javascript.
+- use simple templates for getting started using GitHub Pages.
+- create sites for yourself and all of your projects hosted on GitHub.
+- use a custom domain name if you want!
+
+Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Introduction 
+
+## Thank you. 
+
+You believed in this project enough to get involved early, and your support is making it possible. The first release of _Learn.js_ went out on May 23, 2013. If you've purchased the book you are a serious early adopter, and that's awesome.
+
+Because you got the book so early, you're in a unique position to guide the direction of the book. If there are particular libraries, development tools, or programming patterns that you'd like to see covered, please submit your thoughts at the learnjs issue queue on GitHub, or email me at hi@learnjs.io.
+
+This book is highly inspired by the lean publishing model ([read more about it](https://leanpub.com/manifesto)) proposed by Peter Armstrong, founder of leanpub.com. I'm releasing the book early to get feedback from you, dear readers, so that together we can make the best book about javascript tools and libraries possible.
+
+I'll be releasing updates semi-weekly up until the book is feature-complete at v1.0.0. Help me determine what it will mean for the book to be feature-complete by letting me know what development tools, libraries, and programming patterns you'd be most interested in seeing covered.
+
+The goal: produce a book of roughly 200 pages by the end of July. You're a big part of making that goal real. Thank you.
+
+
+## Target audience
+This book is meant for javascript beginners, but will be useful for anyone that wants to broaden their understanding of javascript. Maybe you've written with jQuery for years and want to get an introduction to server-side code, mapping, or data visualization. Or maybe you've created client-side applications without the use of any development tools like bower, browserify, or grunt, and you want to streamline your development process.
+
+_Learn.js_ will introduce you to a wide range of tools and libraries, and whether you're a beginner or intermediate programmer, you're likely to find helpful material.
+
+## Development tools
+The development tools for javascript have changed rapidly in recent years, and the popularity of server-side javascript has matured tools available for client-side developers.
+
+Learning development tools is one of the most difficult parts of starting to work with a programming language. 
+
+Which tools should I use? Are there best practices for workflows? How should I test code?
+
+There are many possible answers to the above questions, and this book won't give all of them, but because it will be a living document that is revised based on changing patterns and practices in the javascript world, we'll be able to create a guide that remains relevant.
+
+### Development tools the book will cover:
+- npm, the package manager for node.js, which is also often used for client-side javascript modules.
+- bower and component, two package management tools for client-side javascript.
+- browserify, a tool for bundling client side code as node-style modules.
+- grunt, a build tool that can automate repetitive development tasks.
+- Chrome developer tools.
+- Git and GitHub. This book won't be a full guide to git, but it will help you improve as a git user.
+- Vagrant and Virtualbox. Using these tools you can set up an instance of a linux operating system on your Mac or Windows machine and interact with it from the command line.
+- Phonegap/Cordova. This project allows developers to create mobile apps for multiple platforms based on one js/html/css codebase.
+- Hosting using Heroku and GitHub pages.
+- And other tools. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+## Libraries
+There are many different libraries available to javascript developers. It takes time just to learn how to find and use javascript libraries, how to tell which libraries will be effective and reliable, and when not to use a library.
+
+We'll show you the best places to look for javascript libraries, the best resources for keeping track of new releases of libraries, and where to go when you need help learning a new library.
+
+_Learn.js_ will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.
+
+### Some of the javascript libraries the book will cover:
+- jQuery.
+- leaflet.js, mapbox.js, gmaps.js, etc.
+- d3.js, chart.js, raphael.js, and vega.js.
+- pixi.js, voxel.js, and processing.js.
+- And other libraries. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+## Programming patterns
+Javascript is a very flexible language that can be employed using a number of styles and patterns. In this book we'll take a look at some of the most popular patterns, and develop a simple, clean coding style based on popular open-source style guides already available in the community.
+
+### Some coding styles and programming patterns the book will cover:
+- CommonJS and ECMAScript 6 modules.
+- Functional programming.
+- Prototypal inheritance.
+- Constructors.
+- And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+# Introduction to functions.
+
+## Eating, digesting, and pooping.
+
+A function is a block of code that takes input, processes that input, and then produces output.
+
+You can think of it like eating, digesting, and pooping.
+
+And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+
+## Let's make a function named `eat`.
+
+```
+// take input / eat food
+function eat(food){
+  
+  // process the input / digest the food
+  var poop = digest(food);
+
+  // send output / poop
+  return poop;
+}
+```
+
+The above example should make sense just from reading it.
+
+Note that lines that start with `//` are comments, and they get ignored when the code is executed.
+
+To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
+
+Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
+
+Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
+
+We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
+
+Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
+
+## Using the `eat` function:
+
+We can use the `eat` function like this:
+
+```
+eat('pizza');
+```
+
+When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
+You know, something random like that.
+
+### So what is the `digest` function doing?
+
+You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
+
+Here's an example of the `shuffleLetters()` function using our food/poop language:
+
+```
+function digest(food){
+  var food = food.split('')
+  var digesting = food.length, digested, randomFoodPart;
+
+  while (digesting) {
+
+    randomFoodPart = Math.floor(Math.random() * digesting--);
+
+    digested = food[digesting];
+
+    food[digesting] = food[randomFoodPart];
+
+    food[randomFoodPart] = digested;
+  }
+
+  var poop = food.join('');
+
+  return poop;
+}
+```
+
+_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+
+You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+
+If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
+
+
+
+
+# Introduction to node.
+
+Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+
+## In this book, we'll use node in these ways:
+- Install command line tools available through node's package manager, `npm`.
+- Create basic web servers to serve static content to our web browser.
+- Experiment with real-time, multi-user applications.
+
+## To learn node in detail, read these resources in this order:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [streams handbook](https://github.com/substack/stream-handbook)
+
+## Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+### Use nvm to manage node versions.
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+### Install using a package manager. 
+This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+### Download an installer from nodejs.org.
+[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
 # Introduction to grunt.js
@@ -922,148 +886,126 @@ If this seems like a lot, like it's beating up your brain, don't worry. After a 
 
 
 
-# Introduction to functions.
+# Introduction to npm
 
-## Eating, digesting, and pooping.
+You use `npm` to install javascript modules. It is most often used for installing node.js modules, but it is not limited to server side code.
 
-A function is a block of code that takes input, processes that input, and then produces output.
+You might expect `npm` to stand for Node Package Manager. But that's misleading – it reinforces the idea that `npm` is just for node.js projects.
 
-You can think of it like eating, digesting, and pooping.
+Instead, we can follow the guidance of javascript developer Max Ogden and let is stand for Node Packaged Modules.
 
-And when we use a number of functions in succession, it's almost like that movie [The Human Centipede](http://www.imdb.com/title/tt1467304/), only less gross.
+Read more about this idea on his blog post: [maxogden.com/node-packaged-modules.html](http://maxogden.com/node-packaged-modules.html), where he presents three projects based on the tool `browserify`. We'll make heavy use of browserify in the book.
 
-## Let's make a function named `eat`.
+## Getting started with `npm`
+If you've alreadt installed node.js, you've got npm.
 
-```
-// take input / eat food
-function eat(food){
-  
-  // process the input / digest the food
-  var poop = digest(food);
-
-  // send output / poop
-  return poop;
-}
-```
-
-The above example should make sense just from reading it.
-
-Note that lines that start with `//` are comments, and they get ignored when the code is executed.
-
-To create a function, we first write `function`. Next, we can name the function, and in this case it is named `eat`.
-
-Inside of the parentheses we specify the input, which are also called arguments. We only have one argument in this case, named `food`.
-
-Next, we use an opening curly bracket to indicate the beginning of the block of code connected with this function.
-
-We create a variable named `poop`, which contains a "digested" form of the `food` argument. Here we're using another function named `digest` that is using the `food` argument as its own input. 
-
-Finally, we `return poop;` so that the output of this function can be used in other parts of our code.
-
-## Using the `eat` function:
-
-We can use the `eat` function like this:
+Check the version of `npm` like this:
 
 ```
-eat('pizza');
+npm -v
 ```
 
-When we run this, it'll return something like `zpzia`, `apizz`, or `pzazi`.
-You know, something random like that.
-
-### So what is the `digest` function doing?
-
-You've probably already guessed that it is a function that randomly shuffles letters in a string. In actual production projects you would want to name it something a little more clear, like`shuffleLetters()`.
-
-Here's an example of the `shuffleLetters()` function using our food/poop language:
+This should return something like:
 
 ```
-function digest(food){
-  var food = food.split('')
-  var digesting = food.length, digested, randomFoodPart;
-
-  while (digesting) {
-
-    randomFoodPart = Math.floor(Math.random() * digesting--);
-
-    digested = food[digesting];
-
-    food[digesting] = food[randomFoodPart];
-
-    food[randomFoodPart] = digested;
-  }
-
-  var poop = food.join('');
-
-  return poop;
-}
+1.2.32
 ```
 
-_Adapted from [Mike Bostocks's Fischer-Yates Shuffle](http://bost.ocks.org/mike/shuffle)._
+The exact version numbers might differ, and that's ok.
 
-You're probably aware that this `digest` function is doing the heavy lifting, while the `eat` function is just a wrapper around `digest`.
+Installing a module will automatically place the module in a folder named `node_modules` in your current working directory.
 
-If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
-
-
-
-
-# Introduction to callbacks.
-
-A callback is a function that you pass as an argument to another function.
-Typically, you'll use a callback as a way to work with data after it's been processed by a function.
-
-A simple callback looks like this:
+Make a new folder:
 
 ```
-function holla(callback){
-  callback();
-}
+mkdir npm-experiments
+cd npm-experiments
 ```
 
-Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
-
-Usage if the `holla` function:
+Install browserify:
 
 ```
-holla(function(){
-  console.log('this is part of the callback function);
-});
+npm install browserify
 ```
 
-Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
+Now, if you look in the node_modules directory, you'll see browserify!
+
+You can also install modules globally, typically so that you can run their commands at any time in any directory. This is useful with a module like browserify, so let's try it out:
 
 ```
-function holla(callback){
-  callback();
-}
-
-function back(){
-  console.log('this is part of the callback function);
-}
-
-holla(back);
+npm install -g browserify
 ```
 
-But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
+It's the `-g` option that install the module globally.
+
+You can delete the node_modules directory:
 
 ```
-// create an eat function
-function eat(food, callback){
-  var food = food + " was eaten";
-  callback(food);
-}
-
-// create a poop function to use as the callback
-function poop(output){
-  console.log(output);
-}
-
-// call the eat function, passing a food and the poop function as arguments
-eat("pizza", poop);
+rm -rf node_modules
 ```
 
-Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+And run the browserify command:
+
+```
+browserify
+```
+
+Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
+
+To learn more about `npm` run the command without any options:
+
+```
+npm
+```
+
+This gives you a full list of the commands and options available through `npm`. To learn about any particular command you can run:
+
+```
+npm help name-of-command
+```
+
+## Creating a module
+Any time you're using javascript modules from `npm` in a project you should create a package.json file. In this file you can save the dependencies for your project, along with license, author, repo inforamtion, and other details.
+
+You can use the `npm init` command to generate a package.json file:
+
+```
+npm init
+```
+
+Answer the questions.
+
+When you're done, you'll have a package.json file. You can install modules and save them as dependencies of your project like this:
+
+```
+npm install request --save
+```
+
+And if you are installing a module (like a test framework) as a development dependency, you can do so like this:
+
+```
+npm install tap --save-dev
+```
+
+## Publishing modules
+Once you've written a module, you can publish it to `npm` super easy:
+
+```
+npm publish .
+```
+
+Before running the `npm publish` command you'll want to edit your package.json file to make sure that properties like version, author, homepage, and repository are all filled in. You should also first create a useful readme.md file, as that is displayed on a modules project page on [npmjs.org](http://npmjs.org).
+
+## Finding modules
+You can check out [npmjs.org](http://npmjs.org) as well as [npmsearch.com](http://npmsearch.com) to find modules that you can use in your projects.
+
+You can also run the `search` command in the terminal:
+
+```
+npm search template
+```
+
+This will return a bunch of modules related to templates!
 
 
 # Introduction to canvas
@@ -1207,6 +1149,630 @@ startGame();
 That's it, and you made stuff move around the screen!
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Introduction to callbacks.
+
+A callback is a function that you pass as an argument to another function.
+Typically, you'll use a callback as a way to work with data after it's been processed by a function.
+
+A simple callback looks like this:
+
+```
+function holla(callback){
+  callback();
+}
+```
+
+Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
+
+Usage if the `holla` function:
+
+```
+holla(function(){
+  console.log('this is part of the callback function);
+});
+```
+
+Our function named `holla()` takes one argument, and we expect it to be a function. In this example we're using an anonymous function, but we could use a named function like this:
+
+```
+function holla(callback){
+  callback();
+}
+
+function back(){
+  console.log('this is part of the callback function);
+}
+
+holla(back);
+```
+
+But usually we're providing a function some kind of parameter,  that function performs an action on the parameter, then we use the callback to work with the output of the function we called. A simple example looks like this:
+
+```
+// create an eat function
+function eat(food, callback){
+  var food = food + " was eaten";
+  callback(food);
+}
+
+// create a poop function to use as the callback
+function poop(output){
+  console.log(output);
+}
+
+// call the eat function, passing a food and the poop function as arguments
+eat("pizza", poop);
+```
+
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+
+
+# Appendix
+
+
+## Javascript style guide & syntax cheatsheet
+
+
+### Variables
+
+#### Creating a variable:
+
+```
+var nameOfVariable;
+```
+
+> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
+
+#### Creating a variable that references a string:
+
+```
+var thisIsAString = 'this is a string';
+```
+
+Surround strings with single quotes.
+
+
+#### Creating a variable that references a number:
+
+```
+var thisIsANumber = 3.14;
+```
+
+Numbers do not have quotes around them.
+
+#### Creating a variable that references an array:
+
+```
+var thisIsAnArray = [1, "two", [3, 4]];
+```
+
+Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
+
+#### Accessing the values in an array:
+
+```
+thisIsAnArray[0];
+```
+
+The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
+
+```
+thisIsAnArray[1];
+```
+
+This returns the string 'two';
+
+##### How would you return the number `4` from the nested array?
+
+Like this:
+
+```
+thisIsAnArray[2][1];
+```
+
+#### Creating a variable that references an object:
+
+var thisIsAnObject = {
+  someString: 'some string value',
+  someNumber: 1234,
+  someFunction: function(){
+    return 'a function that belongs to an object';
+  }
+}
+
+Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
+
+To get the value of `someString` using dot notation:
+
+```
+thisIsAnObject.someString;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someString'];
+```
+
+To get the value of `someNumber` using dot notation:
+
+```
+thisIsAnObject.someNumber;
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someNumber'];
+```
+
+To use the function `someFunction` using dot notation:
+
+```
+thisIsAnObject.someFunction();
+```
+
+Or using bracket notation:
+
+```
+thisIsAnObject['someFunction']();
+```
+
+Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
+That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
+
+For instance, it's more clear to use bracket notation in a situation like this:
+
+```
+for (var key in object){
+  thisIsAnObject[key];
+}
+```
+
+This gives you an idea of how to iterate through an object using a for...in loop.
+
+
+# Chapter 1
+
+## Make a game with javascript!
+
+Let's build a game, everybody. Let's have some fun.
+
+We'll create a bunch of objects and functions. We'll put them together to make our game run, and experiment with changing the functions and the object attributes to alter the behavior of the game.
+
+It'll be a single player game. A [roguelike](http://en.wikipedia.org/wiki/Roguelike) [rpg](http://en.wikipedia.org/wiki/Role-playing_video_game) with extremely simple graphics.
+
+Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example.
+
+Our game will feature monsters, weapons, coins, potions, and a hero.
+
+That small list above gives us a good sense of what objects and functions we'll need in our code.
+
+We'll need to represent each of those things in our game code, so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
+
+### Game
+- Loop
+- Draw
+
+### Level
+- Load level data
+- Draw
+
+### Hero
+- Update
+- Draw
+- Drink Potion
+- Pick up Coin
+- Fight Monster
+
+### Monster
+- Update
+- Draw
+- Fight Hero
+
+### Weapon
+- Update
+- Draw
+
+### Coin
+- Update
+- Draw
+
+### Potions
+- Update
+- Draw
+
+Each of the above headers will be an object in our game, and each of the list items will be methods or attributes of their respective headers.
+
+## Requirements:
+You'll need these things installed on your computer:
+- node.js
+- browserify and beefy
+
+Make sure you're read the intro to node and intro to browserify chapters before starting this project. (TODO: link to those chapters.)
+
+To get started, create a folder for your game. I'm calling it `node-rogue`:
+
+```
+mkdir node-rogue
+cd node-rogue
+```
+
+Run the npm init command to create a package.json file for your project:
+
+```
+npm init
+```
+
+Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
+
+```
+name: (node-rogue) 
+version: (0.0.0) 
+description: a roguelike game made with javascript
+entry point: (index.js) game.js
+test command: node test.js
+git repository: git://github.com/learn-js/node-rogue
+keywords: gamezzz
+author: seth vincent
+license: (BSD) MIT
+```
+
+You should end up with a package.json file that looks like this:
+
+```
+{
+  "name": "node-rogue",
+  "version": "0.0.0",
+  "description": "a roguelike game made with javascript",
+  "main": "game.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/learnjs/node-rogue"
+  },
+  "keywords": [
+    "gamezzz"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learnjs/node-rogue/issues"
+  }
+}
+```
+
+Now, create the game.js and test.js files:
+
+```
+touch game.js test.js
+```
+
+We'll also need an index.html file:
+
+```
+touch index.html
+```
+
+Open up that file and make it look like this:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>node-rogue</title>
+</head>
+<body>
+
+<h1 id="title">node-rogue</h1>
+
+<canvas id="game"></canvas>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+```
+
+Let's add a css file:
+
+```
+touch style.css
+```
+
+And give it some very basic styles:
+
+```
+html,
+body {
+  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+h1#title {
+  margin-bottom: 50px;
+}
+
+canvas#game {
+  display: block;
+  margin: 0px auto;
+}
+```
+
+To ease development, we'll use a simple game library I recently created called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
+
+Install `crtrdg-gameloop` using npm:
+
+```
+npm install crtrdg-gameloop --save
+```
+
+The `--save` option edits the package.json file and adds the module you're installing the the dependencies list. 
+
+## Now, to start writing javascript! 
+Open the game.js file, and get started:
+
+```
+// require crtrdg-gameloop
+var Game = require('crtrdg-gameloop');
+
+// create a new game
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+// game.on('update', callback) 
+//
+// this runs each time the game loops
+// it is useful for things like checking for user input
+// moving the position of characters/items
+// checking for game boundaries and collision detection
+// and other similar tasks
+// interval is the time since the last loop
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+// game.on('draw', callback) 
+//
+// the draw event runs after the update event
+// it's used for actually drawing your characters / items / backgrounds to the canvas
+// context is the actual canvas context, so you'll
+// use it to draw just like in the Introduction to Canvas chapter.
+game.on('draw', function(context){
+  console.log('draw', context);
+  context.fillStyle = '#fff';
+  context.fillRect(10, 10, 10, 10);
+});
+
+// game.on('pause', callback) 
+//
+// if game.pause() is called somewhere in your code,
+// a `pause` event will be emitted
+// listen for it like this:
+game.on('pause', function(){
+  console.log('paused');
+});
+
+// game.on('resume', callback) 
+//
+// if game.resume() is called somewhere in your code,
+// a `resume` event will be emitted
+// listen for it like this:
+game.on('resume', function(){
+  console.log('resumed');
+});
+```
+
+To run this code we will use [beefy](https://github.com/chrisdickinson/beefy).
+
+Open the package.json file and add a `start` script to the scripts object so it looks like this:
+
+```
+"scripts": {
+  "test": "node test.js",
+  "start": "beefy game.js:bundle.js --live"
+},
+```
+
+If you've installed browserify and beefy like this:
+
+```
+npm install -g browserify beefy
+```
+
+You can now run:
+
+```
+npm start
+```
+
+This will serve your index.html file at http://localhost:9966.
+
+Open Chrome, navigate to that url, and open the javascript console.
+
+You should see the `update` and `draw` messages being logged to the console and a big red canvas with a small white block in the top left corner!
+
+This is the beginning of node-rogue.
+
+## Create the player character
+
+Next, we'll make a player that can move around the screen. We'll make use of another small game module: `[crtrdg-entity](https://github.com/sethvincent/crtrdg-entity)`.
+
+First, install the `crtrdg-entity` module:
+
+```
+npm install --save crtrdg-entity
+```
+
+Next, create a player.js file that looks like this:
+
+```
+// require `crtrdg-entity` module
+var Entity = require('crtrdg-entity');
+
+// Make this available as a module that can be required
+exports.module = Player;
+
+// make the Player funtion inherit from crtrdg-entity
+inherits(Player, Entity);
+
+// create Player function
+function Player(options){
+  this.position = { 
+    x: options.position.x, 
+    y: options.position.y 
+  };
+
+  this.size = {
+    x: options.size.x,
+    y: options.size.y
+  };
+
+  this.color = options.color
+}
+```
+
+So we created a constructor that takes position, size, and color options. We can now use `Player` in our game.js file.
+
+Revise game.js to look like this:
+
+```
+var Game = require('crtrdg-gameloop');
+
+// Require the Player module
+var Player = require('./player');
+
+// the same game code we had before:
+
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+game.on('draw', function(context){
+  console.log('draw', context);
+  context.fillStyle = '#fff';
+  context.fillRect(10, 10, 10, 10);
+});
+
+game.on('pause', function(){
+  console.log('paused');
+});
+
+game.on('resume', function(){
+  console.log('resumed');
+});
+
+// The new player code:
+
+// create instance of Player with position, size, and color
+var player = new Player({
+  position: { x: 10, y: 10 },
+  size: { x: 10, y: 10 },
+  color: '#fff'
+});
+
+// add the player to the game
+player.addTo(game);
+
+// listen for update event.
+// here you can do things like change position or watch for keyboard/mouse events
+player.on('update', function(interval){
+  console.log(this.position);
+});
+
+// listen for draw event.
+// context is the canvas context, so you can draw on the canvas like usual.
+player.on('draw', function(context){
+  context.fillStyle = this.color;
+  context.fillRect(this.position.x, this.position.y, this.size.x, this.size.y);
+});
+```
+
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+## Additional resources
+
+### javascript books:
+- [js for cats](https://github.com/maxogden/javascript-for-cats)
+- [eloquent javascript](http://eloquentjavascript.net/)
+- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
+- [jquery fundamentals](http://jqfundamentals.com/)
+- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
+
+### node.js books:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [stream handbook](https://github.com/substack/stream-handbook)
+- [node beginner book](http://www.nodebeginner.org/)
+
+### html/js/dom books:
+- [dive into html5](http://diveintohtml5.info/)
+- [dom enlightenmnet](http://domenlightenment.com/)
+
+### Style guides:
+- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
+- [idiomatic html](https://github.com/necolas/idiomatic-html)
+- [idiomatic css](https://github.com/necolas/idiomatic-css)
+- [airbnb js style guide](https://github.com/airbnb/javascript)
+- [felixge node style guide](https://github.com/felixge/node-style-guide)
+- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
+
+
+
+# Changelog
+
+## v0.4.0
+- Add Introduction to npm
+- Add Introduction to callbacks
+- Add Introduction to canvas (still working on this)
+- Add Introduction to browserify
+- Substantial revisions to Chapter 01 - making a game
+- Many small typo / formatting fixes
+
+## v0.3.2
+- Substantial copy editing
+- Start chapter 1 about making an rpg game
+- Rearrange and edit Basics intro section
+
+## v0.3.1
+- start intro to node section
+- add contributors list
+- add simple keyboard interaction example
+
+## v0.3.0
+- start Basics section
+- add intro to Chrome Developer Tools
+- add intro to functions
+
+## v0.2.0:
+- added introduction to grunt.js
+- added introduction to git & GitHub
+- small typo fixes
+
+## v0.1.0:
+- first release
+- intro to functions - create an add function
+- appendix with initial style guide and additional resources
 
 
 # CHAPTER 0
@@ -1622,465 +2188,6 @@ As you're getting started it probably feels like errors are just something to av
 
 ### Hey, adding isn't really a useful function. Let's get serious.
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple website: **a fanpage for pizza**!
-
-
-# Chapter 1
-
-## Make a simple game
-
-Let's build a game, everybody. Let's have some fun.
-
-Our game will be built from scratch.
-
-We'll create a bunch of objects and functions. We'll put them together to make our game run, and experiment with changing the functions and the object attributes to alter the behavior of the game.
-
-It'll be a single player game. A [roguelike](http://en.wikipedia.org/wiki/Roguelike) [rpg](http://en.wikipedia.org/wiki/Role-playing_video_game) with extremely simple graphics.
-
-Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example.
-
-Our game will feature monsters, weapons, coins, potions, and a hero.
-
-That small list above gives us a good sense of what objects and functions we'll need in our code.
-
-We'll need to represent each of those things in our game code, so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
-
-### Game
-- Loop
-- Draw
-
-### Level
-- Load level data
-- Draw
-
-### Hero
-- Update
-- Draw
-- Drink Potion
-- Pick up Coin
-- Fight Monster
-
-### Monster
-- Update
-- Draw
-- Fight Hero
-
-### Weapon
-- Update
-- Draw
-
-### Coin
-- Update
-- Draw
-
-### Potions
-- Update
-- Draw
-
-Each of the above headers will be an object in our game, and each of the list items will be methods or attributes of their respective headers.
-
-## Requirements:
-You'll need these things installed on your computer:
-- node.js
-- browserify and beefy
-
-Make sure you're read the intro to node and intro to browserify chapters before starting this project. (TODO: link to those chapters.)
-
-To get started, create a folder for your game. I'm calling it `node-rogue`:
-
-```
-mkdir node-rogue
-cd node-rogue
-```
-
-Run the npm init command to create a package.json file for your project:
-
-```
-npm init
-```
-
-Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
-
-```
-name: (node-rogue) 
-version: (0.0.0) 
-description: a roguelike game made with javascript
-entry point: (index.js) game.js
-test command: node test.js
-git repository: git://github.com/learn-js/node-rogue
-keywords: gamezzz
-author: seth vincent
-license: (BSD) MIT
-```
-
-You should end up with a package.json file that looks like this:
-
-```
-{
-  "name": "node-rogue",
-  "version": "0.0.0",
-  "description": "a roguelike game made with javascript",
-  "main": "game.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/learnjs/node-rogue"
-  },
-  "keywords": [
-    "gamezzz"
-  ],
-  "author": "sethvincent",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/learnjs/node-rogue/issues"
-  }
-}
-```
-
-Now, create the game.js and test.js files:
-
-```
-touch game.js test.js
-```
-
-We'll also need an index.html file:
-
-```
-touch index.html
-```
-
-Open up that file and make it look like this:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>node-rogue</title>
-</head>
-<body>
-
-<h1 id="title">node-rogue</h1>
-
-<canvas id="game"></canvas>
-
-<script src="./bundle.js"></script>
-</body>
-</html>
-```
-
-Let's add a css file:
-
-```
-touch style.css
-```
-
-And give it some very basic styles:
-
-```
-html,
-body {
-  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-weight: 300;
-}
-
-h1#title {
-  margin-bottom: 50px;
-}
-
-canvas#game {
-  display: block;
-  margin: 0px auto;
-}
-```
-
-To ease development, we'll use a simple game library I recently called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
-
-Install `crtrdg-gameloop` using npm:
-
-```
-npm install crtrdg-gameloop --save
-```
-
-The `--save` option edits the package.json file and adds the module you're installing the the dependencies list. 
-
-## Now, to start writing javascript! 
-Open the game.js file, and get started:
-
-```
-// require crtrdg-gameloop
-var Game = require('crtrdg-gameloop');
-
-// create a new game
-var game = new Game({
-  canvasId: 'game',
-  width: 800,
-  height: 400,
-  backgroundColor: '#ff1f1f'
-});
-
-// this runs each time the game loops
-// it is useful for things like checking for user input
-// moving the position of characters/items
-// checking for game boundaries and collision detection
-// and other similar tasks
-// interval is the time since the last loop
-game.on('update', function(interval){
-  console.log('update', interval);
-});
-
-// the draw event runs after the update event
-// it's used for actually drawing your characters / items / backgrounds to the canvas
-// context is the actual canvas context, so you'll
-// use it to draw just like in the Introduction to Canvas chapter.
-game.on('draw', function(context){
-  console.log('draw', context);
-  context.fillStyle = '#fff';
-  context.fillRect(10, 10, 10, 10);
-});
-
-// if game.pause() is called somewhere in your code,
-// a `pause` event will be emitted
-// listen for it like this:
-game.on('pause', function(){
-  console.log('paused');
-});
-
-// if game.resume() is called somewhere in your code,
-// a `resume` event will be emitted
-// listen for it like this:
-game.on('resume', function(){
-  console.log('resumed');
-});
-```
-
-To run this code we will use beefy.
-
-Open the package.json file and add a `start` script to the scripts object so it looks like this:
-
-```
-"scripts": {
-  "test": "node test.js",
-  "start": "beefy game.js:bundle.js --live"
-},
-```
-
-If you've installed browserify and beefy like this:
-
-```
-npm install -g browserify beefy
-```
-
-You can now run:
-
-```
-npm start
-```
-
-This will serve your index.html file at http://localhost:9966.
-
-Open Chrome, navigate to that url, and open the javascript console.
-
-You should see the `update` and `draw` messages being logged to the console and a big red canvas with a small white block in the top left corner!
-
-This is the beginning of node-rogue.
-
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Appendix
-
-
-## Javascript style guide & syntax cheatsheet
-
-
-### Variables
-
-#### Creating a variable:
-
-```
-var nameOfVariable;
-```
-
-> Variables are camelCase, meaning first letter is lowercase, and if the variable is made of multiple words, the first letter of following words are capitalized.
-
-#### Creating a variable that references a string:
-
-```
-var thisIsAString = 'this is a string';
-```
-
-Surround strings with single quotes.
-
-
-#### Creating a variable that references a number:
-
-```
-var thisIsANumber = 3.14;
-```
-
-Numbers do not have quotes around them.
-
-#### Creating a variable that references an array:
-
-```
-var thisIsAnArray = [1, "two", [3, 4]];
-```
-
-Note that one of the values in the array is a number, one is a string, and another is an array. Arrays can hold any value in any order.
-
-#### Accessing the values in an array:
-
-```
-thisIsAnArray[0];
-```
-
-The above will return the number `1`. Arrays use numbers as the index of their values, and with javascript an array's index always start at `0`, making `0` reference the first value of the array.
-
-```
-thisIsAnArray[1];
-```
-
-This returns the string 'two';
-
-##### How would you return the number `4` from the nested array?
-
-Like this:
-
-```
-thisIsAnArray[2][1];
-```
-
-#### Creating a variable that references an object:
-
-var thisIsAnObject = {
-  someString: 'some string value',
-  someNumber: 1234,
-  someFunction: function(){
-    return 'a function that belongs to an object';
-  }
-}
-
-Here we're setting `someString` to `'some string value'`, `someNumber' to `1234`, and we're creating a function named `someFunction` that returns the string `'a function that belongs to an object'`. So how do we access these values?
-
-To get the value of `someString` using dot notation:
-
-```
-thisIsAnObject.someString;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someString'];
-```
-
-To get the value of `someNumber` using dot notation:
-
-```
-thisIsAnObject.someNumber;
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someNumber'];
-```
-
-To use the function `someFunction` using dot notation:
-
-```
-thisIsAnObject.someFunction();
-```
-
-Or using bracket notation:
-
-```
-thisIsAnObject['someFunction']();
-```
-
-Using square bracket notations with functions looks a little wacky. It will be useful if you are storing function names in variables as strings, and need to use the variable to call the function being stored. Otherwise, stick with dot notation.
-That goes for other attributes on an object, too: stick with dot notation unless there's a good reason to use bracket notation.
-
-For instance, it's more clear to use bracket notation in a situation like this:
-
-```
-for (var key in object){
-  thisIsAnObject[key];
-}
-```
-
-This gives you an idea of how to iterate through an object using a for...in loop.
-
-
-## Additional resources
-
-### javascript books:
-- [js for cats](https://github.com/maxogden/javascript-for-cats)
-- [eloquent javascript](http://eloquentjavascript.net/)
-- [learning javascript design patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- [writing modular javascript](http://addyosmani.com/writing-modular-js/)
-- [jquery fundamentals](http://jqfundamentals.com/)
-- [javascript enlightenment](http://www.javascriptenlightenment.com/JavaScript_Enlightenment.pdf)
-
-### node.js books:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [stream handbook](https://github.com/substack/stream-handbook)
-- [node beginner book](http://www.nodebeginner.org/)
-
-### html/js/dom books:
-- [dive into html5](http://diveintohtml5.info/)
-- [dom enlightenmnet](http://domenlightenment.com/)
-
-### Style guides:
-- [idiomatic.js](https://github.com/rwldrn/idiomatic.js)
-- [idiomatic html](https://github.com/necolas/idiomatic-html)
-- [idiomatic css](https://github.com/necolas/idiomatic-css)
-- [airbnb js style guide](https://github.com/airbnb/javascript)
-- [felixge node style guide](https://github.com/felixge/node-style-guide)
-- [jQuery's javascript style guide](http://contribute.jquery.org/style-guide/js/)
-
-
-
-# Changelog
-
-## v0.4.0
-- Add Introduction to npm
-- Add Introduction to callbacks
-- Add Introduction to canvas (still working on this)
-- Add Introduction to browserify
-- Substantial revisions to Chapter 01 - making a game
-- Many small typo / formatting fixes
-
-## v0.3.2
-- Substantial copy editing
-- Start chapter 1 about making an rpg game
-- Rearrange and edit Basics intro section
-
-## v0.3.1
-- start intro to node section
-- add contributors list
-- add simple keyboard interaction example
-
-## v0.3.0
-- start Basics section
-- add intro to Chrome Developer Tools
-- add intro to functions
-
-## v0.2.0:
-- added introduction to grunt.js
-- added introduction to git & GitHub
-- small typo fixes
-
-## v0.1.0:
-- first release
-- intro to functions - create an add function
-- appendix with initial style guide and additional resources
 
 
 # Contributors
