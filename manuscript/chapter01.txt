@@ -1,10 +1,8 @@
 # Chapter 1
 
-## Make a simple game
+## Make a game with javascript!
 
 Let's build a game, everybody. Let's have some fun.
-
-Our game will be built from scratch.
 
 We'll create a bunch of objects and functions. We'll put them together to make our game run, and experiment with changing the functions and the object attributes to alter the behavior of the game.
 
@@ -172,7 +170,7 @@ canvas#game {
 }
 ~~~~~~~~
 
-To ease development, we'll use a simple game library I recently called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
+To ease development, we'll use a simple game library I recently created called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
 
 Install `crtrdg-gameloop` using npm:
 
@@ -197,6 +195,8 @@ var game = new Game({
   backgroundColor: '#ff1f1f'
 });
 
+// game.on('update', callback) 
+//
 // this runs each time the game loops
 // it is useful for things like checking for user input
 // moving the position of characters/items
@@ -207,6 +207,8 @@ game.on('update', function(interval){
   console.log('update', interval);
 });
 
+// game.on('draw', callback) 
+//
 // the draw event runs after the update event
 // it's used for actually drawing your characters / items / backgrounds to the canvas
 // context is the actual canvas context, so you'll
@@ -217,6 +219,8 @@ game.on('draw', function(context){
   context.fillRect(10, 10, 10, 10);
 });
 
+// game.on('pause', callback) 
+//
 // if game.pause() is called somewhere in your code,
 // a `pause` event will be emitted
 // listen for it like this:
@@ -224,6 +228,8 @@ game.on('pause', function(){
   console.log('paused');
 });
 
+// game.on('resume', callback) 
+//
 // if game.resume() is called somewhere in your code,
 // a `resume` event will be emitted
 // listen for it like this:
@@ -232,7 +238,7 @@ game.on('resume', function(){
 });
 ~~~~~~~~
 
-To run this code we will use beefy.
+To run this code we will use [beefy](https://github.com/chrisdickinson/beefy).
 
 Open the package.json file and add a `start` script to the scripts object so it looks like this:
 
@@ -262,6 +268,107 @@ Open Chrome, navigate to that url, and open the javascript console.
 You should see the `update` and `draw` messages being logged to the console and a big red canvas with a small white block in the top left corner!
 
 This is the beginning of node-rogue.
+
+## Create the player character
+
+Next, we'll make a player that can move around the screen. We'll make use of another small game module: `[crtrdg-entity](https://github.com/sethvincent/crtrdg-entity)`.
+
+First, install the `crtrdg-entity` module:
+
+~~~~~~~~
+npm install --save crtrdg-entity
+~~~~~~~~
+
+Next, create a player.js file that looks like this:
+
+~~~~~~~~
+// require `crtrdg-entity` module
+var Entity = require('crtrdg-entity');
+
+// Make this available as a module that can be required
+exports.module = Player;
+
+// make the Player funtion inherit from crtrdg-entity
+inherits(Player, Entity);
+
+// create Player function
+function Player(options){
+  this.position = { 
+    x: options.position.x, 
+    y: options.position.y 
+  };
+
+  this.size = {
+    x: options.size.x,
+    y: options.size.y
+  };
+
+  this.color = options.color
+}
+~~~~~~~~
+
+So we created a constructor that takes position, size, and color options. We can now use `Player` in our game.js file.
+
+Revise game.js to look like this:
+
+~~~~~~~~
+var Game = require('crtrdg-gameloop');
+
+// Require the Player module
+var Player = require('./player');
+
+// the same game code we had before:
+
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+game.on('draw', function(context){
+  console.log('draw', context);
+  context.fillStyle = '#fff';
+  context.fillRect(10, 10, 10, 10);
+});
+
+game.on('pause', function(){
+  console.log('paused');
+});
+
+game.on('resume', function(){
+  console.log('resumed');
+});
+
+// The new player code:
+
+// create instance of Player with position, size, and color
+var player = new Player({
+  position: { x: 10, y: 10 },
+  size: { x: 10, y: 10 },
+  color: '#fff'
+});
+
+// add the player to the game
+player.addTo(game);
+
+// listen for update event.
+// here you can do things like change position or watch for keyboard/mouse events
+player.on('update', function(interval){
+  console.log(this.position);
+});
+
+// listen for draw event.
+// context is the canvas context, so you can draw on the canvas like usual.
+player.on('draw', function(context){
+  context.fillStyle = this.color;
+  context.fillRect(this.position.x, this.position.y, this.size.x, this.size.y);
+});
+~~~~~~~~
 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
