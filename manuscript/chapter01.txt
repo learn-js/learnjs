@@ -130,6 +130,7 @@ Open up that file and make it look like this:
 <head>
   <meta charset="utf-8">
   <title>node-rogue</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -161,7 +162,9 @@ body {
 }
 
 h1#title {
-  margin-bottom: 50px;
+  margin: 30px 0px;
+  text-align: center;
+  font-weight: 300;
 }
 
 canvas#game {
