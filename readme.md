@@ -417,6 +417,37 @@ This is a newer resource, but a good one. It's got a great design and well-organ
 
 
 
+# Introduction to node.
+
+Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
+
+## In this book, we'll use node in these ways:
+- Install command line tools available through node's package manager, `npm`.
+- Create basic web servers to serve static content to our web browser.
+- Experiment with real-time, multi-user applications.
+
+## To learn node in detail, read these resources in this order:
+- [art of node](https://github.com/maxogden/art-of-node)
+- [streams handbook](https://github.com/substack/stream-handbook)
+
+## Install node:
+
+There are a few options for this, and I've put them in my order of preference:
+
+### Use nvm to manage node versions.
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+
+### Install using a package manager. 
+This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
+
+### Download an installer from nodejs.org.
+[Here's the node.js download page][nodejs.org/download].
+
+Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+
+> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
 # Introduction to git & GitHub
 
 Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
@@ -449,37 +480,6 @@ GitHub has a useful service called [GitHub Pages](http://pages.github.com) that 
 - use a custom domain name if you want!
 
 Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
-
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
-
-
-# Introduction to node.
-
-Node.js is server-side javascript. It is well-suited to real-time applications and systems that are heavy on input and output. You can use it to create web servers, to manage information in databases, to build real-time communication tools, and more.
-
-## In this book, we'll use node in these ways:
-- Install command line tools available through node's package manager, `npm`.
-- Create basic web servers to serve static content to our web browser.
-- Experiment with real-time, multi-user applications.
-
-## To learn node in detail, read these resources in this order:
-- [art of node](https://github.com/maxogden/art-of-node)
-- [streams handbook](https://github.com/substack/stream-handbook)
-
-## Install node:
-
-There are a few options for this, and I've put them in my order of preference:
-
-### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
-
-### Install using a package manager. 
-This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here][https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager].
-
-### Download an installer from nodejs.org.
-[Here's the node.js download page][nodejs.org/download].
-
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
@@ -1756,6 +1756,7 @@ Open up that file and make it look like this:
 <head>
   <meta charset="utf-8">
   <title>node-rogue</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -1787,7 +1788,9 @@ body {
 }
 
 h1#title {
-  margin-bottom: 50px;
+  margin: 30px 0px;
+  text-align: center;
+  font-weight: 300;
 }
 
 canvas#game {
