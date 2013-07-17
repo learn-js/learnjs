@@ -370,5 +370,55 @@ player.on('draw', function(context){
 });
 ~~~~~~~~
 
+Check your browser at url http://localhost:9966 and you should see the red canvas with a small white square in the top left corner!
+
+## Adding keyboard interaction
+
+Let's move that little white square around the screen now!
+
+We'll use a module named `crtrdg-keyboard` to listen for keyboard events.
+
+Install it:
+
+~~~~~~~~
+npm install --save crtrdg-keyboard
+~~~~~~~~
+
+Require it in game.js:
+
+~~~~~~~~
+var Keyboard = require('crtrdg-keyboard');
+~~~~~~~~
+
+Create the keyboard:
+
+~~~~~~~~
+var keyboard = new Keyboard();
+~~~~~~~~
+
+Revise player.on('update'):
+
+~~~~~~~~
+player.on('update', function(interval){
+  console.log(this.position);
+
+  if ('<up>' in keyboard.keysDown){
+    this.position.y -= 1;
+  }
+  
+  if ('<down>' in keyboard.keysDown){
+    this.position.y += 1;
+  }
+  
+  if ('<left>' in keyboard.keysDown){
+    this.position.x -= 1;
+  }
+
+  if ('<right>' in keyboard.keysDown){
+    this.position.x += 1;
+  }
+});
+~~~~~~~~
+
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
