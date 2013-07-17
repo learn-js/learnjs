@@ -18,6 +18,7 @@ chapter01.txt
 
 backmatter:
 appendix.txt
+package-managers.txt
 style.txt
 resources.txt
 changelog.txt
