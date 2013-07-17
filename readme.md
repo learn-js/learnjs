@@ -1910,9 +1910,10 @@ Next, create a player.js file that looks like this:
 ```
 // require `crtrdg-entity` module
 var Entity = require('crtrdg-entity');
+var inherits = require('inherits');
 
 // Make this available as a module that can be required
-exports.module = Player;
+module.exports = Player;
 
 // make the Player funtion inherit from crtrdg-entity
 inherits(Player, Entity);
@@ -1958,8 +1959,6 @@ game.on('update', function(interval){
 
 game.on('draw', function(context){
   console.log('draw', context);
-  context.fillStyle = '#fff';
-  context.fillRect(10, 10, 10, 10);
 });
 
 game.on('pause', function(){
@@ -2019,7 +2018,7 @@ var Keyboard = require('crtrdg-keyboard');
 Create the keyboard:
 
 ```
-var keyboard = new Keyboard();
+var keyboard = new Keyboard(game);
 ```
 
 Revise player.on('update'):
@@ -2043,6 +2042,72 @@ player.on('update', function(interval){
   if ('<right>' in keyboard.keysDown){
     this.position.x += 1;
   }
+});
+```
+
+So the full code of our game.js file should now look like this:
+
+~~~~
+var Game = require('crtrdg-gameloop');
+var Keyboard = require('crtrdg-keyboard');
+var Player = require('./player');
+
+var game = new Game({
+  canvasId: 'game',
+  width: 800,
+  height: 400,
+  backgroundColor: '#ff1f1f'
+});
+
+var keyboard = new Keyboard(game);
+
+game.on('update', function(interval){
+  console.log('update', interval);
+});
+
+game.on('draw', function(context){
+  console.log('draw', context);
+});
+
+game.on('pause', function(){
+  console.log('paused');
+});
+
+game.on('resume', function(){
+  console.log('resumed');
+});
+
+var player = new Player({
+  position: { x: 10, y: 10 },
+  size: { x: 10, y: 10 },
+  color: '#fff'
+});
+
+player.addTo(game);
+
+player.on('update', function(interval){
+  console.log(this.position);
+
+  if ('<up>' in keyboard.keysDown){
+    this.position.y -= 1;
+  }
+  
+  if ('<down>' in keyboard.keysDown){
+    this.position.y += 1;
+  }
+  
+  if ('<left>' in keyboard.keysDown){
+    this.position.x -= 1;
+  }
+
+  if ('<right>' in keyboard.keysDown){
+    this.position.x += 1;
+  }
+});
+
+player.on('draw', function(context){
+  context.fillStyle = this.color;
+  context.fillRect(this.position.x, this.position.y, this.size.x, this.size.y);
 });
 ```
 
