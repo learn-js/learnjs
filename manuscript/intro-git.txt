@@ -32,3 +32,9 @@ GitHub has a useful service called [GitHub Pages](http://pages.github.com) that 
 Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+init
+add
+commit
+
+
