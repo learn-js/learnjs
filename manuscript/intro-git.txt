@@ -33,8 +33,19 @@ Visit the [help section for GitHub Pages](https://help.github.com/categories/20/
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
+### Cover the basics of these commands:
 init
 add
 commit
+rm
+branch
+checkout
+merge
+remote (remote -v shows urls)
+remote add <name> <url>
+fetch / pull
+
+checkout a remote branch:
+git checkout -t origin/haml
 
 
