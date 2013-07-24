@@ -450,7 +450,103 @@ GitHub has a useful service called [GitHub Pages](http://pages.github.com) that 
 
 Visit the [help section for GitHub Pages](https://help.github.com/categories/20/articles) to learn more details about hosting sites on GitHub.
 
+Basics of using git:
+
+Create a git repository:
+
+```
+cd name-of-folder
+git init
+```
+
+Add files:
+
+```
+git add name-of-file
+
+// or add all files in directory:
+
+git add .
+```
+
+When you add files to a git repository they are "staged" and ready to be committed.
+
+Remove files:
+```
+git rm name-of-file
+
+// force removal of files:
+
+git rm -rf name-of-file-or-directory
+```
+
+Commit files and add a message using the `-m` option:
+
+```
+git commit -m 'a message describing the commit'
+```
+
+Create a branch:
+
+```
+git branch name-of-branch
+```
+
+Checkout a branch:
+
+```
+git checkout name-of-branch
+```
+
+Shortcut for creating a new branch and checking it out:
+
+```
+git checkout -b name-of-branch
+```
+
+Merge a branch into the master branch:
+
+```
+git checkout master
+git merge name-of-branch
+```
+
+Add a remote repository:
+
+```
+git remote add origin git@github.com:yourname/projectname.git
+```
+
+List associated repositories:
+
+```
+git remote -v
+```
+
+Pull changes from a remote repository:
+
+```
+git pull origin master
+```
+
+Push changes to a remote repository
+
+```
+git push origin master
+```
+
+Checkout a remote branch:
+
+```
+git checkout -t origin/haml
+```
+
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+
+
+
 
 
 # Introduction to node.
