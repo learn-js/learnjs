@@ -12,6 +12,7 @@ intro-browserify.txt
 intro-grunt.txt
 intro-functions.txt
 intro-callbacks.txt
+intro-testing.txt
 intro-canvas.txt
 chapter00.txt
 chapter01.txt
