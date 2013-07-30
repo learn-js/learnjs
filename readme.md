@@ -1,36 +1,3 @@
-# Learn.js
-> A guidebook to building projects with javascript.
-
-Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can help guide the development of the book by submitting errata and topic requests to [the book's issues queue](https://github.com/learn-js/learnjs/issues).
-
-
-
-# THE BASICS
-
-## In this section, we'll get started learning:
-
-### Chrome's Developer Tools
-All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
-
-### Basic html and css
-For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
-
-### Javascript syntax, variables, data types, functions, and style guidelines
-Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
-
-### Node.js and npm
-Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
-
-### Bower, browserify, and grunt
-The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
-
-### Git and GitHub
-Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
-
-### Testing javascript
-Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
-
-
 # Introduction 
 
 ## Thank you. 
@@ -102,6 +69,39 @@ Javascript is a very flexible language that can be employed using a number of st
 - Prototypal inheritance.
 - Constructors.
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
+
+
+# Learn.js
+> A guidebook to building projects with javascript.
+
+Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can help guide the development of the book by submitting errata and topic requests to [the book's issues queue](https://github.com/learn-js/learnjs/issues).
+
+
+
+# THE BASICS
+
+## In this section, we'll get started learning:
+
+### Chrome's Developer Tools
+All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
+
+### Basic html and css
+For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
+
+### Javascript syntax, variables, data types, functions, and style guidelines
+Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
+
+### Node.js and npm
+Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
+
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
+
+### Git and GitHub
+Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
+
+### Testing javascript
+Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
 # Hello, javascript. It's nice to meet you.
@@ -708,99 +708,6 @@ npm search template
 This will return a bunch of modules related to templates!
 
 
-# Introduction to browserify.
-
-There's all this wonderful code on `npm`, the node.js package manager.
-
-What if we could use that code in the browser?
-
-## Hey, we can. Use browserify.
-
-With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
-
-We can also write our browser-side javascript in the node.js style by using `require`.
-
-Install browserify:
-
-```
-npm install -g browserify
-```
-
-We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
-
-### Brief example:
-
-```
-// require the core node events module
-var EventEmitter = require('events').EventEmitter;
-
-//create a new event emitter
-var emitter = new EventEmitter;
-
-// set up a listener for the event
-emitter.on('pizza', function(message){
-  console.log(message);
-});
-
-// emit an event
-emitter.emit('pizza', 'pizza is extremely yummy');
-```
-
-Put the above code in a file named index.js.
-
-Now, to be able to run this code in the browser, enter this command in the terminal:
-
-```
-browserify index.js > bundle.js
-```
-
-The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
-
-You can include bundle.js in your html now like any other javascript file.
-
-Example:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>node / browserify example</title>
-</head>
-<body>
-
-<script src="./bundle.js"></script>
-</body>
-</html>
-```
-
-That's it! Now you can use node modules and `require` in the browser!
-
-## Live reload development environment
-If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
-
-**Enter beefy!**
-
-`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
-
-Install beefy:
-
-```
-npm install -g beefy
-```
-
-Now, run this:
-
-```
-beefy index.js:bundle.js --live
-```
-
-The `--live` option enables the live reload functionality of beefy.
-
-This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
-
-You'll see `pizza is extremely yummy` in the javascript console!
-
-
 # Introduction to grunt.js
 
 Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
@@ -1022,6 +929,99 @@ If you didn't get output like that, check your Gruntfile for typos. If you did g
 
 If this seems like a lot, like it's beating up your brain, don't worry. After a few times of starting a project like this, these initial steps will get faster and easier. Heck, you might even create some kind of base project that you can build on with each new project so that you don't have to write the boilerplate every time. Or you could use a project like yeoman for its code generators. That's up to you, but when first learning this it's a reasonable idea to start from scratch and see how everything works.
 
+
+
+# Introduction to browserify.
+
+There's all this wonderful code on `npm`, the node.js package manager.
+
+What if we could use that code in the browser?
+
+## Hey, we can. Use browserify.
+
+With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
+
+We can also write our browser-side javascript in the node.js style by using `require`.
+
+Install browserify:
+
+```
+npm install -g browserify
+```
+
+We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
+
+### Brief example:
+
+```
+// require the core node events module
+var EventEmitter = require('events').EventEmitter;
+
+//create a new event emitter
+var emitter = new EventEmitter;
+
+// set up a listener for the event
+emitter.on('pizza', function(message){
+  console.log(message);
+});
+
+// emit an event
+emitter.emit('pizza', 'pizza is extremely yummy');
+```
+
+Put the above code in a file named index.js.
+
+Now, to be able to run this code in the browser, enter this command in the terminal:
+
+```
+browserify index.js > bundle.js
+```
+
+The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
+
+You can include bundle.js in your html now like any other javascript file.
+
+Example:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>node / browserify example</title>
+</head>
+<body>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+```
+
+That's it! Now you can use node modules and `require` in the browser!
+
+## Live reload development environment
+If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
+
+**Enter beefy!**
+
+`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
+
+Install beefy:
+
+```
+npm install -g beefy
+```
+
+Now, run this:
+
+```
+beefy index.js:bundle.js --live
+```
+
+The `--live` option enables the live reload functionality of beefy.
+
+This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
+
+You'll see `pizza is extremely yummy` in the javascript console!
 
 
 # Introduction to functions.
