@@ -1,14 +1,36 @@
 # Introduction to testing
 
-In this book we will test code using [tap](https://github.com/isaacs/node-tap), [tape](https://github.com/substack/tape), and [mocha](https://github.com/visionmedia/mocha).
+In this book we will test code using [tape](https://github.com/substack/tape), and [mocha](https://github.com/visionmedia/mocha).
 
-## tap
 
 ## tape
 
+tape's api is largely based on
+
+### Install tape as a development dependency:
+~~~~~~~~
+npm install tape --save-dev
+~~~~~~~~
+
+### Example:
+~~~~~~~~
+var test = require('tape');
+
+test('timing test', function (t) {
+    t.plan(2);
+
+    t.equal(typeof Date.now, 'function');
+    var start = Date.now();
+
+    setTimeout(function () {
+        t.equal(Date.now() - start, 100);
+    }, 100);
+});
+~~~~~~~~
+
 ## mocha
 
-### install:
+### Install mocha as a command line tool:
 
 ~~~~~~~~
 npm install -g mocha
