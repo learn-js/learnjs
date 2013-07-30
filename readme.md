@@ -1,3 +1,10 @@
+# Learn.js
+> A guidebook to building projects with javascript.
+
+Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can help guide the development of the book by submitting errata and topic requests to [the book's issues queue](https://github.com/learn-js/learnjs/issues).
+
+
+
 # Introduction 
 
 ## Thank you. 
@@ -69,13 +76,6 @@ Javascript is a very flexible language that can be employed using a number of st
 - Prototypal inheritance.
 - Constructors.
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
-
-
-# Learn.js
-> A guidebook to building projects with javascript.
-
-Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can help guide the development of the book by submitting errata and topic requests to [the book's issues queue](https://github.com/learn-js/learnjs/issues).
-
 
 
 # THE BASICS
@@ -708,6 +708,99 @@ npm search template
 This will return a bunch of modules related to templates!
 
 
+# Introduction to browserify.
+
+There's all this wonderful code on `npm`, the node.js package manager.
+
+What if we could use that code in the browser?
+
+## Hey, we can. Use browserify.
+
+With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
+
+We can also write our browser-side javascript in the node.js style by using `require`.
+
+Install browserify:
+
+```
+npm install -g browserify
+```
+
+We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
+
+### Brief example:
+
+```
+// require the core node events module
+var EventEmitter = require('events').EventEmitter;
+
+//create a new event emitter
+var emitter = new EventEmitter;
+
+// set up a listener for the event
+emitter.on('pizza', function(message){
+  console.log(message);
+});
+
+// emit an event
+emitter.emit('pizza', 'pizza is extremely yummy');
+```
+
+Put the above code in a file named index.js.
+
+Now, to be able to run this code in the browser, enter this command in the terminal:
+
+```
+browserify index.js > bundle.js
+```
+
+The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
+
+You can include bundle.js in your html now like any other javascript file.
+
+Example:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>node / browserify example</title>
+</head>
+<body>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
+```
+
+That's it! Now you can use node modules and `require` in the browser!
+
+## Live reload development environment
+If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
+
+**Enter beefy!**
+
+`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
+
+Install beefy:
+
+```
+npm install -g beefy
+```
+
+Now, run this:
+
+```
+beefy index.js:bundle.js --live
+```
+
+The `--live` option enables the live reload functionality of beefy.
+
+This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
+
+You'll see `pizza is extremely yummy` in the javascript console!
+
+
 # Introduction to grunt.js
 
 Grunt is a tool for managing the javascript, css, and html files of your web project. Grunt is a task manager similar to Ruby's `rake`. You can run any arbitrary tasks you want, and there are a number of grunt plugins that make it easy to set up common tasks. Grunt is useful for running tests or for build steps, including turning sass, stylus, or less files into css, concatenating files, or creating .zip or .tar.gz packages of your project.
@@ -931,99 +1024,6 @@ If this seems like a lot, like it's beating up your brain, don't worry. After a 
 
 
 
-# Introduction to browserify.
-
-There's all this wonderful code on `npm`, the node.js package manager.
-
-What if we could use that code in the browser?
-
-## Hey, we can. Use browserify.
-
-With [browserify](https://github.com/substack/node-browserify), we can use some core node modules and many of the thousands of modules on `npm` in our browser-side code.
-
-We can also write our browser-side javascript in the node.js style by using `require`.
-
-Install browserify:
-
-```
-npm install -g browserify
-```
-
-We use the `-g` option to install browserify globally on your machine, allowing you to use it on the command line.
-
-### Brief example:
-
-```
-// require the core node events module
-var EventEmitter = require('events').EventEmitter;
-
-//create a new event emitter
-var emitter = new EventEmitter;
-
-// set up a listener for the event
-emitter.on('pizza', function(message){
-  console.log(message);
-});
-
-// emit an event
-emitter.emit('pizza', 'pizza is extremely yummy');
-```
-
-Put the above code in a file named index.js.
-
-Now, to be able to run this code in the browser, enter this command in the terminal:
-
-```
-browserify index.js > bundle.js
-```
-
-The bundle.js file now has your event emitter code along with any dependencies on core node modules and shims to make them work in the browser.
-
-You can include bundle.js in your html now like any other javascript file.
-
-Example:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>node / browserify example</title>
-</head>
-<body>
-
-<script src="./bundle.js"></script>
-</body>
-</html>
-```
-
-That's it! Now you can use node modules and `require` in the browser!
-
-## Live reload development environment
-If you're in the middle of writing code, you'll find running `browserify` in the terminal to regenerate bundle.js, then refreshing the browser to be time-consuming and annoying.
-
-**Enter beefy!**
-
-`beefy` is a command-line tool for automatically generating and serving your browserify bundles as you develop. Each time you save your javascript file `beefy` will regenerate bundle.js and refresh the browser automatically.
-
-Install beefy:
-
-```
-npm install -g beefy
-```
-
-Now, run this:
-
-```
-beefy index.js:bundle.js --live
-```
-
-The `--live` option enables the live reload functionality of beefy.
-
-This will by default serve your index.html file at http://localhost:9966. Open Chrome, enter that url, then open the javascript console by using the keyboard shortcut `command+option+j`.
-
-You'll see `pizza is extremely yummy` in the javascript console!
-
-
 # Introduction to functions.
 
 ## Eating, digesting, and pooping.
@@ -1166,6 +1166,66 @@ eat("pizza", poop);
 ```
 
 Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+
+
+# Introduction to testing
+
+In this book we will test code using [tape](https://github.com/substack/tape), and [mocha](https://github.com/visionmedia/mocha).
+
+
+## tape
+
+tape's api is largely based on
+
+### Install tape as a development dependency:
+```
+npm install tape --save-dev
+```
+
+### Example:
+```
+var test = require('tape');
+
+test('timing test', function (t) {
+    t.plan(2);
+
+    t.equal(typeof Date.now, 'function');
+    var start = Date.now();
+
+    setTimeout(function () {
+        t.equal(Date.now() - start, 100);
+    }, 100);
+});
+```
+
+## mocha
+
+### Install mocha as a command line tool:
+
+```
+npm install -g mocha
+```
+
+### Example:
+
+```
+var assert = require("assert");
+
+describe('Array', function(){
+  describe('#indexOf()', function(){
+    it('should return -1 when the value is not present', function(){
+      assert.equal(-1, [1,2,3].indexOf(5));
+      assert.equal(-1, [1,2,3].indexOf(0));
+    });
+  });
+});
+```
+
+### Run the example with the mocha terminal command:
+
+```
+mocha
+```
 
 
 # Introduction to canvas
