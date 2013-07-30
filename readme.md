@@ -5,6 +5,32 @@ Like the book? You can purchase it at [learnjs.io](http://learnjs.io). You can h
 
 
 
+# THE BASICS
+
+## In this section, we'll get started learning:
+
+### Chrome's Developer Tools
+All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
+
+### Basic html and css
+For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
+
+### Javascript syntax, variables, data types, functions, and style guidelines
+Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
+
+### Node.js and npm
+Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
+
+### Bower, browserify, and grunt
+The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
+
+### Git and GitHub
+Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
+
+### Testing javascript
+Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
+
+
 # Introduction 
 
 ## Thank you. 
@@ -54,11 +80,17 @@ We'll show you the best places to look for javascript libraries, the best resour
 
 _Learn.js_ will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.
 
-### Some of the javascript libraries the book will cover:
-- jQuery.
-- leaflet.js, mapbox.js, gmaps.js, etc.
-- d3.js, chart.js, raphael.js, and vega.js.
-- pixi.js, voxel.js, and processing.js.
+### Some of the javascript modules/libraries the book will cover:
+- browserify
+- request
+- express
+- leaflet.js
+- d3.js
+- crtrdg.js
+- voxel.js
+- backbone
+- angular
+- polymer
 - And other libraries. [Let us know what you'd like to see covered](http://hi@learnjs.io).
 
 ## Programming patterns
@@ -70,32 +102,6 @@ Javascript is a very flexible language that can be employed using a number of st
 - Prototypal inheritance.
 - Constructors.
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
-
-
-# THE BASICS
-
-## In this section, we'll get started learning:
-
-### Chrome's Developer Tools
-All browsers include tools for evaluating, debugging, and auditing your code and your site's performance. This section will introduce you to the tools offered in the browser Chrome, and later in the book we'll go into these tools in more detail.
-
-### Basic html and css
-For many of our projects in this book, html and css will be kept as minimal as possible. This refresher will get you up to speed if you haven't worked with css or html much before.
-
-### Javascript syntax, variables, data types, functions, and style guidelines
-Here we'll go over the basic parts of javascript. We'll cover the equivalents of a programming language's grammar and punctuation, as well as the basic building blocks of javascript: strings, numbers, booleans, arrays, objects, and functions. We'll also briefly explore style guidelines for writing javascript that help will ensure your code is readable and maintainable for you and others.
-
-### Node.js and npm
-Server side javascript is a seriously awesome thing, and while this book will only give an introductory look at what's possible, we'll be using many command line tools based on node.js that are installable using `npm`, node's package manager.
-
-### Bower, browserify, and grunt
-The command line tools we'll use most commonly in this book are bower, browserify, and grunt. Bower is a package manager for client-side javascript and css. Browserify is a tool that allows us to organize javascript in modules that work the same as node.js modules (and we can even use node modules in our browser code). Grunt is a build tool we'll use to automate repetitive tasks in javascript development. We'll combine bower, browserify, and grunt in the more complicated projects for awesome automation of our code.
-
-### Git and GitHub
-Git is a tool for tracking, sharing, and collaborating on versions of your code, and GitHub is the defacto resource for hosting code online. These are essential tools for anyone working on the web, and we'll use them in every part of the book.
-
-### Testing javascript
-Writing tests for your code does two things: ensure your code works as expected when changes are made, and provides examples of usage of your project. When applicable we'll write the tests for a project first, before writing the code that does the real work, and we'll describe later why this is a useful workflow.
 
 
 # Hello, javascript. It's nice to meet you.
@@ -644,7 +650,7 @@ And run the browserify command:
 browserify
 ```
 
-Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
+Without any options it'll only return help text. For more about browserify, check out the Introduction to browserify section.
 
 To learn more about `npm` run the command without any options:
 
