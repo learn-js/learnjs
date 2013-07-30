@@ -62,7 +62,7 @@ And run the browserify command:
 browserify
 ~~~~~~~~
 
-Right now it'll only return help text. For more about browserify, check out the Introduction to browserify section. (TODO: link to that chapter)
+Without any options it'll only return help text. For more about browserify, check out the Introduction to browserify section.
 
 To learn more about `npm` run the command without any options:
 

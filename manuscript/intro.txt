@@ -47,11 +47,17 @@ We'll show you the best places to look for javascript libraries, the best resour
 
 _Learn.js_ will cover client-side libraries as well as node.js modules, and explore opportunities for using libraries that work on both the client and the server.
 
-### Some of the javascript libraries the book will cover:
-- jQuery.
-- leaflet.js, mapbox.js, gmaps.js, etc.
-- d3.js, chart.js, raphael.js, and vega.js.
-- pixi.js, voxel.js, and processing.js.
+### Some of the javascript modules/libraries the book will cover:
+- browserify
+- request
+- express
+- leaflet.js
+- d3.js
+- crtrdg.js
+- voxel.js
+- backbone
+- angular
+- polymer
 - And other libraries. [Let us know what you'd like to see covered](http://hi@learnjs.io).
 
 ## Programming patterns
