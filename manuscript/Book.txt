@@ -14,7 +14,6 @@ intro-functions.txt
 intro-callbacks.txt
 intro-testing.txt
 intro-canvas.txt
-chapter00.txt
 
 websites.txt
 
