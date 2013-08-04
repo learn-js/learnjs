@@ -2,7 +2,7 @@
 
 ## A fanpage for pizza.
 
-We're going to make a website for pizza as our first project, and I'm pretty excited about that. This project starts out a little heavy on html and css, but that's alright for the first project isn't it? Maybe you need an html/css refresher. If you're a hero of markup and styling you should be able to complete this project super fast.
+We're going to make a website for pizza as our first project and host it using GitHub Pages. I'm pretty excited about that. This project starts out a little heavy on html and css, but that's alright for the first project isn't it? Maybe you need an html/css refresher. If you're a hero of markup and styling you should be able to complete this project super fast, or you may want to ski(m/p) this chapter.
 
 ### A breakdown of what we'll go over:  
 - Sketching the contents of the page.  

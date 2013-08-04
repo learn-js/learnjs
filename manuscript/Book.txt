@@ -18,6 +18,7 @@ intro-canvas.txt
 package-managers.txt
 
 websites.txt
+pizza-fanpage.txt
 
 games.txt
 chapter01.txt
