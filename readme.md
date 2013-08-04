@@ -496,6 +496,33 @@ Open and edit a file with the simple nano editor:
 nano file-name
 ```
 
+Move a file or directory:
+
+```
+mv file new/path/to/file
+```
+
+Rename a file or directory:
+
+```
+mv file new-file-name
+```
+
+Copy a file:
+
+```
+cp file name-of-file-copy
+```
+
+Copy a directory
+
+```
+cp -R directory directory-copy
+```
+
+The `-R` option allows for recursive copying of files inside the directory.
+
+
 Delete a file:
 
 ```
@@ -2082,7 +2109,6 @@ mkdir images
 ### Adding text and images to our microsite.
 
 ### Creating a pizza with code.
-We're going to use a javascript library called raphael.js
 
 
 ### Adding menu data using json.

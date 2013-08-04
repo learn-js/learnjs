@@ -92,7 +92,6 @@ mkdir images
 ### Adding text and images to our microsite.
 
 ### Creating a pizza with code.
-We're going to use a javascript library called raphael.js
 
 
 ### Adding menu data using json.
