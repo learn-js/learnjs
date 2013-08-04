@@ -23,7 +23,7 @@ But we can build our pizza microsite with a similar tone and purpose. On the web
 
 Choosing pizza as the topic is arbitrary. You could make a fanpage for anything. 
 
-If we were writing a zine in the '90s we might make a quick prototype with a pencial. And you know, that's basically what we'll do right now, too. Instead of calling it a zine, we'll call it a microsite.
+If we were writing a zine in the '90s we might make a quick prototype with a pencil. And you know, that's basically what we'll do right now, too. Instead of calling it a zine, we'll call it a microsite.
 
 Get a pencil and a piece of paper. Or find a marker and go to your window or whiteboard. Whatever. Let's sketch.
 
@@ -67,35 +67,109 @@ mkdir images
 
 #### Add the following markup to your index.html file:
 
+(you don't have to copy the comments)
+
 ~~~~~~~~
 <!DOCTYPE html>
 <html>
 
 <head>
-  <!-- this ensures ie is using the latest rendering mode -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- the title of the page – shows up in the browser tab/window -->
-  <title>I love pizza.</title>
+<!-- the title of the page – shows up in the browser tab/window -->
+<title>I love pizza.</title>
 
-  <!-- default viewport settings to help with mobile/responsive design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- this ensures ie is using the latest rendering mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- default viewport settings to help with mobile/responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- include our css styles -->
+<link href="style.css" rel="stylesheet">
+
 </head>
 
 <body>
   <h1>I love pizza.</h1>
+
+  <!-- include our javascript -->
+  <script src="app.js"></script>
 </body>
 
 </html>
 ~~~~~~~~
 
+That'll get us started.
+
 ### Adding text and images to our microsite.
 
-### Creating a pizza with code.
+#### Add the header:
+
+Replace the current `h1` tag with this markup for the header:
+
+~~~~~~~~
+<header>
+  <h1>I love pizza</h1>
+</header>
+~~~~~~~~
+
+After the closing header tag, add this main content section:
+
+~~~~~~~~
+<main role="main">
+  <p>Pizza is my favorite food in the world, and here's why: it's delicious.</p>
+</main>
+~~~~~~~~
+
+The `main` tag is a fairly new addition to html5. Feel free to use your own text about pizza here.
+
+After the closing body tag, add a footer:
+
+~~~~~~~~
+<footer>
+  <p>Made by YOUR NAME HERE with love for pizza.</p>
+</footer>
+~~~~~~~~
+
+That should give us an html document that looks like this:
+
+~~~~~~~~
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>I love pizza.</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <h1>I love pizza</h1>
+</header>
+
+<main role="main">
+  <p>Pizza is my favorite food in the world, and here's why: it's delicious.</p>
+</main>
+
+<footer>
+  <p>Made by YOUR NAME HERE with love for pizza.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+
+</html>
+~~~~~~~~
 
 
-### Adding menu data using json.
-Let's say you're favorite pizza place is named Pizza Pi, and one of the employees is also a web developer. This awesome pizza artist decided to create a json feed of their menu, so customers can work with the data. Weird, right?
+### Create a pizza with code.
 
+### Create a map of your favorite pizza places
 
-### Map your favorite pizza places.
+> This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).

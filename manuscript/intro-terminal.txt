@@ -116,7 +116,7 @@ Never do this:
 rm -rf /
 ~~~~~~~~
 
-Be very careful with the rm command. You can delete things on accident very easily.
+Be very careful with the rm command. You can easily delete things on accident.
 
 Clear the terminal screen of previous activity:
 
