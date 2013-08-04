@@ -1,0 +1,6 @@
+# Code used in this book:
+
+You'll find finished examples of all projects in this book on GitHub.
+
+## Project repositories:
+- [node-rogue](https://github.com/learn-js/node-rogue)

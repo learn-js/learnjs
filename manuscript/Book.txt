@@ -1,5 +1,6 @@
 frontmatter:
 intro.txt
+code.txt
 
 mainmatter:
 basics.txt
