@@ -81,3 +81,413 @@ You're probably aware that this `digest` function is doing the heavy lifting, wh
 
 If you were really modeling eating, digesting, and pooping using javascript functions, how would you do it?
 
+---
+
+## Let's get more in-depth with functions: write a function that adds numbers, and make it awesome.
+
+### Our goals for this section are simple:
+- Get familiar with javascript syntax and data types.
+- Write a function that does one task really well.
+- Try out the Chrome javascript console
+- Learn about debugging and refactoring code.
+
+We'll be writing a function that adds numbers. Simple. Almost too easy. But think about it as if you were building a calculator. You'll need functions that add, subtract, multiply, and divide, and depending on the complexity of the calculator, maybe even more than that.
+
+Our goal will be to create an add function that could be reused in various ways throughout our imaginary calculator program. We'll only make `add`, but if you want to experiment and actually make a calculator, that would be awesome! [Let me know how it goes](mailto:hi@learnjs.io).
+
+### Writing javascript on paper.
+
+**You want to write javascript? OK, here's what we'll do:**
+
+- Take out a sheet of paper and a pen.
+- Write the following on the paper:
+
+~~~~~~~~
+var x = 1;  
+var y = 2;  
+var z = x + y;  
+~~~~~~~~
+
+- Think about how easy this is and how it's awesome that you're coding with javascript on WHATEVER YOU WANT.
+
+You know what happens when you write `x + y`.
+
+You already know the value of `z`.
+
+This looks just like math, and that's because it is.
+
+Don't worry, writing code isn't all about math, but working with numbers is a big part of the work you'll be doing.
+
+#### If the above is simple math, what's with the word `var`? What's that?  
+The word `var` stands for variable. We use it only when creating a variable.
+You might remember the concept of variables from math, too. In this case, `x` is just a name that refers to the number 1. Any time we want to create a variable in javascript, we write something like:
+
+~~~~~~~~
+var nameOfTheVariable = 'whatever the variable should reference';
+~~~~~~~~
+
+#### Why are there single quotes around the phrase `whatever the variable should reference`?  
+Check out the `var x = 1;` statement above. There aren’t any quotes around the `1`. This is how we can tell numbers from text. In javascript (and most programming languages), text like this is called a **string**.
+
+#### Wait, why did I just write that on paper?  
+Asking you to write code on paper wasn't arbitrary. It's useful to think about code in different ways, especially in the abstract. Sometimes it takes brainstorming away from the computer to figure out solutions to difficult problems. Another perk to paper coding: your program doesn't have to run, so you can use *pseudocode*.
+
+#### So, what's pseudocode?  
+Here's a simple example:
+
+~~~~~~~~
+if x is greater than 10, subtract 1 from x.  
+~~~~~~~~
+
+Here's that pseudocode turned into javascript:
+
+~~~~~~~~
+if (x > 10){  
+  x = x - 1;  
+}  
+~~~~~~~~
+
+We won't go into `if` statements in detail here, but based on this pseudocode you should be able to tell what's happening in that javascript.
+
+#### Pseudocode is awesome.
+You can use pseudocode to experiment, and to define the outline of a program without worrying about errors or syntax details. It's a great way to start thinking about the structure of the code you're about to write.
+
+
+### Now let's open up the web browser, Chrome, and do some experimenting.
+
+> If you haven't installed Chrome yet, do so now at [google.com/chrome](http://google.com/chrome)
+
+1. Open a Chrome window.
+2. Go to [learnjs.io](http://learnjs.io).
+3. Click **View**, in the top menu, hover over **Developer**, then click **Javascript Console**. (TODO: edit for windows, linux, and mac)
+
+> You can also use a keyboard shortcut:
+> command+option+j on mac (TODO: edit for windows, linux, and mac)
+
+If you've used a terminal program on your computer, the javascript console is similar, except you write javascript instead of terminal commands.
+
+### Important:
+Any time there are code samples just type them straight into the javascript console, hit **Enter**, and see what happens. The best way to learn a programming language is to type it a lot. More than a lot.
+
+In the console, type: 
+
+~~~~~~~~
+var x = 10;
+~~~~~~~~
+
+Hit enter, and you'll see the word `undefined` pop up below your line of javascript.
+That's fine, it's normal. That's what the console returns when you enter such a statement.
+To see the value of `x`, type `x` into the console.
+
+The console should return the number `10`!
+
+
+### Let's get functional.
+Consider this pseudocode:
+
+~~~~~~~~
+add two arbitrary numbers.
+~~~~~~~~
+
+We're going to create a function in javascript that adds two numbers.
+
+We've got a function named add, and it takes two arguments and adds them together. For now, we assume the arguments to be numbers.
+
+To use the 'add' function, write something like this:
+
+~~~~~~~~
+add(3, 7);
+~~~~~~~~
+
+### Let's add with a function!
+
+A function is a block of executable code, and when we give a function a name, like we do below, it can be used throughout your program. The benefit: define a function once rather than using similar blocks of code in multiple places in your program.
+
+~~~~~~~~
+function add(x, y){
+  return x + y;
+}
+~~~~~~~~
+
+Type the above `add` function into the javascript console, and use it to do some addition!
+
+Important note: using Chrome's javascript console, if you hit **Enter** it will execute the code. To type a function like this onto multiple lines, hit **Shift + Enter** to add a line.
+
+Just like with the variables we created earlier, when we first define a function in the console it will return `undefined` when you hit enter. This is normal.
+
+Also: When you are in the javascript console you can hit the up arrow to revisit previous code that you've typed in.
+
+**Try these examples:**
+
+~~~~~~~~
+// add 2 and 4:
+add(2, 4);
+
+// create a variable named num and set its value to the sum of 3 and 4:
+var num = add(3, 4);
+~~~~~~~~
+
+### Hey, you made `num` equal the usage of the add function.
+Heck yeah, buddy. Let's take a look at the definition of the function again:  
+
+~~~~~~~~
+function add(x, y){
+  return x + y;
+}
+~~~~~~~~
+
+Check out the middle line, `return x + y;`.
+
+With most javascript programming, one of your goals should be to write small, simple functions that take arguments as input, modify that input, and output it using the return statement. Whatever a function returns is used elsewhere in your program.
+
+When we make the variable `num` equal `add(3, 4)`, we're really setting `num` to equal the value that's returned from the add function. In this case, `add(3, 4)` will return the number 7, so that's what `num` references.
+
+### Wait, what if I messed up the adder?
+
+Hey, sorry to bother you, but somebody tried to use our add function like this:
+
+~~~~~~~~
+add(‘1’, ‘5’);
+~~~~~~~~
+
+Unsurprisingly, it didn’t work as expected. Can you guess what the add function returned?
+
+It returned this: `’15’`.
+
+### Why didn’t it add?
+Those numbers had quotes around them. Numbers in javascript do not have quotes around them, only strings. Instead of adding numbers, our program combined two strings.
+
+### Walking like a duck
+Javascript is a dynamically-typed language. Remember how we created variables earlier that referenced specific values? Each value that a variable references has a type, and in javascript, you don't have to specify a type when you create a variable. You can change a variable's type later in the program, and you will interact with a variable in different ways depending on its type. Sometimes this is called duck typing. If the variable walks like a duck and talks like a duck, it is a duck.
+
+#### Here are common types in javascript:
+
+##### Boolean: true or false
+
+**Example:**
+
+~~~~~~~~
+var thisIsNotTrue = false;
+var thisIsNotFalse = true;
+~~~~~~~~
+
+Note that there are no quotes around the words `true` or `false`. The variable named `thisIsNotTrue` references the value `false`, and the variable named `thisIsNotFalse` references the value `true`.
+
+##### Number: integer or float
+
+**Example:**
+
+~~~~~~~~
+var thisIsAnInteger = 123;
+var thisIsAFloat = 3.14;
+~~~~~~~~
+
+A float is a number with a decimal. An integer is a whole number – without a decimal.
+
+##### String: text in quotes.
+
+**Example:**
+
+~~~~~~~~
+var thisIsAString = ‘you can tell because this text is inside of quotes’;
+~~~~~~~~
+
+A string is any text inside of quotes. It can be single or double quotes, but it has to be the same on each end. This will work: `'text'`, and this will work: `"text"`, but this will not work: `'text"`.
+
+### Back to our addition issue:
+
+This usage of our function doesn’t work: `add(‘1’, ‘5’);`.
+
+The reason? The `+` operator and the way it works with strings.
+
+This little buddy does a little more than you might expect at first. It’ll add numbers together, but it’ll also add strings together. When that happens it’s called concatenation.
+
+When we use the `add` function with `'1'` and `'5'` as arguments, it executes a statement like this:
+
+~~~~~~~~
+return ‘1’ + ‘5’;
+~~~~~~~~
+
+A string `+` a string equals those two strings combined. That’s concatenation. So `'1' + '5'` becomes `'15'`.
+
+**Some examples:**
+
+~~~~~~~~
+‘abc’ + ‘def’ // becomes ‘abcdef’
+‘This is a ‘ + ‘string’ // becomes ‘This is a string’
+‘1’ + ‘5’ // becomes ‘15’
+~~~~~~~~
+
+Lets add some code to our `add` function to make sure this doesn’t happen. By converting the arguments of the function to numbers, we can allow for the possibility of adding numbers that happen to be strings!
+
+~~~~~~~~
+function add(x, y) {
+  return parseInt(x) + parseInt(y);
+}
+~~~~~~~~
+
+All we added was the usage of the `parseInt` function. This is a part of core javascript, and is used to convert strings and floats to integers. 
+
+### Now we have a float issue.
+
+Somebody tried to add some floats together, like this:
+
+~~~~~~~~
+add(3.14, 7.28);
+~~~~~~~~
+
+It did not work as expected. It returned `10`. That's because `parseInt` is only going to return the integer it finds in a string. So maybe `parseInt` isn't the best solution.
+
+**There is an easy fix.** Revise your add function to look like this:
+
+~~~~~~~~
+function add(x, y) {
+  return parseFloat(x) + parseFloat(y);
+}
+~~~~~~~~
+
+Yep, that works. Now that we're using `parseFloat` instead of `parseInt`, decimal numbers stay intact.  Now `add(3.14, 6.28);` returns `9.42`.
+
+### What about adding more than two numbers?
+
+Somebody found a weird workaround for adding multiple numbers using this `add` function:
+
+~~~~~~~~
+var a = add(1, 3);
+var b = add(a, 7);
+var c = add(b, 21);
+~~~~~~~~
+
+That’s just sad. We can make this easier. Rewrite the add function to look like this:
+
+~~~~~~~~
+function add() {
+  var total = 0;
+  for (var i = 0; i < arguments.length; i++){
+    total += parseFloat( arguments[i] );
+  }
+  return total;
+}
+~~~~~~~~
+
+Cool. Now we can pass any number of arguments to the `add` function and get the correct result!
+With this change we can now pass any number of arguments to `add`, like this: 
+
+~~~~~~~~
+add(1, 2, 3, 4, 5, 6, 7);
+~~~~~~~~
+
+This makes `add` much more flexible than the previous workaround.
+
+We used a `for` loop to cycle through all the arguments that are passed to `add`. We also used a variable named `total` to reference the sum of all arguments.
+
+### Looper: cycling through a function's arguments
+For loops are easy once you get used to them.
+
+First we set a start value: `var i = 0`. That sets `i` to `0`, which makes our loop start at `0`.
+
+Then compare that to an end value: `i < arguments.length`.
+The statement `arguments.length` gives us the number of arguments. `length` returns the number of arguments. So, with usage like this: `add(1, 2, 3);`, `arguments.length` will return `3`.
+
+As long as `i` is less than 3, the loop will run again.
+
+Then we give the loop an increment value: `i++`. The `++` increases `i` by one with every loop.
+
+This might be the point where you get a little overwhelmed if you are new to programming. If so, I recommend you practice things like `for` loops over at [codecademy.com](http://codecademy.com).  It's a great site for building foundational knowledge of javascript basics.
+
+### One last problem: ‘one’.
+
+That’s not a number. Can you guess what happens when someone tries to do this:
+
+~~~~~~~~
+add(‘one’, ‘two’, 3);
+~~~~~~~~
+
+Paste in the latest version of the `add` function to the Chrome javascript console. Then try out the above usage of `add`.
+
+It should return something like this:
+
+~~~~~~~~
+NaN
+~~~~~~~~
+
+Let’s fix that. The problem: `NaN` means **not a number**. When we run `parseFloat` on a string like `’one’`, it returns `NaN`, and when we try to add `NaN` to a number, the whole sum becomes `NaN`.
+
+There are a few possible solutions to this problem. Here are two:
+
+#### Ignore any argument that is not a number.
+
+~~~~~~~~
+function add() {
+  var total = 0;
+  for (var i = 0; i < arguments.length; i++){
+    if ( isNaN( parseFloat(arguments[i]) ) === false ) {
+      total += parseFloat( arguments[i] );
+    }
+  }
+  return total;
+}
+~~~~~~~~
+
+The new code that we added looks like this:
+
+~~~~~~~~
+...
+    if ( isNaN( parseFloat(arguments[i]) ) === false )  {
+      ...
+    }
+...
+~~~~~~~~
+
+The function `isNaN` checks to see if `parseFloat(arguments[i])` is a number. If `isNaN` returns false, then we know that the argument is a number.
+
+This checks to see if an argument is a number, and if not, ignores it – but there’s still a problem with this. Ignoring values like `'one'` in our `add` function because it doesn't contain numbers is reasonable. The problem: this error fails silently. 
+
+Any time there's a chance our function can fail because of misuse by yourself or another programmer, it's best for the code to send errors explaining why it fails. We want our code to complain when there is a problem.
+
+Let's switch up our code so that if an argument is not a number, `add` throws an error, and if the argument _is_ a number, it gets added to the `total` variable.
+
+~~~~~~~~
+function add() {
+  var total = 0;
+  for (var i = 0; i < arguments.length; i++){
+    if ( isNaN( parseFloat(arguments[i]) ) ) {
+      throw new Error('Arguments to `add`  must be numbers.');
+    } else {
+      total += parseFloat( arguments[i] );
+    }
+  }
+  return total;
+}
+~~~~~~~~
+
+Now, when we put that version of `add` into our javascript console and use it like this:
+
+~~~~~~~~
+add('one', 2);
+~~~~~~~~
+
+It'll return an error with this text:
+
+~~~~~~~~
+Error: Arguments to `add` must be numbers.
+~~~~~~~~
+
+Good, that was our goal. Now any strings that can't be converted to numbers will result in this clear error rather than being ignored.
+
+### Here is what we covered:
+
+#### Chrome javascript console
+We started using Chrome's javascript console in a really basic way as preparation for upcoming chapters.
+
+#### Basic data types
+We covered the basics of strings, numbers, and booleans.
+
+#### Writing functions.
+We went over the basics of writing a simple function.
+
+#### Refactoring code.
+As we wrote and experimented use cases of the `add` function we identified ways it could be improved and rewrote the function to guard against mistakes.
+
+#### Debugging and useful errors.
+As you're getting started it probably feels like errors are just something to avoid. But, if we can embed useful errors in our code in places where we know there are likely problems, that can make debugging much easier.
