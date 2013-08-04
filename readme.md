@@ -1786,7 +1786,11 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple rpg game.
 
 
+# Websites
+
+
 # Games
+
 
 - Minecraft-like games with voxel.js
 - Old-school arcade games with crtrdg.jd
@@ -2325,6 +2329,15 @@ var game = createGame()
 
 Here we're requiring the `voxel-hello-world` module, and creating our game with the `createGame()` function.
 
+
+
+# Mobile apps
+
+
+# APIs
+
+
+# Mapping and geodata
 
 
 # Appendix
