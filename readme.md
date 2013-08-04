@@ -1786,6 +1786,12 @@ As you're getting started it probably feels like errors are just something to av
 OK, you're ready for the first project. Continue on to the first chapter, where we'll manipulate html elements on a page. We’ll learn more about javascript syntax, data structures, and programming patterns to make a simple rpg game.
 
 
+# Games
+
+- Minecraft-like games with voxel.js
+- Old-school arcade games with crtrdg.jd
+
+
 # Chapter 1
 
 ## Make a game with javascript!
@@ -2278,6 +2284,47 @@ player.on('draw', function(context){
 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
+# Chapter 2
+## create a minecraft-like world in your browser with voxel.js
+
+voxel.js is a game engine for creating 3d voxel worlds with javascript. It's like minecraft, but open-source. Over {somenum} people have already contributed to the project.
+
+One cool thing about voxel.js is that it isn't just one big library – there's a main game engine, [voxel-engine](http://github.com/maxogden/voxel-engine), and a bunch of [modules that extend the functionality of the engine](http://voxeljs.com/#modules). Quite a few people have created modules for voxel.js, and in this chapter we'll both make a game using voxel.js, and create a module that modifies the gameplay in a new way.
+
+Create a package.json file with these contents:
+```
+{
+  "name": "mygamename",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "beefy game.js:bundle.js --live"
+  },
+  "dependencies": {
+    "voxel-hello-world": "0.6.0"
+  },
+  "devDependencies": {
+    "beefy": "*"
+  }
+}
+```
+
+Install the dependencies:
+
+```
+npm install
+```
+
+Create a game.js file, and start it out with this code:
+
+```
+var createGame = require('voxel-hello-world')
+var game = createGame()
+```
+
+Here we're requiring the `voxel-hello-world` module, and creating our game with the `createGame()` function.
+
 
 
 # Appendix
