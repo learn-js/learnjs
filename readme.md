@@ -2041,9 +2041,43 @@ Things like:
 - Licensing of the code and content
 - Contact information
 
-### Overview of html & css.
+### Create the project file/directory structure:
 
-### Using online text editors.
+#### Create the index.html, app.js, and style.css files:
+
+```
+touch index.html app.js style.css
+```
+
+#### Create a folder for images:
+
+```
+mkdir images
+```
+
+#### Add the following markup to your index.html file:
+
+```
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- this ensures ie is using the latest rendering mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- the title of the page – shows up in the browser tab/window -->
+  <title>I love pizza.</title>
+
+  <!-- default viewport settings to help with mobile/responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>I love pizza.</h1>
+</body>
+
+</html>
+```
 
 ### Adding text and images to our microsite.
 
