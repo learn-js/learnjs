@@ -1,5 +1,6 @@
 # Games
 
-
-- Minecraft-like games with voxel.js
-- Old-school arcade games with crtrdg.jd
+Some of the things we'll work on in the Games section:
+- Simple asteroids-style game without using a js game library.
+- Old-school arcade games with crtrdg.jd.
+- Minecraft-like games with voxel.js.

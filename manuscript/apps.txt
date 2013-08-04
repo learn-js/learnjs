@@ -1,0 +1,6 @@
+# Applications
+
+We'll work on apps based on these technologies:
+- phonegap
+- cocoonjs
+- firefox os

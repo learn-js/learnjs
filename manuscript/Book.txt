@@ -17,11 +17,15 @@ intro-canvas.txt
 chapter00.txt
 
 websites.txt
+
 games.txt
 chapter01.txt
 chapter02.txt
-mobile-apps.txt
+
+apps.txt
+
 apis.txt
+
 geo.txt
 
 backmatter:

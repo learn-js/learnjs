@@ -1,1 +1,7 @@
 # Mapping and geodata
+
+We'll work on projects that utilize:
+- leaflet.js
+- openstreetmaps geocoding service, nominatim.js
+- localwiki
+- geojson
