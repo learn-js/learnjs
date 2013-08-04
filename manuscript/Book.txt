@@ -15,6 +15,7 @@ intro-functions.txt
 intro-callbacks.txt
 intro-testing.txt
 intro-canvas.txt
+package-managers.txt
 
 websites.txt
 
@@ -30,7 +31,6 @@ geo.txt
 
 backmatter:
 appendix.txt
-package-managers.txt
 style.txt
 resources.txt
 changelog.txt

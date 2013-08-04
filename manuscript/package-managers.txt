@@ -1,4 +1,4 @@
-#Package managers for browser code: what should I use?
+# Package managers for browser code: what should I use?
 
 When should I use npm, bower, or component for managing client-side code?
 
