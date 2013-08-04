@@ -24,6 +24,6 @@ This is a good option, but sometimes package managers can be out of date. If the
 ### Download an installer from nodejs.org.
 [Here's the node.js download page](nodejs.org/download).
 
-Installing node gives us the node package manager `npm`. We'll use it to install grunt-cli, which is the command-line tool that is used to run grunt tasks. 
+Installing node gives us the node package manager `npm`. We'll use it to install a wide range of packages, including web frameworks, game dev libraries, and client-side javascript modules. 
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
