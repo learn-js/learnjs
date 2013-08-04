@@ -16,9 +16,13 @@ intro-testing.txt
 intro-canvas.txt
 chapter00.txt
 
+websites.txt
 games.txt
 chapter01.txt
 chapter02.txt
+apps.txt
+apis.txt
+geo.txt
 
 backmatter:
 appendix.txt
