@@ -78,6 +78,14 @@ Javascript is a very flexible language that can be employed using a number of st
 - And other patterns. [Let us know what you'd like to see covered](http://hi@learnjs.io).
 
 
+# Code used in this book:
+
+You'll find finished examples of all projects in this book on GitHub.
+
+## Project repositories:
+- [node-rogue](https://github.com/learn-js/node-rogue)
+
+
 # THE BASICS
 
 ## In this section, we'll get started learning:
