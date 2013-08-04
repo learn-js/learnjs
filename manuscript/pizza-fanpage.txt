@@ -167,6 +167,62 @@ That should give us an html document that looks like this:
 </html>
 ~~~~~~~~
 
+### Give the page some very simple styles
+Add this to the style.css file:
+
+~~~~~~~~
+html,
+body {
+  font: 16px/1.3 "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+a {
+  color: #3c80c3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active,
+a:focus {
+  color: #1e4062;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* mobile size */
+.container {
+  width: 80%;
+  padding: 0px 10%;
+  margin: 0px auto;
+}
+
+/* tablet size */
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 540px;
+    padding: 0px 20px;
+  }
+}
+
+/* desktop size */
+@media only screen and (min-width: 960px) {
+  .container {
+    width: 800px;
+  }
+}
+~~~~~~~~
+
 
 ### Create a pizza with code.
 
