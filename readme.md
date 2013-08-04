@@ -444,10 +444,6 @@ In fact, if you're looking to get a job with a particular company, try to find _
 
 GitHub has become the de facto code hosting service for most open source communities.
 
-## Create a site for yourself using GitHub
-
-GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
-
 ### With GitHub Pages you can:
 - design a website any way you want by having complete control over the html, css, and javascript.
 - use simple templates for getting started using GitHub Pages.
@@ -546,6 +542,63 @@ Checkout a remote branch:
 ```
 git checkout -t origin/haml
 ```
+
+
+## Create a site for yourself using GitHub
+
+GitHub has a useful service called [GitHub Pages](http://pages.github.com) that allows you to host a simple site on their servers for free.
+
+To get started, fork this simple template: [github.com/maxogden/gh-pages-template](https://github.com/maxogden/gh-pages-template).
+
+Visit that github project, make sure you're logged in, and click Fork in the upper right side of the screen.
+
+Fork gh-pages-template to your personal account.
+
+Rename the repository from gh-pages-template to whatever you want by clicking on Settings on the right side of your fork of the repository, and changing the name there. GitHub will warn
+
+That's it! You now have a website hosted through GitHub Pages.
+
+You'll be able to visit your site at __YOUR-USERNAME__.github.com/__YOUR-PROJECT-NAME__.
+
+You'll want to edit the content though, right? Add your cat pictures or resume or pizza recipes? You can do that.
+
+You can create, edit, move, rename, and delete files all through the GitHub website. Check out these blog posts on GitHub for details on how to do those things:
+- [Create files](https://github.com/blog/1327-creating-files-on-github)
+- [Edit files](https://github.com/blog/143-inline-file-editing)
+- [Move and rename files](https://github.com/blog/1436-moving-and-renaming-files-on-github)
+- [Delete files](https://github.com/blog/1545-deleting-files-on-github)
+
+You can also clone the project repository onto your computer:
+
+```
+git clone git@github.com:__YOUR-USERNAME__/__YOUR-PROJECT-NAME__.git
+```
+
+You can copy the git url to clone from the right-hand sidebar of your project repository.
+
+After cloning the repository, `cd` into it and make some changes:
+
+```
+cd __YOUR-PROJECT-NAME__
+nano index.html
+```
+
+Add a bunch of content to index.html, and change the styles in style.css.
+
+After you've made some changes, add them to the repo and commit the changes:
+
+```
+git add .
+git commit -m 'include a brief, clear message about the changes'
+```
+
+Now, push your changes back to GitHub:
+
+```
+git push origin gh-pages
+```
+
+
 
 > _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
@@ -1791,9 +1844,11 @@ OK, you're ready for the first project. Continue on to the first chapter, where 
 
 # Games
 
+Some of the things we'll work on in the Games section:
+- Simple asteroids-style game without using a js game library.
+- Old-school arcade games with crtrdg.jd.
+- Minecraft-like games with voxel.js.
 
-- Minecraft-like games with voxel.js
-- Old-school arcade games with crtrdg.jd
 
 
 # Chapter 1
@@ -2331,13 +2386,24 @@ Here we're requiring the `voxel-hello-world` module, and creating our game with 
 
 
 
-# Mobile apps
+# Applications
+
+We'll work on apps based on these technologies:
+- phonegap
+- cocoonjs
+- firefox os
 
 
 # APIs
 
 
 # Mapping and geodata
+
+We'll work on projects that utilize:
+- leaflet.js
+- openstreetmaps geocoding service, nominatim.js
+- localwiki
+- geojson
 
 
 # Appendix
