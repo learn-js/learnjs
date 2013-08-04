@@ -423,6 +423,120 @@ This is a newer resource, but a good one. It's got a great design and well-organ
 
 
 
+# Introduction to the terminal
+
+Get excited, it's time to use the terminal.
+
+
+## Mac / Linux
+
+For most purpose, daily activity in the terminal will be the same in Mac and various Linux distros.
+
+Basic commands include:
+
+Changing directory:
+
+```
+cd path/of/directories
+```
+
+`cd` on its own, or `cd ~` will take you to your home directory.
+
+Create a directory:
+
+```
+mkdir directory-name
+```
+
+Show the directory you're currently in:
+
+```
+pwd
+```
+
+List the files in the directory:
+
+```
+ls
+```
+
+List the files in a more readable way, with useful information like permissions included:
+
+```
+ls -al
+```
+
+Open a file with its default application:
+
+```
+open filename
+```
+
+Open current directory in the finder:
+
+```
+open .
+```
+
+or open some other directory:
+
+```
+open path/to/directory
+```
+
+Create an empty file if it doesn't already exist:
+
+```
+touch file-name
+```
+
+Open and edit a file with the simple nano editor:
+
+```
+nano file-name
+```
+
+Delete a file:
+
+```
+rm file-name
+```
+
+Delete a directory and its contents:
+
+```
+rm -rf path/to/directory
+```
+
+Never do this:
+
+```
+rm -rf /
+```
+
+Be very careful with the rm command. You can delete things on accident very easily.
+
+Clear the terminal screen of previous activity:
+
+```
+clear
+```
+
+Reset the terminal:
+
+```
+reset
+```
+
+
+
+
+
+## Windows
+
+> This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+
+
 # Introduction to git & GitHub
 
 Developing websites and applications without using git is equivalent to writing in Microsoft Word without ever saving your work.
@@ -626,7 +740,7 @@ Node.js is server-side javascript. It is well-suited to real-time applications a
 There are a few options for this, and I've put them in my order of preference:
 
 ### Use nvm to manage node versions.
-This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm).
+This option gives you the most control, allows you to switch between versions of node similar to using rvm or rbenv for Ruby. [Get nvm here](https://github.com/creationix/nvm). This is the method I use, and the one I recommend.
 
 ### Install using a package manager. 
 This is a good option, but sometimes package managers can be out of date. If the node version you'll be using matters for your project, you should make sure that the version in the package manager works for you. [Check out a list of package manager instructions here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
@@ -636,7 +750,7 @@ This is a good option, but sometimes package managers can be out of date. If the
 
 Installing node gives us the node package manager `npm`. We'll use it to install a wide range of packages, including web frameworks, game dev libraries, and client-side javascript modules. 
 
-> _This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
+> This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
 
 
 # Introduction to npm
