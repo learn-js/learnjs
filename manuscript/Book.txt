@@ -15,7 +15,10 @@ intro-callbacks.txt
 intro-testing.txt
 intro-canvas.txt
 chapter00.txt
+
+games.txt
 chapter01.txt
+chapter02.txt
 
 backmatter:
 appendix.txt
