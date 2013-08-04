@@ -2,10 +2,111 @@
 
 Get excited, it's time to use the terminal.
 
-## Mac 
+
+## Mac / Linux
+
+For most purpose, daily activity in the terminal will be the same in Mac and various Linux distros.
+
+Basic commands include:
+
+Changing directory:
+
+~~~~~~~~
+cd path/of/directories
+~~~~~~~~
+
+`cd` on its own, or `cd ~` will take you to your home directory.
+
+Create a directory:
+
+~~~~~~~~
+mkdir directory-name
+~~~~~~~~
+
+Show the directory you're currently in:
+
+~~~~~~~~
+pwd
+~~~~~~~~
+
+List the files in the directory:
+
+~~~~~~~~
+ls
+~~~~~~~~
+
+List the files in a more readable way, with useful information like permissions included:
+
+~~~~~~~~
+ls -al
+~~~~~~~~
+
+Open a file with its default application:
+
+~~~~~~~~
+open filename
+~~~~~~~~
+
+Open current directory in the finder:
+
+~~~~~~~~
+open .
+~~~~~~~~
+
+or open some other directory:
+
+~~~~~~~~
+open path/to/directory
+~~~~~~~~
+
+Create an empty file if it doesn't already exist:
+
+~~~~~~~~
+touch file-name
+~~~~~~~~
+
+Open and edit a file with the simple nano editor:
+
+~~~~~~~~
+nano file-name
+~~~~~~~~
+
+Delete a file:
+
+~~~~~~~~
+rm file-name
+~~~~~~~~
+
+Delete a directory and its contents:
+
+~~~~~~~~
+rm -rf path/to/directory
+~~~~~~~~
+
+Never do this:
+
+~~~~~~~~
+rm -rf /
+~~~~~~~~
+
+Be very careful with the rm command. You can delete things on accident very easily.
+
+Clear the terminal screen of previous activity:
+
+~~~~~~~~
+clear
+~~~~~~~~
+
+Reset the terminal:
+
+~~~~~~~~
+reset
+~~~~~~~~
 
 
 
-## Linux
+
 
 ## Windows
+
+> This section of the book is still a work in progress. Make suggestions at [github.com/learn-js/learnjs/issues](http://github.com/learn-js/learnjs/issues).
