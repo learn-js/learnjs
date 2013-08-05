@@ -1,5 +1,18 @@
 # Changelog:
 
+## v0.4.1
+- started player and keyboard sections of node-rogue chapter
+- fixed html/css stuff in node-rogue chapter
+- add package managers comparison for npm, bower, component
+- expand introduction to git & github
+- expand intro to canvas
+- start an intro to testing chapter
+- start intro to terminal chapter
+- start chapter about voxel.js
+- add placeholders for main sections
+- rearrange some existing chapters
+- start websites section with pizza-fanpage project
+
 ## v0.4.0
 - Add Introduction to npm
 - Add Introduction to callbacks
