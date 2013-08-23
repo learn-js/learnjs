@@ -217,13 +217,13 @@ The thing about the arrow keys is that they have a purpose in the browser: scrol
 
 We don't want the page to scroll when we're moving `box` around, so we need to disable that defulat behavior.
 
-`event.preventDefault()` keeps a key from performing its defualt behavior. We want to be careful how we use `event.preventDefault()` for accessibility and usability reasons. If we disabled all keys that would make normal navigation and keyboard actions impossible.
+`event.preventDefault()` keeps a key from performing its defualt behavior. We want to be careful how we use `event.preventDefault()` for accessibility and usability reasons. If we disable the default behavior of all keys normal navigation and keyboard actions would be impossible.
 
-So we use the `if` statement to check if the keys being pressed are the arrow keys: 37, 38, 39, 49.
+So we use the `if` statement to check if pressed keys are the arrow keys: 37, 38, 39, 49.
 
 If the keyCode is 37, 38, 39, or 40, their default behavior is prevented.
 
-Next, we need to listen for `keyup` events. If we don't, the keysDown object will continue to include keys that are no longer being pressed down.
+Next, we need to listen for `keyup` events. If we don't, the keysDown object will continue to include keys that are no longer pressed down.
 
 Implement `window.addEventListener()` for the `keyup` event:
 
@@ -273,7 +273,7 @@ box.input = function(){
 }
 ~~~~~~~~
 
-It's important to remember that the canvas coordinates start at zero in the top left corner. So to make `box` move down or to the right, we add `box.speed` to its position. And if we want `box` to move up or left, we subtract `box.speed` from its position.
+It's important to remember that the canvas coordinates start at zero in the top left corner. To make `box` move down or to the right, we add `box.speed` to its position. And if we want `box` to move up or left, we subtract `box.speed` from its position.
 
 Add `box.input()` to the `box.update()`, replacing what we had there previously:
 
@@ -285,9 +285,9 @@ box.update = function() {
 
 This will run our `box.input()` method every loop. Check to see if arrow keys are being pressed, and if so, move the box. Try it out!
 
-Wait a minute, there's been something weird going on. Whenever the box moves, it draws a line. Everywhere you make the box go it leaves a trail.
+Wait a minute, there's something weird going on. Whenever the box moves, it draws a line. The box leaves a trail.
 
-We need to clear the canvas on every frame so that the old box positions get deleted, and make it look like the box is moving rather than drawing a line.
+We need to clear the canvas on every frame to delete the old box positions and make it look like the box is moving rather than drawing a line.
 
 To do this, we can add `context.clearRect()` to the game's `draw()` function:
 
