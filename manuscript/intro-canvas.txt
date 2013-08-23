@@ -33,7 +33,7 @@ var context = canvas.getContext('2d');
 
 In this code we find the canvas tag by its `game` id and save that to a new canvas variable.
 
-Next, we state we'll be drawing on the canvas in a 2d context by running `canvas.getContext('2d')` and saving that to the `context` variable. To draw in a 3d context we would pass `'webgl'` as the argument rather than `'2d'`. We'll explore 3d/WebGL drawing later in the book.
+Next, we state we'll be drawing on the canvas in a 2d context by running `canvas.getContext('2d')` and saving that to the `context` variable. To draw in a 3d context we would pass `'webgl'` as the argument rather than `'2d'`. We'll explore 3d/WebGL drawing later.
 
 To experiment with these statements, try running them in the Chrome javascript console.
 
@@ -44,7 +44,7 @@ var canvas = document.getElementById('game');
 canvas;
 ~~~~~~~~
 
-You should get something like this returned:
+You should get something like this returned in the console:
 
 ~~~~~~~~
 <canvas id="game"></canvas>
@@ -57,11 +57,11 @@ var context = canvas.getContext('2d');
 context;
 ~~~~~~~~
 
-You'll be able to open up and inspect the `context` object that we'll use later to draw to the canvas.
+You can open up and inspect the `context` object that we'll use later to draw to the canvas.
 
 # Starting the game and the game loop
 
-We want our game to perform certain actions every frame, and we'll use a `loop()` function to do that.
+We want our game to perform certain actions every frame. We'll use a `loop()` function to do that.
 
 To kick off our loop and start the game, we'll define a `startGame()` function like this:
 
@@ -87,11 +87,11 @@ function loop(){
 }
 ~~~~~~~~
 
-The `requestAnimationFrame()` function is a browser API that runs animations at a consistent framerate, and pauses the animation automatically when the tab/window loses focus. We pass the `loop` function to `requestAnimationFrame()` so that on each frame, `loop()` is called.
+The `requestAnimationFrame()` function is a browser API that runs animations at a consistent framerate and pauses the animation automatically when the tab/window loses focus. We pass the `loop` function to `requestAnimationFrame()` so that on each frame, `loop()` is called.
 
 Next we call `update()` and `draw()`.
 
-`update()` performs the calculations in our game. It can calculate trajectory, check for player input, detect collisions, and other actions that are oriented toward math and game state.
+`update()` performs the calculations in our game. It can calculate trajectory, check for player input, detect collisions, and other actions oriented toward math and game state.
 
 `draw()` is used to draw things to the canvas.
 
@@ -107,9 +107,9 @@ function draw(){
 }
 ~~~~~~~~
 
-Now that we've got the basic structure of the game, let's define our player character so it can be drawn to the screen.
+That's the basic structure of the game. Now you'll define the player character so it can be drawn to the screen.
 
-We'll name it `box`, since it'll be a box. `box` will be an object with these properties:
+Name it `box`, since it'll be a box. `box` will be an object with these properties:
 - x position
 - y position
 - width
@@ -130,16 +130,15 @@ var box = {
 };
 ~~~~~~~~
 
-That gives our box a starting position, size, speed and color.
+That gives the box a starting position, size, speed and color.
 
-Next we need to define `update()` and `draw()` methods on `box` that can be called on each loop.
+Next define `update()` and `draw()` methods on `box` that can be called on each loop.
 
 Let's start with `draw()`:
 
 ~~~~~~~~
 box.draw = function() {
   context.fillStyle = box.color;
-
   context.fillRect(box.x, box.y, box.width, box.height);
 };
 ~~~~~~~~
@@ -148,7 +147,7 @@ box.draw = function() {
 
 `context.fillRect()` draws a rectangle and accepts the x position, y position, width, and height, of the box. It draws with the color set in `context.fillStyle`.
 
-Now we can add `box.draw()` to the game's `draw()` function:
+Now add `box.draw()` to the game's `draw()` function:
 
 ~~~~~~~~
 function draw(){
@@ -156,13 +155,13 @@ function draw(){
 }
 ~~~~~~~~
 
-Add a call to `startGame()` to the end of the app.js file so we can experiment with the code:
+Add a call to `startGame()` to the end of the app.js file to make the game run:
 
 ~~~~~~~~
 startGame();
 ~~~~~~~~
 
-You should see a small dark grey box in the top left corner of the canvas.
+Go to the browser and you should see a small dark grey box in the top left corner of the canvas.
 
 Now let's make the box move! Create `box.update()`:
 
@@ -173,7 +172,7 @@ box.update = function() {
 };
 ~~~~~~~~
 
-To start, we're making the box move from the top left to the bottom right automatically. Add `box.update()` to the game's `update()` function:
+To start, make the box move from the top left to the bottom right automatically. Add `box.update()` to the game's `update()` function:
 
 ~~~~~~~~
 function update(){
@@ -183,7 +182,7 @@ function update(){
 
 Check that out in the browser and you should see the square moving from the top left to the bottom right of the canvas and eventually disappearing past the boundary of the canvas.
 
-Instead of making `box` move automatically, let's make it move when we press the arrow keys.
+Instead of making `box` move automatically, make it move when we press the arrow keys.
 
 For this, we need to listen for events that occur when a key is pressed, so we'll use `window.addEventListener()`.
 
@@ -210,7 +209,7 @@ window.addEventListener('keydown', function(event) {
 });
 ~~~~~~~~
 
-With this code, we listen for the `keydown` event, and when it fires, the anonymous callback function is executed. We get the `event` object, which has detailed information about the event. The only info we need from `event` in this case is the keyCode of the key that is pressed down, and that is accessible at `event.keyCode`.
+With this code, we listen for the `keydown` event. When it fires, the anonymous callback function is executed. We get the `event` object, which has detailed information about the event. The only info we need from `event` in this case is the keyCode of the key that is pressed down, and that is accessible at `event.keyCode`.
 
 With `keysDown[event.keyCode] = true;` we create a property on the `keysDown` object with the name of the property set to the key's keyCode, and the value set to `true`, making it easy to tell if a key is in the `keysDown` object.
 
@@ -234,7 +233,7 @@ window.addEventListener('keyup', function(event) {
 });
 ~~~~~~~~
 
-All this does is listen for the `keyup` event, and when it fires, execute the anonymous callback function.
+All this does is listen for the `keyup` event, and when it fires, executes the anonymous callback function.
 
 With `delete keysDown[event.keyCode];` we remove the key's keyCode from the `keysDown` object.
 
@@ -244,9 +243,9 @@ In the game's `update()` function add this line so that we can log to the consol
 console.log(keysDown);
 ~~~~~~~~
 
-This let's us see which keys are down as we're pressing them.
+This lets us see which keys are down as we're pressing them.
 
-Next, we need to make the position of `box` changed based on the keys we're pressing.
+Next, we need to make the position of `box` change based on the keys we're pressing.
 
 Let's create a `box.input()` method:
 
@@ -284,7 +283,7 @@ box.update = function() {
 };
 ~~~~~~~~
 
-This will run our `box.input()` method every loop, check to see if arrow keys are being pressed, and if so, move the box. Try it out!
+This will run our `box.input()` method every loop. Check to see if arrow keys are being pressed, and if so, move the box. Try it out!
 
 Wait a minute, there's been something weird going on. Whenever the box moves, it draws a line. Everywhere you make the box go it leaves a trail.
 

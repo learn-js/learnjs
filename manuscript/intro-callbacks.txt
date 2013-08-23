@@ -1,4 +1,4 @@
-# Introduction to callbacks.
+# Introduction to callbacks
 
 A callback is a function that you pass as an argument to another function.
 Typically, you'll use a callback as a way to work with data after it's been processed by a function.
@@ -13,7 +13,7 @@ function holla(callback){
 
 Note how we're setting up an argument named `callback`, then calling that argument as a function: `callback()`.
 
-Usage if the `holla` function:
+Usage of the `holla` function:
 
 ~~~~~~~~
 holla(function(){
@@ -53,4 +53,4 @@ function poop(output){
 eat("pizza", poop);
 ~~~~~~~~
 
-Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argumet. The `poop` function gets called later inside the `eat` function.
+Note that when we pass the callback function `poop` as an argument we don't write it like `poop()`. This would _call_ or execute the function, and we don't want that to happen when we pass the `poop` function as an argument. The `poop` function gets called later inside the `eat` function.

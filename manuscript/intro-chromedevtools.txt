@@ -1,4 +1,4 @@
-# Hello, javascript. It's nice to meet you.
+# Introduction to Chrome Developer Tools
 
 ~~~~~~~~
 console.log('hello, javascript. it's nice to meet you');
@@ -9,7 +9,7 @@ Open up the browser Chrome.
 > If you don't already have Chrome installed, download and install it now at [google.com/chrome](http://google.com/chrome)
 
 Now, use this keyboard shortcut on a Mac: command + option + j
-Or this for Windows/Linux: control + shift + j
+Or for Windows/Linux: control + shift + j
 
 You just opened the javascript console.
 
@@ -32,16 +32,16 @@ Type this into the console:
 console.error('this is an error');
 ~~~~~~~~
 
-That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript, and any time something is wonky with your code that red circle will show up.
+That's an error! Note how it shows up in red. Look in the bottom right corner of the browser. You'll see a little red circle with an x in the middle, and a number on its right side. That's a helpful little indicator of errors in your javascript. Any time something is wonky with your code that red circle will show up.
 
-With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later in the book.
+With most errors you'll also be able to see a line number from your javascript file, which will help you pinpoint the offending code. We'll get into errors and debugging in more detail later.
 
 ## Chrome Developer Tools
-The javascript console is just one of the tools available for web development inside of Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a a set of versatile and powerful tools, and focusing on the tools of one browser helps keep the instructions simple.
+The javascript console is just one of the tools available for web development inside Chrome. For this book we will focus on using Chrome and its developer tools for two reasons: Chrome has a set of versatile and powerful tools, and focusing on the tools of one browser keeps the instructions simple.
 
-Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources for learning about these types of tools.
+Expect to learn more about Chrome's Developer Tools throughout the book. Check out the [Browser Developer Tools](TODO) section in the appendix for more information about similar tools in other browsers and more resources.
 
-## Recap! We learned that:
-- the javascript console and learned that we can type in javascript!
-- we can use code like `console.log()` and `console.error()` to print information to the console.
+## Recap! We learned:
+- About the javascript console and learned that we can type in javascript!
+- We can use code like `console.log()` and `console.error()` to print information to the console.
 - Chrome has a lot of useful tools, and later in the book we'll learn how they can help with experimenting with code, auditing the performance of our site, investigating the information sent between the browser and the server, and more.

@@ -1,9 +1,9 @@
 # Chapter 2
-## create a minecraft-like world in your browser with voxel.js
+## create a minecraft-like world in your browser with voxel.js [EDIT - need to explain minecraft? or no?]
 
 voxel.js is a game engine for creating 3d voxel worlds with javascript. It's like minecraft, but open-source. Over {somenum} people have already contributed to the project.
 
-One cool thing about voxel.js is that it isn't just one big library – there's a main game engine, [voxel-engine](http://github.com/maxogden/voxel-engine), and a bunch of [modules that extend the functionality of the engine](http://voxeljs.com/#modules). Quite a few people have created modules for voxel.js, and in this chapter we'll both make a game using voxel.js, and create a module that modifies the gameplay in a new way.
+One cool thing about voxel.js is that it isn't just one big library – there's a main game engine, [voxel-engine](http://github.com/maxogden/voxel-engine), and a bunch of [modules that extend the functionality of the engine](http://voxeljs.com/#modules). Quite a few people have created modules for voxel.js, [EDIT: new sentence]and in this chapter we'll both make a game using voxel.js,[EDIT: remove comma] and create a module that modifies the gameplay in a new way.
 
 Create a package.json file with these contents:
 ~~~~~~~~

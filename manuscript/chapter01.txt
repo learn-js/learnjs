@@ -8,13 +8,14 @@ We'll create a bunch of objects and functions. We'll put them together to make o
 
 It'll be a single player game. A [roguelike](http://en.wikipedia.org/wiki/Roguelike) [rpg](http://en.wikipedia.org/wiki/Role-playing_video_game) with extremely simple graphics.
 
-Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example.
+Usually roguelike games have procedurally generated levels, but we'll just build static levels for this example. [EDIT: is there a vocab/glossary section? or a section that explains what these words are?]
 
 Our game will feature monsters, weapons, coins, potions, and a hero.
 
 That small list above gives us a good sense of what objects and functions we'll need in our code.
 
-We'll need to represent each of those things in our game code, so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
+We'll need to represent each of those things in our game code,[EDIT: New sentence] so let's briefly outline the parts of the game we'll need to build, along with the typical actions each part will have:
+[Define "Actions" - is this a user word or a code word?]
 
 ### Game
 - Loop
@@ -64,13 +65,13 @@ mkdir node-rogue
 cd node-rogue
 ~~~~~~~~
 
-Run the npm init command to create a package.json file for your project:
+Run the npm init command to create a package.json file for your project: [EDIT: do we know what a package.json file is?]
 
 ~~~~~~~~
 npm init
 ~~~~~~~~
 
-Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default, if you just hit enter it'll use that default value).
+Answer all the questions however you want. I kept them mostly at the defaults (text in parentheses is the default--if you just hit enter it'll use that default value).
 
 ~~~~~~~~
 name: (node-rogue) 
@@ -173,7 +174,7 @@ canvas#game {
 }
 ~~~~~~~~
 
-To ease development, we'll use a simple game library I recently created called `crtrdg-gameloop`. All it does is initialize the canvas, and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
+To ease development, we'll use a simple game library I recently created called `crtrdg-gameloop`. All it does is initialize the canvas and provide a simple api that emits `update` and `draw` events that we can use to make our game. Later we'll take a look at the crtrdg-gameloop module in detail. (TODO: add a link to that chapter)
 
 Install `crtrdg-gameloop` using npm:
 
