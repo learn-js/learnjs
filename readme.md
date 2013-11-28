@@ -28,4 +28,4 @@ You can learn more about the books and find free tutorials at [learnjs.io](http:
 
 
 ## What happened to the old book?
-You can find the original Learn.js book in old-book.md.
+You can find the original Learn.js book in old-book.md or in the manuscript folder.
